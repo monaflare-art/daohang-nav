@@ -3,7 +3,7 @@
 ## Project Identity
 
 - Project name: general-resource-nav
-- Repository: local Git repository; remote origin not configured yet
+- Repository: https://github.com/monaflare-art/daohang-nav
 - Main goal: Build a Chinese general resource navigation site with dense categories, resource cards, rankings, articles, and a submission page.
 - Current stage: V1 implementation
 
@@ -28,7 +28,6 @@
 
 ## Known Issues
 
-- GitHub remote origin is not configured yet, so push will be blocked until the repository is created and linked.
 - Real production domain is still unknown; deploys must set `NEXT_PUBLIC_SITE_URL` before public launch.
 - Local verification commands: `npm run lint`, `npm run build`, and `npm audit --audit-level=moderate`.
 - Browser QA checked desktop 1440px and mobile 390px; mobile overflow was fixed with `min-w-0` on grid/flex columns.
@@ -43,7 +42,7 @@
 ## External Resources
 
 - Reference site: https://www.weidus.com/ used for information architecture inspiration only
-- GitHub:
+- GitHub: https://github.com/monaflare-art/daohang-nav
 - Server:
 - Deployment: Vercel
 - Credentials location only:

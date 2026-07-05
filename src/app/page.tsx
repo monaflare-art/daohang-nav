@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { JsonLd } from "@/components/json-ld";
 import { PostCard } from "@/components/post-card";
 import { RecentVisits } from "@/components/recent-visits";
 import { ResourceCard } from "@/components/resource-card";
@@ -6,7 +7,7 @@ import { SearchDirectory } from "@/components/search-directory";
 import { categories } from "@/data/categories";
 import { getFeaturedResources, getRankingResources, resources } from "@/data/resources";
 import { posts } from "@/data/posts";
-import { siteConfig } from "@/lib/site";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 
 const quickLinks = [
   { label: "翻译", href: "https://www.deepl.com/translator", note: "DeepL" },
@@ -23,9 +24,36 @@ export default function HomePage() {
 
   return (
     <main>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: siteConfig.name,
+          url: siteConfig.url,
+          description: siteConfig.description,
+          potentialAction: {
+            "@type": "SearchAction",
+            target: `${siteConfig.url}/?q={search_term_string}`,
+            "query-input": "required name=search_term_string",
+          },
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: `${siteConfig.name} 推荐资源`,
+          itemListElement: featuredResources.slice(0, 9).map((resource, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            url: absoluteUrl(`/resources/${resource.slug}`),
+            name: resource.name,
+          })),
+        }}
+      />
       <section className="border-b border-slate-200 bg-white">
         <div className="mx-auto grid max-w-7xl gap-5 px-4 py-6 sm:px-6 lg:grid-cols-[220px_1fr_300px] lg:px-8">
-          <aside className="order-2 min-w-0 lg:order-1">
+          <aside id="categories" className="order-2 min-w-0 scroll-mt-24 lg:order-1">
             <div className="sticky top-20 rounded-xl border border-slate-200 bg-slate-50 p-3">
               <p className="px-2 text-xs font-black uppercase text-slate-500">分类导航</p>
               <nav className="soft-scrollbar mt-3 flex max-w-full gap-2 overflow-x-auto lg:block lg:space-y-1 lg:overflow-visible">

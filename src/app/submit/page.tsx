@@ -10,6 +10,7 @@ export default function SubmitPage() {
   const mailto = `mailto:${siteConfig.email}?subject=${encodeURIComponent("资源收录提交")}&body=${encodeURIComponent(
     "资源名称：\n官网链接：\n所属分类：\n一句话介绍：\n是否推广合作：否\n提交人联系方式：\n",
   )}`;
+  const submitHref = siteConfig.submitFormUrl ?? mailto;
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
@@ -31,10 +32,12 @@ export default function SubmitPage() {
           ))}
         </div>
         <a
-          href={mailto}
+          href={submitHref}
+          target={siteConfig.submitFormUrl ? "_blank" : undefined}
+          rel={siteConfig.submitFormUrl ? "noopener noreferrer" : undefined}
           className="mt-6 inline-flex h-11 items-center justify-center rounded-md bg-[#116b5f] px-5 text-sm font-black text-white hover:bg-slate-950"
         >
-          打开邮件提交
+          {siteConfig.submitFormUrl ? "打开提交表单" : "打开邮件提交"}
         </a>
       </section>
 

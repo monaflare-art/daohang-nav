@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Breadcrumb } from "@/components/breadcrumb";
 import { ExternalIcon } from "@/components/icons";
+import { JsonLd } from "@/components/json-ld";
 import { ResourceCard } from "@/components/resource-card";
 import { getCategory } from "@/data/categories";
 import { getResource, resources } from "@/data/resources";
+import { absoluteUrl, defaultOgImage, siteConfig } from "@/lib/site";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -28,6 +31,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: `/resources/${resource.slug}`,
     },
+    openGraph: {
+      title: resource.name,
+      description: resource.description,
+      url: `/resources/${resource.slug}`,
+      type: "article",
+      siteName: siteConfig.name,
+      images: [defaultOgImage],
+    },
   };
 }
 
@@ -46,6 +57,32 @@ export default async function ResourcePage({ params }: Props) {
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+      <Breadcrumb
+        items={[
+          ...(category ? [{ label: category.name, href: `/categories/${category.slug}` }] : []),
+          { label: resource.name, href: `/resources/${resource.slug}` },
+        ]}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: `${resource.name} - ${siteConfig.name}`,
+          description: resource.description,
+          url: absoluteUrl(`/resources/${resource.slug}`),
+          datePublished: resource.submittedAt,
+          isPartOf: {
+            "@type": "WebSite",
+            name: siteConfig.name,
+            url: siteConfig.url,
+          },
+          about: {
+            "@type": "Thing",
+            name: resource.name,
+            url: resource.url,
+          },
+        }}
+      />
       <section className="rounded-xl border border-slate-200 bg-white p-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div>

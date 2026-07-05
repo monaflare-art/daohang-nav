@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Breadcrumb } from "@/components/breadcrumb";
 import { ResourceCard } from "@/components/resource-card";
 import { categories, getCategory } from "@/data/categories";
 import { getResourcesByCategory } from "@/data/resources";
+import { defaultOgImage } from "@/lib/site";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -23,6 +25,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: category.name,
     description: category.description,
+    alternates: {
+      canonical: `/categories/${category.slug}`,
+    },
+    openGraph: {
+      title: category.name,
+      description: category.description,
+      url: `/categories/${category.slug}`,
+      type: "website",
+      images: [defaultOgImage],
+    },
   };
 }
 
@@ -38,6 +50,7 @@ export default async function CategoryPage({ params }: Props) {
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <Breadcrumb items={[{ label: category.name, href: `/categories/${category.slug}` }]} />
       <div className="mb-6 rounded-xl border border-slate-200 bg-white p-5">
         <p className="text-sm font-bold text-[#116b5f]">分类资源</p>
         <h1 className="mt-2 text-3xl font-black text-slate-950">{category.name}</h1>

@@ -1,41 +1,23 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { recentStorageKey, recentUpdatedEvent } from "@/components/resource-click-tracker";
 import { resources, type Resource } from "@/data/resources";
-
-const storageKey = "general-resource-nav:recent";
 
 export function RecentVisits() {
   const [recent, setRecent] = useState<Resource[]>([]);
 
   useEffect(() => {
     const updateRecent = () => {
-      const raw = window.localStorage.getItem(storageKey);
+      const raw = window.localStorage.getItem(recentStorageKey);
       const slugs = raw ? (JSON.parse(raw) as string[]) : [];
       setRecent(slugs.map((slug) => resources.find((resource) => resource.slug === slug)).filter(Boolean) as Resource[]);
     };
 
     updateRecent();
+    window.addEventListener(recentUpdatedEvent, updateRecent);
 
-    const onClick = (event: MouseEvent) => {
-      const target = event.target as HTMLElement | null;
-      const link = target?.closest("[data-resource-slug]");
-      const slug = link?.getAttribute("data-resource-slug");
-
-      if (!slug) {
-        return;
-      }
-
-      const raw = window.localStorage.getItem(storageKey);
-      const existing = raw ? (JSON.parse(raw) as string[]) : [];
-      const next = [slug, ...existing.filter((item) => item !== slug)].slice(0, 8);
-      window.localStorage.setItem(storageKey, JSON.stringify(next));
-      updateRecent();
-    };
-
-    document.addEventListener("click", onClick);
-
-    return () => document.removeEventListener("click", onClick);
+    return () => window.removeEventListener(recentUpdatedEvent, updateRecent);
   }, []);
 
   if (recent.length === 0) {

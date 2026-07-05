@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Breadcrumb } from "@/components/breadcrumb";
 import { ResourceCard } from "@/components/resource-card";
 import { getPost, posts } from "@/data/posts";
 import { resources } from "@/data/resources";
+import { defaultOgImage } from "@/lib/site";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -27,6 +29,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: `/blog/${post.slug}`,
     },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `/blog/${post.slug}`,
+      type: "article",
+      publishedTime: post.date,
+      tags: post.tags,
+      images: [defaultOgImage],
+    },
   };
 }
 
@@ -44,6 +55,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+      <Breadcrumb items={[{ label: "文章资讯", href: "/blog" }, { label: post.title, href: `/blog/${post.slug}` }]} />
       <article className="rounded-xl border border-slate-200 bg-white p-6">
         <Link href="/blog" className="text-sm font-bold text-[#116b5f] hover:text-slate-950">
           返回文章列表

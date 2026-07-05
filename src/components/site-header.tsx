@@ -1,8 +1,12 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { siteConfig } from "@/lib/site";
 
 const navItems = [
   { href: "/", label: "首页" },
+  { href: "/#categories", label: "分类" },
   { href: "/rankings", label: "排行榜" },
   { href: "/blog", label: "文章资讯" },
   { href: "/submit", label: "收录提交" },
@@ -10,6 +14,19 @@ const navItems = [
 ];
 
 export function SiteHeader() {
+  const pathname = usePathname();
+  const isCurrent = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    if (href.includes("#")) {
+      return false;
+    }
+
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/92 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl min-w-0 items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
@@ -27,7 +44,10 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="whitespace-nowrap rounded-md px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-950"
+              aria-current={isCurrent(item.href) ? "page" : undefined}
+              className={`whitespace-nowrap rounded-md px-3 py-2 text-sm font-semibold transition hover:bg-slate-100 hover:text-slate-950 ${
+                isCurrent(item.href) ? "bg-slate-100 text-slate-950" : "text-slate-600"
+              }`}
             >
               {item.label}
             </Link>

@@ -21,10 +21,15 @@
 - Submission flow uses a prefilled `mailto:` link first; no external database writes in V1.
 - The directory intentionally excludes piracy, cracked software, magnet download, and obvious copyright-risk resources.
 - `package.json` uses npm `overrides` to force `postcss@8.5.10`, fixing the moderate audit issue from Next's nested PostCSS dependency without downgrading Next.
+- SEO production readiness now depends on deployment env vars: `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`, `NEXT_PUBLIC_SUBMIT_EMAIL`, and optional `NEXT_PUBLIC_SUBMIT_FORM_URL`.
+- OpenGraph, JSON-LD, semantic breadcrumbs, category canonical URLs, skip-link, focus-visible styles, and reduced-motion handling were added after production-readiness review.
+- Resource data was refactored from positional tuples to named object literals to reduce content-entry mistakes.
+- Resource click tracking is global via `ResourceClickTracker`: updates local recent visits and sends Plausible `Resource Click` events when Plausible is configured.
 
 ## Known Issues
 
 - GitHub remote origin is not configured yet, so push will be blocked until the repository is created and linked.
+- Real production domain is still unknown; deploys must set `NEXT_PUBLIC_SITE_URL` before public launch.
 - Local verification commands: `npm run lint`, `npm run build`, and `npm audit --audit-level=moderate`.
 - Browser QA checked desktop 1440px and mobile 390px; mobile overflow was fixed with `min-w-0` on grid/flex columns.
 

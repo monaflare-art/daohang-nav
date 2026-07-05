@@ -30,6 +30,21 @@ npm run dev
 
 打开 `http://localhost:3000`。
 
+## 上线前环境变量
+
+复制 `.env.example` 到部署平台环境变量中，并替换成真实值：
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+NEXT_PUBLIC_PLAUSIBLE_DOMAIN=your-domain.com
+NEXT_PUBLIC_SUBMIT_EMAIL=submit@your-domain.com
+NEXT_PUBLIC_SUBMIT_FORM_URL=https://forms.gle/your-form-id
+```
+
+- `NEXT_PUBLIC_SITE_URL`：必须使用正式域名，否则 sitemap、canonical、OpenGraph URL 会错误。
+- `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`：用于接入 Plausible 统计；不配置则不会加载分析脚本。
+- `NEXT_PUBLIC_SUBMIT_FORM_URL`：推荐填 Google Form、Tally 或 Formspree 地址，让提交有后台留痕；不配置时回退到预填邮件。
+
 ## 构建检查
 
 ```bash
@@ -46,4 +61,4 @@ npm run build
 
 ## 部署
 
-推荐部署到 Vercel。正式上线前修改 `src/lib/site.ts` 中的站点域名。
+推荐部署到 Vercel。正式上线前必须配置 `NEXT_PUBLIC_SITE_URL`，不要使用默认占位域名。

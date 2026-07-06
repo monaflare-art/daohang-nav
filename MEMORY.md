@@ -25,6 +25,7 @@
 - OpenGraph, JSON-LD, semantic breadcrumbs, category canonical URLs, skip-link, focus-visible styles, and reduced-motion handling were added after production-readiness review.
 - Resource data was refactored from positional tuples to named object literals to reduce content-entry mistakes.
 - Resource click tracking is global via `ResourceClickTracker`: updates local recent visits and sends Plausible `Resource Click` events when Plausible is configured.
+- Homepage visual direction was revised toward the reference navigation-site structure: fixed category rail, large search block, hot searches, compact quick links, favicon resource cards, category resource directory blocks, and right-side ranking/news panels.
 
 ## Known Issues
 
@@ -32,6 +33,7 @@
 - Build-time placeholder env warning script lives at `scripts/check-env.mjs`; it warns but does not fail production builds.
 - Local verification commands: `npm run test`, `npm run lint`, `npm run build`, and `npm audit --audit-level=moderate`.
 - Browser QA checked desktop 1440px and mobile 390px; mobile overflow was fixed with `min-w-0` on grid/flex columns.
+- Latest visual QA checked desktop 1440px and mobile 390px after the reference-style homepage redesign; mobile header wrapping was fixed by hiding brand text on small screens.
 
 ## User Preferences
 

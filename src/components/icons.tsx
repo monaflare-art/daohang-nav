@@ -37,3 +37,21 @@ export function RankIcon({ className = "h-4 w-4" }: IconProps) {
     </svg>
   );
 }
+
+export function GridIcon({ className = "h-4 w-4" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" aria-hidden="true" fill="none">
+      <path d="M5 5h5v5H5zM14 5h5v5h-5zM5 14h5v5H5zM14 14h5v5h-5z" stroke="currentColor" strokeLinejoin="round" strokeWidth="2" />
+    </svg>
+  );
+}
+
+export function CategoryGlyph({ label, className = "h-4 w-4" }: { label: string; className?: string }) {
+  const first = label.slice(0, 1);
+
+  return (
+    <span className={`${className} inline-flex items-center justify-center rounded-md bg-slate-100 text-[11px] font-black text-[#116b5f]`}>
+      {first}
+    </span>
+  );
+}

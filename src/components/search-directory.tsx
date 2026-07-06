@@ -34,16 +34,16 @@ export function SearchDirectory() {
   }, [query]);
 
   return (
-    <section className="min-w-0 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+    <section className="min-w-0">
       <label htmlFor="site-search" className="sr-only">搜索资源</label>
-      <div className="flex min-w-0 items-center gap-3 rounded-lg border border-slate-300 bg-slate-50 px-3 py-2 focus-within:border-[#23a995] focus-within:bg-white">
-        <SearchIcon className="h-5 w-5 shrink-0 text-slate-400" />
+      <div className="flex min-w-0 items-center gap-3 rounded-xl border border-slate-300 bg-white px-4 py-3 shadow-[0_10px_24px_rgba(15,23,42,0.08)] focus-within:border-[#116b5f]">
+        <SearchIcon className="h-6 w-6 shrink-0 text-slate-400" />
         <input
           id="site-search"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="搜索资源、标签、分类，例如 AI、PDF、部署、字体"
-          className="h-10 min-w-0 flex-1 bg-transparent text-sm font-semibold text-slate-950 outline-none placeholder:text-slate-400"
+          placeholder="搜索资源、网站、工具、文章（支持中文搜索）"
+          className="h-11 min-w-0 flex-1 bg-transparent text-base font-semibold text-slate-950 outline-none placeholder:text-slate-400"
         />
         {query ? (
           <button

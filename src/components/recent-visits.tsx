@@ -22,16 +22,16 @@ export function RecentVisits() {
 
   if (recent.length === 0) {
     return (
-      <section className="rounded-lg border border-dashed border-slate-300 bg-white p-4">
-        <h2 className="text-sm font-black text-slate-950">最近访问</h2>
-        <p className="mt-2 text-sm leading-6 text-slate-500">访问资源后会自动显示在这里，只保存在当前浏览器。</p>
+      <section className="ui-panel rounded-2xl p-4">
+        <h2 className="text-[13px] font-semibold text-slate-950">最近访问</h2>
+        <p className="mt-2 text-[13px] leading-6 text-slate-500">访问资源后会自动显示在这里，只保存在当前浏览器。</p>
       </section>
     );
   }
 
   return (
-    <section className="rounded-lg border border-slate-200 bg-white p-4">
-      <h2 className="text-sm font-black text-slate-950">最近访问</h2>
+    <section className="ui-panel rounded-2xl p-4">
+      <h2 className="text-[13px] font-semibold text-slate-950">最近访问</h2>
       <div className="mt-3 flex flex-wrap gap-2">
         {recent.map((resource) => (
           <a
@@ -40,7 +40,7 @@ export function RecentVisits() {
             target="_blank"
             rel="noopener noreferrer"
             data-resource-slug={resource.slug}
-            className="rounded-md bg-slate-100 px-2.5 py-1.5 text-xs font-bold text-slate-700 hover:bg-[#116b5f] hover:text-white"
+            className="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-slate-700 shadow-sm hover:border-slate-300 hover:bg-slate-950 hover:text-white"
           >
             {resource.name}
           </a>

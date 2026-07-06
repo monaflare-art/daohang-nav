@@ -29,25 +29,25 @@ export function SiteHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[#dfe7f0] bg-white/96 backdrop-blur">
-      <div className="mx-auto flex h-[76px] max-w-[1500px] min-w-0 items-center justify-between gap-3 px-4 sm:gap-5 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/82 backdrop-blur-2xl">
+      <div className="ui-shell flex h-[72px] min-w-0 items-center justify-between gap-3 sm:gap-5">
         <Link href="/" className="flex min-w-0 items-center gap-3" aria-label={`${siteConfig.name} 首页`}>
-          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#116b5f] text-2xl font-black text-white shadow-sm">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-950 text-xl font-black text-white shadow-sm ring-1 ring-slate-950/10">
             方
           </span>
           <span className="hidden min-w-0 sm:block">
-            <span className="block text-xl font-black leading-6 text-slate-950 sm:text-2xl">{siteConfig.name}</span>
-            <span className="hidden text-xs font-semibold text-slate-500 sm:block">实用资源 一站直达</span>
+            <span className="block text-[17px] font-semibold leading-5 tracking-[-0.02em] text-slate-950">{siteConfig.name}</span>
+            <span className="hidden text-[12px] font-medium text-slate-500 sm:block">Resource OS</span>
           </span>
         </Link>
-        <nav className="soft-scrollbar flex min-w-0 max-w-full items-center gap-2 overflow-x-auto" aria-label="主导航">
+        <nav className="soft-scrollbar flex min-w-0 max-w-full items-center gap-1 overflow-x-auto rounded-2xl border border-slate-200 bg-white/70 p-1 shadow-sm" aria-label="主导航">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               aria-current={isCurrent(item.href) ? "page" : undefined}
-              className={`inline-flex h-11 items-center gap-2 whitespace-nowrap rounded-xl px-4 text-base font-black transition hover:bg-slate-100 hover:text-slate-950 ${
-                isCurrent(item.href) ? "bg-slate-100 text-slate-950" : "text-slate-700"
+              className={`inline-flex h-9 items-center gap-2 whitespace-nowrap rounded-xl px-3 text-[13px] font-semibold transition hover:bg-slate-100 hover:text-slate-950 sm:px-4 ${
+                isCurrent(item.href) ? "bg-slate-950 text-white shadow-sm" : "text-slate-600"
               }`}
             >
               {item.label === "分类" ? <GridIcon className="h-4 w-4" /> : null}

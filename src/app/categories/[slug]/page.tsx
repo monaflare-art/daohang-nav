@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/breadcrumb";
+import { MonoBadge, Surface } from "@/components/design-system";
 import { ResourceCard } from "@/components/resource-card";
 import { categories, getCategory } from "@/data/categories";
 import { getResourcesByCategory } from "@/data/resources";
@@ -49,20 +50,18 @@ export default async function CategoryPage({ params }: Props) {
   const categoryResources = getResourcesByCategory(category.slug);
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <main className="ui-shell py-8">
       <Breadcrumb items={[{ label: category.name, href: `/categories/${category.slug}` }]} />
-      <div className="mb-6 rounded-xl border border-slate-200 bg-white p-5">
-        <p className="text-sm font-bold text-[#116b5f]">分类资源</p>
-        <h1 className="mt-2 text-3xl font-black text-slate-950">{category.name}</h1>
-        <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600">{category.description}</p>
+      <Surface className="mb-6 p-6 sm:p-8">
+        <p className="text-[13px] font-semibold text-emerald-700">Collection</p>
+        <h1 className="mt-2 text-4xl font-semibold tracking-[-0.04em] text-slate-950">{category.name}</h1>
+        <p className="mt-3 max-w-3xl text-[15px] leading-7 text-slate-500">{category.description}</p>
         <div className="mt-4 flex flex-wrap gap-2">
           {category.subcategories.map((subcategory) => (
-            <span key={subcategory} className="rounded bg-slate-100 px-2.5 py-1.5 text-xs font-bold text-slate-600">
-              {subcategory}
-            </span>
+            <MonoBadge key={subcategory}>{subcategory}</MonoBadge>
           ))}
         </div>
-      </div>
+      </Surface>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {categoryResources.map((resource) => (
           <ResourceCard key={resource.slug} resource={resource} />

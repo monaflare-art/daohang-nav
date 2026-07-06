@@ -30,7 +30,7 @@
 
 - Real production domain is still unknown; deploys must set `NEXT_PUBLIC_SITE_URL` before public launch.
 - Build-time placeholder env warning script lives at `scripts/check-env.mjs`; it warns but does not fail production builds.
-- Local verification commands: `npm run lint`, `npm run build`, and `npm audit --audit-level=moderate`.
+- Local verification commands: `npm run test`, `npm run lint`, `npm run build`, and `npm audit --audit-level=moderate`.
 - Browser QA checked desktop 1440px and mobile 390px; mobile overflow was fixed with `min-w-0` on grid/flex columns.
 
 ## User Preferences

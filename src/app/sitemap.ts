@@ -4,7 +4,7 @@ import { posts } from "@/data/posts";
 import { resources } from "@/data/resources";
 import { siteConfig } from "@/lib/site";
 
-function latestDate(dates: string[]) {
+export function latestDate(dates: string[]) {
   return new Date(
     dates
       .map((date) => new Date(date).getTime())

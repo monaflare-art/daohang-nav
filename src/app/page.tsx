@@ -1,7 +1,19 @@
 import Link from "next/link";
 import { HomeCommandSearch } from "@/components/home-command-search";
 import { HomeRecentRail } from "@/components/home-recent-rail";
-import { CategoryGlyph, ExternalIcon, GridIcon, RankIcon } from "@/components/icons";
+import {
+  ArticleIcon,
+  CategoryGlyph,
+  CompassIcon,
+  ExternalIcon,
+  GridIcon,
+  HomeIcon,
+  InfoIcon,
+  PlusIcon,
+  RankIcon,
+  SearchIcon,
+  SubmitIcon,
+} from "@/components/icons";
 import { JsonLd } from "@/components/json-ld";
 import { categories } from "@/data/categories";
 import { getFeaturedResources, getRankingResources, resources, type Resource } from "@/data/resources";
@@ -9,12 +21,12 @@ import { posts } from "@/data/posts";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 const navItems = [
-  { href: "/", label: "首页", icon: "⌂" },
-  { href: "/categories/ai-tools", label: "分类", icon: "⌘" },
-  { href: "/rankings", label: "排行榜", icon: "↟" },
-  { href: "/blog", label: "文章资讯", icon: "□" },
-  { href: "/submit", label: "收录提交", icon: "↑" },
-  { href: "/about", label: "关于", icon: "i" },
+  { href: "/", label: "首页", icon: HomeIcon },
+  { href: "/categories/ai-tools", label: "分类", icon: CompassIcon },
+  { href: "/rankings", label: "排行榜", icon: RankIcon },
+  { href: "/blog", label: "文章资讯", icon: ArticleIcon },
+  { href: "/submit", label: "收录提交", icon: SubmitIcon },
+  { href: "/about", label: "关于", icon: InfoIcon },
 ];
 
 const workflowGroups = [
@@ -127,6 +139,39 @@ function WorkflowCard({ title, note, slugs }: { title: string; note: string; slu
   );
 }
 
+function CategoryDirectoryRow({ category }: { category: (typeof categories)[number] }) {
+  const categoryResources = resources.filter((resource) => resource.category === category.slug);
+  const previewResources = categoryResources.slice(0, 4);
+
+  return (
+    <div className="directory-row">
+      <div className="directory-category">
+        <CategoryGlyph label={category.name} className="h-9 w-9 shrink-0 rounded-2xl bg-slate-50 text-emerald-700" />
+        <div className="min-w-0">
+          <Link href={`/categories/${category.slug}`} className="block truncate text-sm font-semibold text-slate-950 hover:text-emerald-700">
+            {category.name}
+          </Link>
+          <p className="mt-1 line-clamp-1 text-xs text-slate-500">{category.description}</p>
+        </div>
+      </div>
+      <div className="directory-resources">
+        {previewResources.map((resource) => (
+          <Link key={resource.slug} href={`/resources/${resource.slug}`} className="directory-resource-link">
+            <ResourceLogo resource={resource} size="sm" />
+            <span className="min-w-0">
+              <span className="block truncate text-sm font-semibold text-slate-800">{resource.name}</span>
+              <span className="block truncate text-xs text-slate-400">{resource.subcategory}</span>
+            </span>
+          </Link>
+        ))}
+      </div>
+      <Link href={`/categories/${category.slug}`} className="directory-more">
+        {categoryResources.length} 个
+      </Link>
+    </div>
+  );
+}
+
 export default function HomePage() {
   const featuredResources = getFeaturedResources().slice(0, 4);
   const rankingResources = getRankingResources().slice(0, 10);
@@ -172,7 +217,9 @@ export default function HomePage() {
         <nav className="space-y-1" aria-label="首页导航">
           {navItems.map((item) => (
             <Link key={item.href} href={item.href} className={`command-nav-item ${item.href === "/" ? "is-active" : ""}`}>
-              <span>{item.icon}</span>
+              <span className="command-nav-icon">
+                <item.icon className="h-5 w-5" />
+              </span>
               {item.label}
             </Link>
           ))}
@@ -180,7 +227,9 @@ export default function HomePage() {
 
         <div className="mt-auto">
           <HomeRecentRail />
-          <Link href="/submit" className="command-rail-action" aria-label="收录提交">+</Link>
+          <Link href="/submit" className="command-rail-action" aria-label="收录提交">
+            <PlusIcon className="h-5 w-5" />
+          </Link>
         </div>
       </aside>
 
@@ -191,12 +240,14 @@ export default function HomePage() {
             <span className="mt-0.5 text-[12px] text-slate-500">发现优质资源，高效抵达</span>
           </div>
           <div className="command-top-search">
-            <span className="text-slate-400">⌕</span>
+            <SearchIcon className="h-4 w-4 shrink-0 text-slate-400" />
             <span className="truncate">搜索资源、网站、工具、文章（支持中文）</span>
             <span className="ml-auto rounded-lg border border-slate-200 bg-slate-50 px-2 py-1 text-[11px] font-semibold text-slate-400">⌘ K</span>
           </div>
           <Link href="/submit" className="command-top-action">收录提交</Link>
-          <Link href="/about" className="command-icon-button" aria-label="关于">i</Link>
+          <Link href="/about" className="command-icon-button" aria-label="关于">
+            <InfoIcon className="h-4 w-4" />
+          </Link>
         </header>
 
         <div className="command-layout">
@@ -268,37 +319,14 @@ export default function HomePage() {
               <div className="command-section-head mb-5 px-0 pt-0">
                 <div>
                   <h2>分类目录</h2>
-                  <p>完整目录仍然保留，但以列表承载，不再做卡片墙</p>
+                  <p>用索引式目录承载完整分类，减少滚动和重复卡片</p>
                 </div>
                 <GridIcon className="h-4 w-4 text-slate-400" />
               </div>
-              <div className="grid gap-4 lg:grid-cols-2">
-                {categories.map((category) => {
-                  const categoryResources = resources.filter((resource) => resource.category === category.slug).slice(0, 5);
-
-                  return (
-                    <section key={category.slug} className="category-directory-card">
-                      <div className="mb-3 flex items-center justify-between gap-3">
-                        <div className="flex min-w-0 items-center gap-2">
-                          <CategoryGlyph label={category.name} className="h-8 w-8 shrink-0" />
-                          <h3 className="truncate text-sm font-semibold text-slate-950">{category.name}</h3>
-                        </div>
-                        <Link href={`/categories/${category.slug}`} className="text-xs font-semibold text-slate-400 hover:text-slate-950">更多</Link>
-                      </div>
-                      <div className="space-y-1">
-                        {categoryResources.map((resource) => (
-                          <Link key={resource.slug} href={`/resources/${resource.slug}`} className="flex min-w-0 items-center gap-3 rounded-xl px-2 py-2 transition hover:bg-slate-50">
-                            <ResourceLogo resource={resource} size="sm" />
-                            <span className="min-w-0">
-                              <span className="block truncate text-sm font-semibold text-slate-800">{resource.name}</span>
-                              <span className="block truncate text-xs text-slate-500">{resource.subcategory}</span>
-                            </span>
-                          </Link>
-                        ))}
-                      </div>
-                    </section>
-                  );
-                })}
+              <div className="directory-table">
+                {categories.map((category) => (
+                  <CategoryDirectoryRow key={category.slug} category={category} />
+                ))}
               </div>
             </section>
           </div>

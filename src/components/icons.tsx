@@ -46,6 +46,61 @@ export function GridIcon({ className = "h-4 w-4" }: IconProps) {
   );
 }
 
+export function HomeIcon({ className = "h-4 w-4" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" aria-hidden="true" fill="none">
+      <path d="m4 11 8-7 8 7" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d="M6.5 10.5V19a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-8.5" stroke="currentColor" strokeLinejoin="round" strokeWidth="2" />
+      <path d="M10 20v-5h4v5" stroke="currentColor" strokeLinejoin="round" strokeWidth="2" />
+    </svg>
+  );
+}
+
+export function CompassIcon({ className = "h-4 w-4" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" aria-hidden="true" fill="none">
+      <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="2" />
+      <path d="m15 9-1.7 4.3L9 15l1.7-4.3L15 9Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+    </svg>
+  );
+}
+
+export function ArticleIcon({ className = "h-4 w-4" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" aria-hidden="true" fill="none">
+      <path d="M7 4h7l3 3v13H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="2" />
+      <path d="M14 4v4h4M8 12h8M8 16h5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+    </svg>
+  );
+}
+
+export function SubmitIcon({ className = "h-4 w-4" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" aria-hidden="true" fill="none">
+      <path d="M12 19V5" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
+      <path d="m7 10 5-5 5 5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d="M5 19h14" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
+    </svg>
+  );
+}
+
+export function InfoIcon({ className = "h-4 w-4" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" aria-hidden="true" fill="none">
+      <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="2" />
+      <path d="M12 11v5M12 8h.01" stroke="currentColor" strokeLinecap="round" strokeWidth="2.5" />
+    </svg>
+  );
+}
+
+export function PlusIcon({ className = "h-4 w-4" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" aria-hidden="true" fill="none">
+      <path d="M12 5v14M5 12h14" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
+    </svg>
+  );
+}
+
 export function CategoryGlyph({ label, className = "h-4 w-4" }: { label: string; className?: string }) {
   const first = label.slice(0, 1);
 

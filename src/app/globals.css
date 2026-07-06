@@ -245,14 +245,18 @@ textarea {
     box-shadow 160ms ease;
 }
 
-.command-nav-item span {
+.command-nav-icon {
   display: flex;
-  height: 20px;
-  width: 20px;
+  height: 28px;
+  width: 28px;
   align-items: center;
   justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 10px;
   color: inherit;
-  font-size: 13px;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease;
 }
 
 .command-nav-item:hover {
@@ -264,6 +268,12 @@ textarea {
   background: linear-gradient(90deg, rgba(16, 185, 129, 0.12), rgba(16, 185, 129, 0.04));
   color: #047857;
   box-shadow: inset 0 0 0 1px rgba(16, 185, 129, 0.12);
+}
+
+.command-nav-item:hover .command-nav-icon,
+.command-nav-item.is-active .command-nav-icon {
+  border-color: rgba(16, 185, 129, 0.14);
+  background: rgba(255, 255, 255, 0.78);
 }
 
 .command-main {
@@ -380,6 +390,8 @@ textarea {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 340px;
   gap: 28px;
+  max-width: 1680px;
+  margin-inline: auto;
   padding: 28px;
 }
 
@@ -513,8 +525,7 @@ textarea {
 }
 
 .workflow-card,
-.category-shortcut,
-.category-directory-card {
+.category-shortcut {
   border: 1px solid #e5e7eb;
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.82);
@@ -539,19 +550,91 @@ textarea {
 }
 
 .category-shortcut:hover,
-.category-directory-card:hover,
 .workflow-card:hover {
   border-color: #cbd5e1;
   box-shadow: 0 14px 35px rgba(15, 23, 42, 0.045);
   transform: translateY(-1px);
 }
 
-.category-directory-card {
-  padding: 16px;
+.directory-table {
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  background: rgba(248, 250, 252, 0.68);
+}
+
+.directory-row {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.6fr) 64px;
+  gap: 18px;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+  background: rgba(255, 255, 255, 0.78);
+  padding: 14px 16px;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.directory-row:last-child {
+  border-bottom: 0;
+}
+
+.directory-row:hover {
+  background: #fff;
+  box-shadow: inset 3px 0 0 rgba(16, 185, 129, 0.48);
+}
+
+.directory-category,
+.directory-resource-link {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 12px;
+}
+
+.directory-resources {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.directory-resource-link {
+  min-height: 46px;
+  border-radius: 14px;
+  padding: 5px 7px;
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.directory-resource-link:hover {
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
+.directory-more {
+  display: inline-flex;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 750;
   transition:
     border-color 160ms ease,
-    transform 160ms ease,
-    box-shadow 160ms ease;
+    color 160ms ease;
+}
+
+.directory-more:hover {
+  border-color: rgba(16, 185, 129, 0.36);
+  color: #047857;
 }
 
 .command-insights {
@@ -656,17 +739,12 @@ textarea {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .command-nav-icon {
+    height: 24px;
+    width: 24px;
+  }
+
   .command-topbar {
-    grid-template-columns: 1fr;
-    padding: 14px 16px;
-  }
-
-  .command-brand {
-    display: none;
-  }
-
-  .command-top-action,
-  .command-icon-button {
     display: none;
   }
 
@@ -707,6 +785,20 @@ textarea {
 
   .command-insights {
     display: flex;
+  }
+
+  .directory-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .directory-resources {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .directory-more {
+    width: fit-content;
+    padding-inline: 12px;
   }
 
   .command-footer {

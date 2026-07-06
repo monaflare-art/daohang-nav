@@ -29,6 +29,7 @@
 - UI visual direction was upgraded to a premium SaaS workspace inspired by Linear, Vercel, Raycast, Apple, and Notion; reusable design primitives live in `src/components/design-system.tsx` and global tokens live in `src/app/globals.css`.
 - After user feedback that the prior version still looked like a traditional navigation site, the homepage was redesigned again into a stronger Resource OS app shell: dark fixed sidebar, top command bar, large central workspace hero, bento-style featured/workflow modules, and right-side insight rail. Homepage hides the global header/footer to avoid legacy navigation-site chrome.
 - Product Design workflow selected visual option 1, Command Center. Homepage now follows a light command-center layout with a narrow left rail, large interactive command search, recommended resource table/list, workflow shortcuts, and right-side insight rail.
+- After continued visual feedback, the Command Center homepage replaced text-symbol rail controls with local SVG icon components, compressed the category card wall into a compact index-style directory table, and hides the redundant top command bar on mobile.
 
 ## Known Issues
 
@@ -40,6 +41,7 @@
 - Latest visual QA checked desktop 1440x1000 and mobile 390x844 after the premium SaaS redesign; no horizontal overflow was detected, and CTA/nav contrast was fixed by removing the global anchor color override.
 - Latest visual QA checked desktop 1440x1000 and mobile 390x844 after the Resource OS shell redesign; no horizontal overflow was detected, homepage global header/footer are hidden, and mobile category scrollbar was hidden.
 - Latest Product Design QA checked the Command Center homepage at desktop 1440x1024 and mobile 390x844; `design-qa.md` records final result `passed`.
+- Latest visual QA refinement checked desktop 1440x1024 and mobile 390x844 after SVG rail icons and compact directory rows; no horizontal overflow was detected.
 
 ## User Preferences
 

@@ -27,6 +27,7 @@
 - Resource click tracking is global via `ResourceClickTracker`: updates local recent visits and sends Plausible `Resource Click` events when Plausible is configured.
 - Homepage visual direction was revised toward the reference navigation-site structure: fixed category rail, large search block, hot searches, compact quick links, favicon resource cards, category resource directory blocks, and right-side ranking/news panels.
 - UI visual direction was upgraded to a premium SaaS workspace inspired by Linear, Vercel, Raycast, Apple, and Notion; reusable design primitives live in `src/components/design-system.tsx` and global tokens live in `src/app/globals.css`.
+- After user feedback that the prior version still looked like a traditional navigation site, the homepage was redesigned again into a stronger Resource OS app shell: dark fixed sidebar, top command bar, large central workspace hero, bento-style featured/workflow modules, and right-side insight rail. Homepage hides the global header/footer to avoid legacy navigation-site chrome.
 
 ## Known Issues
 
@@ -36,6 +37,7 @@
 - Browser QA checked desktop 1440px and mobile 390px; mobile overflow was fixed with `min-w-0` on grid/flex columns.
 - Latest visual QA checked desktop 1440px and mobile 390px after the reference-style homepage redesign; mobile header wrapping was fixed by hiding brand text on small screens.
 - Latest visual QA checked desktop 1440x1000 and mobile 390x844 after the premium SaaS redesign; no horizontal overflow was detected, and CTA/nav contrast was fixed by removing the global anchor color override.
+- Latest visual QA checked desktop 1440x1000 and mobile 390x844 after the Resource OS shell redesign; no horizontal overflow was detected, homepage global header/footer are hidden, and mobile category scrollbar was hidden.
 
 ## User Preferences
 

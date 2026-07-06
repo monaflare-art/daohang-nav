@@ -1,7 +1,16 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { siteConfig } from "@/lib/site";
 
 export function SiteFooter() {
+  const pathname = usePathname();
+
+  if (pathname === "/") {
+    return null;
+  }
+
   return (
     <footer className="border-t border-slate-200/80 bg-white/70 backdrop-blur">
       <div className="ui-shell grid gap-6 py-8 text-sm text-slate-600 lg:grid-cols-[1fr_auto]">

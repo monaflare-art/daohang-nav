@@ -16,6 +16,10 @@ const navItems = [
 
 export function SiteHeader() {
   const pathname = usePathname();
+  if (pathname === "/") {
+    return null;
+  }
+
   const isCurrent = (href: string) => {
     if (href === "/") {
       return pathname === "/";

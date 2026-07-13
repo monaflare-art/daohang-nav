@@ -155,6 +155,37 @@ export default async function ResourcePage({ params }: Props) {
         </div>
       </Surface>
 
+      {resource.affiliateLinks?.length ? (
+        <Surface className="mt-6 p-6">
+          <SectionHeader
+            title="推广活动链接"
+            description="同一个平台可能有多个活动或产品推广链接，优先使用更贴合用户意图的入口。"
+          />
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            {resource.affiliateLinks.map((link) => (
+              <a
+                key={link.url}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-resource-slug={resource.slug}
+                className="ui-card ui-card-hover rounded-2xl p-4"
+              >
+                <span className="flex items-start justify-between gap-3">
+                  <span className="min-w-0">
+                    <span className="block text-sm font-bold text-slate-950">{link.label}</span>
+                    {link.description ? (
+                      <span className="mt-1 block text-xs leading-5 text-slate-500">{link.description}</span>
+                    ) : null}
+                  </span>
+                  <ExternalIcon className="h-4 w-4 shrink-0 text-slate-400" />
+                </span>
+              </a>
+            ))}
+          </div>
+        </Surface>
+      ) : null}
+
       <section className="mt-8">
         <SectionHeader
           title="相关资源"

@@ -48,6 +48,7 @@
 - Monetization workflow doc lives at `MONETIZATION.md`; current first registration queue is domestic: 阿里云云大使, 腾讯云推广大使, 百度智能云云推广大使, and 又拍云邀请/联盟.
 - 阿里云推广链接已接入：resource `aliyun` uses public `affiliateUrl` `https://www.aliyun.com/minisite/goods?userCode=ltpqlvx9`.
 - 腾讯云推广链接已接入：resource `tencent-cloud` uses primary `affiliateUrl` `https://curl.qcloud.com/Yj3ERuoZ` and keeps two extra campaign links in `affiliateLinks`.
+- Cloud provider resources now support multiple campaign links through `affiliateLinks`; resource detail pages render a `推广活动链接` section when multiple links are available.
 
 ## User Preferences
 

@@ -22,7 +22,7 @@ Build a navigation site that can earn from promotable resources without copying 
 
 - `url`: official product URL.
 - `affiliateUrl`: approved tracking URL after Mona gets it.
-- `affiliateLinks`: optional list of multiple approved campaign links for the same resource.
+- `affiliateLinks`: optional list of multiple approved campaign links for the same resource. Use it for activity, product, article or custom campaign links from the same platform.
 - `affiliateProgramUrl`: public signup or partner program URL.
 - `affiliateStatus`: `none`, `available`, `pending`, or `connected`.
 - `commissionType`: `one-time`, `recurring`, `lead`, `partner`, or `unknown`.
@@ -77,3 +77,14 @@ Prefer:
 ## Current Public Content Rule
 
 The public `resources` export only includes China-market resources. Global resources remain in `allResources` for future recovery but are hidden from public pages, search, sitemap, rankings, and resource detail routes.
+
+## Campaign Link Rule
+
+Cloud providers often provide many promotion links. Do not overwrite the brand-level resource for every link.
+
+Use:
+
+- `affiliateUrl`: the default outbound link for the resource card and main CTA.
+- `affiliateLinks`: all approved campaign/product links for the detail page, homepage promo blocks, category promos and future articles.
+
+When a screenshot or dashboard does not clearly identify which short link belongs to which product, keep the label generic until Mona confirms the mapping.

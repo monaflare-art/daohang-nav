@@ -9,6 +9,8 @@ export type ResourceVisibility = "public" | "hidden";
 export type AffiliateLink = {
   label: string;
   url: string;
+  description?: string;
+  type?: "activity" | "product" | "article" | "custom";
 };
 
 export type Resource = {
@@ -638,6 +640,14 @@ const resourcesSeed: Resource[] = [
     url: "https://www.aliyun.com/",
     market: "cn",
     affiliateUrl: "https://www.aliyun.com/minisite/goods?userCode=ltpqlvx9",
+    affiliateLinks: [
+      {
+        label: "官方热门活动",
+        url: "https://www.aliyun.com/minisite/goods?userCode=ltpqlvx9",
+        description: "阿里云云大使自定义生成的热门活动推广链接，适合放在首页云服务推荐位。",
+        type: "activity",
+      },
+    ],
     affiliateProgramUrl: "https://dashi.aliyun.com/",
     affiliateStatus: "connected",
     commissionType: "one-time",
@@ -661,9 +671,24 @@ const resourcesSeed: Resource[] = [
     market: "cn",
     affiliateUrl: "https://curl.qcloud.com/Yj3ERuoZ",
     affiliateLinks: [
-      { label: "腾讯云活动入口 1", url: "https://curl.qcloud.com/Yj3ERuoZ" },
-      { label: "腾讯云活动入口 2", url: "https://curl.qcloud.com/0gxgivFT" },
-      { label: "腾讯云活动入口 3", url: "https://curl.qcloud.com/ecgHoSEp" },
+      {
+        label: "腾讯云活动入口 1",
+        url: "https://curl.qcloud.com/Yj3ERuoZ",
+        description: "腾讯云推广短链，当前作为默认出站链接。",
+        type: "activity",
+      },
+      {
+        label: "腾讯云活动入口 2",
+        url: "https://curl.qcloud.com/0gxgivFT",
+        description: "腾讯云推广短链，适合后续绑定具体产品或活动卡。",
+        type: "activity",
+      },
+      {
+        label: "腾讯云活动入口 3",
+        url: "https://curl.qcloud.com/ecgHoSEp",
+        description: "腾讯云推广短链，适合后续绑定具体产品或活动卡。",
+        type: "activity",
+      },
     ],
     affiliateProgramUrl: "https://cloud.tencent.com/act/partner/cps",
     affiliateStatus: "connected",

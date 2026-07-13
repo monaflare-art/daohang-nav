@@ -16,7 +16,7 @@ import {
 } from "@/components/icons";
 import { JsonLd } from "@/components/json-ld";
 import { categories } from "@/data/categories";
-import { getFeaturedResources, getRankingResources, resources, type Resource } from "@/data/resources";
+import { getAffiliateLabel, getFeaturedResources, getRankingResources, getResourceOutboundUrl, resources, type Resource } from "@/data/resources";
 import { posts } from "@/data/posts";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
@@ -76,6 +76,8 @@ function ResourceLogo({ resource, size = "md" }: { resource: Resource; size?: "s
 
 function ResourceTableRow({ resource }: { resource: Resource }) {
   const category = categories.find((item) => item.slug === resource.category);
+  const affiliateLabel = getAffiliateLabel(resource);
+  const outboundUrl = getResourceOutboundUrl(resource);
 
   return (
     <div className="resource-table-row">
@@ -86,11 +88,12 @@ function ResourceTableRow({ resource }: { resource: Resource }) {
         </Link>
         {resource.isFeatured ? <span className="rounded-md bg-emerald-50 px-2 py-1 text-[11px] font-semibold text-emerald-700">推荐</span> : null}
         {resource.isSponsored ? <span className="rounded-md bg-amber-50 px-2 py-1 text-[11px] font-semibold text-amber-700">推广</span> : null}
+        {affiliateLabel ? <span className="rounded-md bg-cyan-50 px-2 py-1 text-[11px] font-semibold text-cyan-700">{affiliateLabel}</span> : null}
       </div>
       <span className="hidden min-w-0 truncate text-[13px] text-slate-500 md:block">{category?.name ?? resource.category}</span>
       <span className="hidden min-w-0 truncate text-[13px] text-slate-500 lg:block">{resource.description}</span>
       <a
-        href={resource.url}
+        href={outboundUrl}
         target="_blank"
         rel="noopener noreferrer"
         data-resource-slug={resource.slug}

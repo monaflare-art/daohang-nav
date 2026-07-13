@@ -2,7 +2,7 @@ import Link from "next/link";
 import { MonoBadge } from "@/components/design-system";
 import { ExternalIcon } from "@/components/icons";
 import { getCategory } from "@/data/categories";
-import type { Resource } from "@/data/resources";
+import { getAffiliateLabel, getResourceOutboundUrl, type Resource } from "@/data/resources";
 
 function faviconUrl(url: string) {
   const hostname = new URL(url).hostname;
@@ -12,6 +12,8 @@ function faviconUrl(url: string) {
 
 export function ResourceCard({ resource, compact = false }: { resource: Resource; compact?: boolean }) {
   const category = getCategory(resource.category);
+  const affiliateLabel = getAffiliateLabel(resource);
+  const outboundUrl = getResourceOutboundUrl(resource);
 
   return (
     <article
@@ -31,6 +33,7 @@ export function ResourceCard({ resource, compact = false }: { resource: Resource
             </Link>
             <div className="flex shrink-0 gap-1">
               {resource.isSponsored ? <MonoBadge tone="amber">推广</MonoBadge> : resource.isFeatured ? <MonoBadge tone="accent">推荐</MonoBadge> : null}
+              {affiliateLabel ? <MonoBadge tone={resource.affiliateStatus === "connected" ? "accent" : "amber"}>{affiliateLabel}</MonoBadge> : null}
               {resource.status === "inactive" ? (
                 <MonoBadge>失效</MonoBadge>
               ) : null}
@@ -53,7 +56,7 @@ export function ResourceCard({ resource, compact = false }: { resource: Resource
           ))}
         </div>
         <a
-          href={resource.url}
+          href={outboundUrl}
           target="_blank"
           rel="noopener noreferrer"
           data-resource-slug={resource.slug}

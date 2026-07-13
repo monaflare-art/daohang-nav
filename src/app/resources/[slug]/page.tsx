@@ -7,7 +7,7 @@ import { ExternalIcon } from "@/components/icons";
 import { JsonLd } from "@/components/json-ld";
 import { ResourceCard } from "@/components/resource-card";
 import { getCategory } from "@/data/categories";
-import { getResource, resources } from "@/data/resources";
+import { getAffiliateLabel, getResource, getResourceOutboundUrl, resources } from "@/data/resources";
 import { absoluteUrl, defaultOgImage, siteConfig } from "@/lib/site";
 
 type Props = {
@@ -52,6 +52,8 @@ export default async function ResourcePage({ params }: Props) {
   }
 
   const category = getCategory(resource.category);
+  const affiliateLabel = getAffiliateLabel(resource);
+  const outboundUrl = getResourceOutboundUrl(resource);
   const related = resources
     .filter((item) => item.slug !== resource.slug && (item.category === resource.category || item.tags.some((tag) => resource.tags.includes(tag))))
     .slice(0, 6);
@@ -92,7 +94,7 @@ export default async function ResourcePage({ params }: Props) {
             <p className="mt-4 max-w-3xl text-[15px] leading-7 text-slate-500">{resource.description}</p>
           </div>
           <a
-            href={resource.url}
+            href={outboundUrl}
             target="_blank"
             rel="noopener noreferrer"
             data-resource-slug={resource.slug}
@@ -106,6 +108,9 @@ export default async function ResourcePage({ params }: Props) {
           {resource.isSponsored ? (
             <MonoBadge tone="amber">推广资源</MonoBadge>
           ) : null}
+          {affiliateLabel ? (
+            <MonoBadge tone={resource.affiliateStatus === "connected" ? "accent" : "amber"}>{affiliateLabel}</MonoBadge>
+          ) : null}
           {resource.isFeatured ? (
             <MonoBadge tone="accent">编辑推荐</MonoBadge>
           ) : null}
@@ -117,7 +122,7 @@ export default async function ResourcePage({ params }: Props) {
 
       <Surface className="mt-6 p-6">
         <SectionHeader title="收录说明" />
-        <div className="mt-4 grid gap-4 text-sm leading-6 text-slate-500 sm:grid-cols-3">
+        <div className="mt-4 grid gap-4 text-sm leading-6 text-slate-500 sm:grid-cols-4">
           <div className="ui-card rounded-2xl p-4">
             <p className="font-semibold text-slate-950">状态</p>
             <p className="mt-1">{resource.status === "active" ? "正常可访问" : "暂时失效"}</p>
@@ -129,6 +134,23 @@ export default async function ResourcePage({ params }: Props) {
           <div className="ui-card rounded-2xl p-4">
             <p className="font-semibold text-slate-950">收录日期</p>
             <p className="mt-1">{resource.submittedAt}</p>
+          </div>
+          <div className="ui-card rounded-2xl p-4">
+            <p className="font-semibold text-slate-950">推广状态</p>
+            <p className="mt-1">{affiliateLabel ?? "未发现官方推广入口"}</p>
+            {resource.commissionNote ? (
+              <p className="mt-2 text-xs leading-5 text-slate-400">{resource.commissionNote}</p>
+            ) : null}
+            {resource.affiliateProgramUrl ? (
+              <a
+                href={resource.affiliateProgramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex text-xs font-bold text-emerald-700 hover:text-slate-950"
+              >
+                申请推广计划
+              </a>
+            ) : null}
           </div>
         </div>
       </Surface>

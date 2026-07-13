@@ -1,11 +1,22 @@
 import { categories } from "@/data/categories";
 
 export type ResourceStatus = "active" | "inactive";
+export type AffiliateStatus = "none" | "available" | "pending" | "connected";
+export type CommissionType = "one-time" | "recurring" | "lead" | "partner" | "unknown";
+export type RiskLevel = "low" | "medium" | "high";
 
 export type Resource = {
   slug: string;
   name: string;
   url: string;
+  affiliateUrl?: string;
+  affiliateProgramUrl?: string;
+  affiliateStatus?: AffiliateStatus;
+  commissionType?: CommissionType;
+  commissionNote?: string;
+  promotionLabel?: string;
+  riskLevel?: RiskLevel;
+  monetizationNote?: string;
   category: string;
   subcategory: string;
   description: string;
@@ -120,6 +131,12 @@ const resourcesSeed: Resource[] = [
     slug: "canva-ai",
     name: "Canva AI",
     url: "https://www.canva.com/ai/",
+    affiliateProgramUrl: "https://www.canva.com/help/canva-affiliate-marketing-program/",
+    affiliateStatus: "pending",
+    commissionType: "unknown",
+    commissionNote: "Canvassador/Creators 入口需申请，当前不按已接入推广处理。",
+    promotionLabel: "待申请",
+    riskLevel: "low",
     category: "ai-tools",
     subcategory: "AI办公",
     description: "把设计、文档、演示和 AI 辅助能力放在一起的在线创作工具。",
@@ -498,6 +515,12 @@ const resourcesSeed: Resource[] = [
     slug: "vercel",
     name: "Vercel",
     url: "https://vercel.com/",
+    affiliateProgramUrl: "https://vercel.com/legal/affiliate-marketing-terms",
+    affiliateStatus: "available",
+    commissionType: "partner",
+    commissionNote: "存在官方 Affiliate Marketing Terms / Partner Program，需申请后获取追踪链接。",
+    promotionLabel: "可申请",
+    riskLevel: "low",
     category: "dev",
     subcategory: "部署托管",
     description: "前端和 Next.js 项目的快速部署平台。",
@@ -507,6 +530,26 @@ const resourcesSeed: Resource[] = [
     isSponsored: true,
     officialLabel: "推广",
     submittedAt: "2026-07-05",
+  },
+  {
+    slug: "hostinger",
+    name: "Hostinger",
+    url: "https://www.hostinger.com/",
+    affiliateProgramUrl: "https://www.hostinger.com/affiliates",
+    affiliateStatus: "available",
+    commissionType: "one-time",
+    commissionNote: "官方联盟计划，公开说明每笔合格销售至少 40% 佣金，适合建站/主机类流量转化。",
+    promotionLabel: "高佣金",
+    riskLevel: "low",
+    category: "dev",
+    subcategory: "部署托管",
+    description: "主机、域名和建站服务平台，适合建站教程、VPS/虚拟主机推荐和新手站长转化。",
+    tags: ["主机", "建站", "联盟"],
+    status: "active",
+    isFeatured: true,
+    isSponsored: true,
+    officialLabel: "推广",
+    submittedAt: "2026-07-13",
   },
   {
     slug: "netlify",
@@ -708,6 +751,12 @@ const resourcesSeed: Resource[] = [
     slug: "notion",
     name: "Notion",
     url: "https://www.notion.so/",
+    affiliateProgramUrl: "https://www.notion.com/affiliates",
+    affiliateStatus: "available",
+    commissionType: "recurring",
+    commissionNote: "官方联盟页说明可获得激活注册奖励和首年收入分成，需通过 PartnerStack 申请。",
+    promotionLabel: "可申请",
+    riskLevel: "low",
     category: "study-office",
     subcategory: "笔记知识",
     description: "笔记、知识库、项目管理和轻量数据库工具。",
@@ -1051,6 +1100,26 @@ export const resources: Resource[] = resourcesSeed.map((resource) => ({
 
 export function getResource(slug: string) {
   return resources.find((resource) => resource.slug === slug);
+}
+
+export function getResourceOutboundUrl(resource: Resource) {
+  return resource.affiliateUrl || resource.url;
+}
+
+export function getAffiliateLabel(resource: Resource) {
+  if (resource.affiliateStatus === "connected") {
+    return resource.promotionLabel ?? "已接入";
+  }
+
+  if (resource.affiliateStatus === "available") {
+    return resource.promotionLabel ?? "可申请";
+  }
+
+  if (resource.affiliateStatus === "pending") {
+    return resource.promotionLabel ?? "待申请";
+  }
+
+  return null;
 }
 
 export function getResourcesByCategory(categorySlug: string) {

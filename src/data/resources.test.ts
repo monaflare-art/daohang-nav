@@ -8,7 +8,7 @@ import {
 
 describe("resource data helpers", () => {
   it("returns a resource by slug and undefined for missing slugs", () => {
-    expect(getResource("chatgpt")?.name).toBe("ChatGPT");
+    expect(getResource("deepseek")?.name).toBe("DeepSeek");
     expect(getResource("missing-resource-slug")).toBeUndefined();
   });
 

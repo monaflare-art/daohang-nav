@@ -31,29 +31,29 @@ const navItems = [
 
 const workflowGroups = [
   {
+    title: "中文 AI 助手",
+    note: "适合中文写作、资料整理和办公场景",
+    slugs: ["doubao", "kimi", "tongyi"],
+  },
+  {
+    title: "国内云服务推广",
+    note: "优先申请返佣，适合建站和服务器内容",
+    slugs: ["aliyun", "tencent-cloud", "baidu-ai-cloud"],
+  },
+  {
     title: "翻译与阅读",
-    note: "翻译、词典、PDF 阅读工具集合",
-    slugs: ["deepl", "google-translate", "ilovepdf"],
+    note: "中文用户高频翻译和词典入口",
+    slugs: ["baidu-translate", "youdao-translate"],
   },
   {
-    title: "AI 写作与创作",
-    note: "AI 写作、总结和内容生成",
-    slugs: ["notion", "chatgpt", "claude"],
+    title: "生活服务",
+    note: "地图、快递和招聘等高频入口",
+    slugs: ["amap", "kuaidi100", "boss"],
   },
   {
-    title: "设计与开发",
-    note: "设计协作、开发工具、代码托管",
-    slugs: ["figma", "github", "vercel"],
-  },
-  {
-    title: "文件处理",
-    note: "PDF、压缩、格式转换、文档处理",
-    slugs: ["smallpdf", "ilovepdf", "tinypng"],
-  },
-  {
-    title: "云存储与同步",
-    note: "网盘、同步、备份、资源管理",
-    slugs: ["google-drive", "dropbox", "onedrive"],
+    title: "商业资讯",
+    note: "科技商业、创业和产品趋势资讯",
+    slugs: ["36kr", "huxiu"],
   },
 ];
 
@@ -178,6 +178,9 @@ function CategoryDirectoryRow({ category }: { category: (typeof categories)[numb
 export default function HomePage() {
   const featuredResources = getFeaturedResources().slice(0, 4);
   const rankingResources = getRankingResources().slice(0, 10);
+  const visibleCategories = categories.filter((category) => (
+    resources.some((resource) => resource.category === category.slug)
+  ));
 
   return (
     <main className="command-app min-h-screen bg-[#f7f9fc]">
@@ -302,7 +305,7 @@ export default function HomePage() {
                 <Link href="#category-directory">查看全部</Link>
               </div>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-                {categories.map((category) => {
+                {visibleCategories.map((category) => {
                   const count = resources.filter((resource) => resource.category === category.slug).length;
 
                   return (
@@ -327,7 +330,7 @@ export default function HomePage() {
                 <GridIcon className="h-4 w-4 text-slate-400" />
               </div>
               <div className="directory-table">
-                {categories.map((category) => (
+                {visibleCategories.map((category) => (
                   <CategoryDirectoryRow key={category.slug} category={category} />
                 ))}
               </div>

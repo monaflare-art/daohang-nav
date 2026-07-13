@@ -50,6 +50,7 @@
 - 腾讯云推广链接已接入：resource `tencent-cloud` uses primary `affiliateUrl` `https://curl.qcloud.com/Yj3ERuoZ` and keeps two extra campaign links in `affiliateLinks`.
 - Cloud provider resources now support multiple campaign links through `affiliateLinks`; resource detail pages render a `推广活动链接` section when multiple links are available.
 - 阿里云 `affiliateLinks` currently include `云大使折扣补贴推广` and `云小站上云`; both use Mona's public Aliyun tracking URL.
+- 百度智能云推广链接已接入：resource `baidu-ai-cloud` uses primary new-customer campaign URL with `track=cc19d5069f9b5a93c16c23d79df4ab75003a3209e79e0086` and keeps enterprise/AI campaign links in `affiliateLinks`.
 
 ## User Preferences
 

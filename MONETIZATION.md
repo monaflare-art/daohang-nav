@@ -22,6 +22,7 @@ Build a navigation site that can earn from promotable resources without copying 
 
 - `url`: official product URL.
 - `affiliateUrl`: approved tracking URL after Mona gets it.
+- `affiliateLinks`: optional list of multiple approved campaign links for the same resource.
 - `affiliateProgramUrl`: public signup or partner program URL.
 - `affiliateStatus`: `none`, `available`, `pending`, or `connected`.
 - `commissionType`: `one-time`, `recurring`, `lead`, `partner`, or `unknown`.
@@ -34,7 +35,7 @@ Build a navigation site that can earn from promotable resources without copying 
 | Resource | Program URL | Status | Why |
 | --- | --- | --- | --- |
 | 阿里云 | https://www.aliyun.com/minisite/goods?userCode=ltpqlvx9 | connected | 已接入 Mona 的公开推广链接，适合建站/服务器教程转化。 |
-| 腾讯云 | https://cloud.tencent.com/act/partner/cps | available | 国内 CPS 推广入口明确，适合云产品与服务器活动转化。 |
+| 腾讯云 | https://curl.qcloud.com/Yj3ERuoZ | connected | 已接入 Mona 的 3 个腾讯云公开推广短链，主访问按钮默认使用活动入口 1。 |
 | 百度智能云 | https://cloud.baidu.com/campaign/ambassador/index.html | available | 云推广大使邀新返利入口明确，适合 AI 云与企业服务转化。 |
 | 又拍云 | https://www.upyun.com/invite | available | 开发者扶持/邀请入口明确，适合 CDN、云存储和站长流量。 |
 

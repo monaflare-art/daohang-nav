@@ -6,6 +6,10 @@ export type CommissionType = "one-time" | "recurring" | "lead" | "partner" | "un
 export type RiskLevel = "low" | "medium" | "high";
 export type ResourceMarket = "cn" | "global";
 export type ResourceVisibility = "public" | "hidden";
+export type AffiliateLink = {
+  label: string;
+  url: string;
+};
 
 export type Resource = {
   slug: string;
@@ -14,6 +18,7 @@ export type Resource = {
   market?: ResourceMarket;
   visibility?: ResourceVisibility;
   affiliateUrl?: string;
+  affiliateLinks?: AffiliateLink[];
   affiliateProgramUrl?: string;
   affiliateStatus?: AffiliateStatus;
   commissionType?: CommissionType;
@@ -654,11 +659,17 @@ const resourcesSeed: Resource[] = [
     name: "腾讯云",
     url: "https://cloud.tencent.com/",
     market: "cn",
+    affiliateUrl: "https://curl.qcloud.com/Yj3ERuoZ",
+    affiliateLinks: [
+      { label: "腾讯云活动入口 1", url: "https://curl.qcloud.com/Yj3ERuoZ" },
+      { label: "腾讯云活动入口 2", url: "https://curl.qcloud.com/0gxgivFT" },
+      { label: "腾讯云活动入口 3", url: "https://curl.qcloud.com/ecgHoSEp" },
+    ],
     affiliateProgramUrl: "https://cloud.tencent.com/act/partner/cps",
-    affiliateStatus: "available",
+    affiliateStatus: "connected",
     commissionType: "one-time",
-    commissionNote: "腾讯云推广大使有公开 CPS 返佣入口，需登录实名认证后申请推广链接。",
-    promotionLabel: "可申请",
+    commissionNote: "已接入 Mona 的 3 个腾讯云公开推广短链，主访问按钮默认使用活动入口 1。",
+    promotionLabel: "已接入",
     riskLevel: "low",
     category: "dev",
     subcategory: "部署托管",
@@ -1295,7 +1306,7 @@ export function getResource(slug: string) {
 }
 
 export function getResourceOutboundUrl(resource: Resource) {
-  return resource.affiliateUrl || resource.url;
+  return resource.affiliateUrl || resource.affiliateLinks?.[0]?.url || resource.url;
 }
 
 export function getAffiliateLabel(resource: Resource) {

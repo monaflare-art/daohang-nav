@@ -642,9 +642,15 @@ const resourcesSeed: Resource[] = [
     affiliateUrl: "https://www.aliyun.com/minisite/goods?userCode=ltpqlvx9",
     affiliateLinks: [
       {
-        label: "官方热门活动",
+        label: "云大使折扣补贴推广",
         url: "https://www.aliyun.com/minisite/goods?userCode=ltpqlvx9",
-        description: "阿里云云大使自定义生成的热门活动推广链接，适合放在首页云服务推荐位。",
+        description: "阿里云云大使折扣补贴推广链接，适合云服务器、建站和云产品优惠内容导流。",
+        type: "activity",
+      },
+      {
+        label: "云小站上云",
+        url: "https://www.aliyun.com/minisite/goods?userCode=ltpqlvx9",
+        description: "阿里云云小站上云推广入口，适合新用户上云、建站教程和云产品合集页面。",
         type: "activity",
       },
     ],

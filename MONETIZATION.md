@@ -38,6 +38,7 @@ Build a navigation site that can earn from promotable resources without copying 
 | 腾讯云 | https://curl.qcloud.com/Yj3ERuoZ | connected | 已接入 Mona 的 3 个腾讯云公开推广短链，主访问按钮默认使用活动入口 1。 |
 | 百度智能云 | https://cloud.baidu.com/campaign/experience/index.html?track=cc19d5069f9b5a93c16c23d79df4ab75003a3209e79e0086#company-hot | connected | 已接入 Mona 的 3 个百度智能云公开推广活动链接，主访问按钮默认使用新客特惠专场。 |
 | 又拍云 | https://console.upyun.com/register/?invite=0zBpu9y-f | connected | 已接入 Mona 的又拍云大使公开邀请链接，适合 CDN、云存储和站长流量。 |
+| 淘宝联盟精选 | https://pub.alimama.com/ | pending | 已登录阿里妈妈并找到 PID `mm_99391035_322400376_89025600014`；最终推广 URL 仍需在转链弹窗里选择推广位后生成。 |
 
 ## Paused Foreign Affiliate Queue
 
@@ -89,3 +90,7 @@ Use:
 - `affiliateLinks`: all approved campaign/product links for the detail page, homepage promo blocks, category promos and future articles.
 
 When a screenshot or dashboard does not clearly identify which short link belongs to which product, keep the label generic until Mona confirms the mapping.
+
+## Current Blockers
+
+- 阿里妈妈：账号已登录，已有审核通过媒体 `爱分享(手机客户端专享)_99391035` 和推广位 PID `mm_99391035_322400376_89025600014`。频道推广页转换在“选择推广位”弹窗中默认停留在 `自有平台 / 网站`，需要手动切换到已有社交媒体并确认，才能生成最终推广链接。

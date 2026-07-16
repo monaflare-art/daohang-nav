@@ -61,6 +61,7 @@
 - 阿里云 `affiliateLinks` currently include `云大使折扣补贴推广` and `云小站上云`; both use Mona's public Aliyun tracking URL.
 - 百度智能云推广链接已接入：resource `baidu-ai-cloud` uses primary new-customer campaign URL with `track=cc19d5069f9b5a93c16c23d79df4ab75003a3209e79e0086` and keeps enterprise/AI campaign links in `affiliateLinks`.
 - 又拍云推广链接已接入：resource `upyun` uses public invite URL `https://console.upyun.com/register/?invite=0zBpu9y-f`.
+- 阿里妈妈/淘宝联盟已登录并找到审核通过媒体 `爱分享(手机客户端专享)_99391035`、PID `mm_99391035_322400376_89025600014`；resource `taobao-union-deals` 暂为 `affiliateStatus: "pending"`，因为频道推广页转换弹窗还需要手动选择推广位后生成最终推广链接。
 - 2026-07-16 reference-site expansion batch 1 added official, low-risk resources from weidus.com homepage signals: Chinese AI assistants, official translate tools, official netdisk/email services, and online image/format tools. Piracy, cracked software, magnet search, unofficial netdisk resource dumps, and adult resources remain excluded.
 
 ## User Preferences

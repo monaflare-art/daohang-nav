@@ -5,7 +5,7 @@ import { getRankingResources } from "@/data/resources";
 
 export const metadata: Metadata = {
   title: "排行榜",
-  description: "方舟导航的推荐资源排行榜，推广资源会明确标记。",
+  description: "极新导航的推荐资源排行榜，推广资源会明确标记。",
 };
 
 export default function RankingsPage() {

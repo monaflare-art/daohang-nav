@@ -5,7 +5,7 @@ import { posts } from "@/data/posts";
 
 export const metadata: Metadata = {
   title: "文章资讯",
-  description: "方舟导航的资源整理、运营规则和工具站建设文章。",
+  description: "极新导航的资源整理、运营规则和工具站建设文章。",
 };
 
 export default function BlogPage() {

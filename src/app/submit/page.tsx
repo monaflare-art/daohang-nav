@@ -4,13 +4,13 @@ import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "收录提交",
-  description: "提交适合方舟导航收录的合法、稳定、公开资源。",
+  description: "提交适合极新导航收录的合法、稳定、公开资源。",
 };
 
 export default function SubmitPage() {
-  const mailto = `mailto:${siteConfig.email}?subject=${encodeURIComponent("资源收录提交")}&body=${encodeURIComponent(
+  const mailto = siteConfig.email ? `mailto:${siteConfig.email}?subject=${encodeURIComponent("资源收录提交")}&body=${encodeURIComponent(
     "资源名称：\n官网链接：\n所属分类：\n一句话介绍：\n是否推广合作：否\n提交人联系方式：\n",
-  )}`;
+  )}` : undefined;
   const submitHref = siteConfig.submitFormUrl ?? mailto;
 
   return (
@@ -33,14 +33,20 @@ export default function SubmitPage() {
             </label>
           ))}
         </div>
-        <a
-          href={submitHref}
-          target={siteConfig.submitFormUrl ? "_blank" : undefined}
-          rel={siteConfig.submitFormUrl ? "noopener noreferrer" : undefined}
-          className="mt-6 inline-flex h-10 items-center justify-center rounded-xl bg-slate-950 px-5 text-[13px] font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-emerald-700"
-        >
-          {siteConfig.submitFormUrl ? "打开提交表单" : "打开邮件提交"}
-        </a>
+        {submitHref ? (
+          <a
+            href={submitHref}
+            target={siteConfig.submitFormUrl ? "_blank" : undefined}
+            rel={siteConfig.submitFormUrl ? "noopener noreferrer" : undefined}
+            className="mt-6 inline-flex h-10 items-center justify-center rounded-xl bg-slate-950 px-5 text-[13px] font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-emerald-700"
+          >
+            {siteConfig.submitFormUrl ? "打开提交表单" : "打开邮件提交"}
+          </a>
+        ) : (
+          <p className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-6 text-amber-800">
+            提交通道待配置。上线后可通过 `NEXT_PUBLIC_SUBMIT_EMAIL` 或 `NEXT_PUBLIC_SUBMIT_FORM_URL` 启用提交入口。
+          </p>
+        )}
       </Surface>
 
       <Surface className="mt-6 p-6">

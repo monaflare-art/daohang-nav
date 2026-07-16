@@ -21,7 +21,7 @@
 - Spacing and layout rhythm: implementation uses the selected narrow rail, top command bar, large command panel, table rows, and right rail. Previous oversized sidebar drift was fixed.
 - Colors and visual tokens: implementation uses true white/cool gray surfaces, emerald selected states, slate text, subtle borders, and restrained shadows.
 - Image quality and assets: no hero bitmap asset was required by the selected option; resources use real favicons from the existing favicon strategy. Article thumbnails remain abstract but non-blocking.
-- Copy and content: above-the-fold copy follows the selected direction and real app labels: `方舟导航`, `搜索资源、网站、工具、文章`, `推荐资源`, `热门排行`, `最新文章`, `收录提交`.
+- Copy and content: above-the-fold copy follows the selected direction and real app labels: `极新导航`, `搜索资源、网站、工具、文章`, `推荐资源`, `热门排行`, `最新文章`, `收录提交`.
 - Patches made since previous QA pass: replaced dark oversized Resource OS shell with light Command Center layout; converted sidebar to 104px rail; moved recent visits into the rail; converted featured resources to table/list rows; added interactive command search preview.
 - Patches made in this refinement: replaced text-symbol rail controls with consistent SVG icon primitives; replaced the category card wall with a compact `.directory-table`; hid the redundant mobile topbar so mobile keeps one primary search entry.
 - Browser QA metrics: desktop has `navIcons: 6`, `directoryRows: 10`, `categoryCards: 0`, and no horizontal overflow. Mobile has `directoryRows: 10`, topbar display `none`, and no horizontal overflow.

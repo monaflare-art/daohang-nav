@@ -216,7 +216,7 @@ export default function HomePage() {
       <aside className="command-sidebar">
         <Link href="/" className="mb-6 flex items-center justify-center" aria-label={`${siteConfig.name} 首页`}>
           <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-600 text-xl font-black text-white shadow-sm">
-            方
+            极
           </span>
         </Link>
 
@@ -243,7 +243,7 @@ export default function HomePage() {
         <header className="command-topbar">
           <div className="command-brand">
             <span className="text-[17px] font-semibold tracking-[-0.02em] text-slate-950">{siteConfig.name}</span>
-            <span className="mt-0.5 text-[12px] text-slate-500">发现优质资源，高效抵达</span>
+            <span className="mt-0.5 text-[12px] text-slate-500">{siteConfig.tagline}</span>
           </div>
           <div className="command-top-search">
             <SearchIcon className="h-4 w-4 shrink-0 text-slate-400" />
@@ -371,7 +371,7 @@ export default function HomePage() {
         </div>
 
         <footer className="command-footer">
-          <span>© 2026 {siteConfig.name} · 发现优质资源，提升每一天</span>
+          <span>© 2026 {siteConfig.name} · {siteConfig.tagline}</span>
           <span className="flex gap-4">
             <Link href="/disclaimer">免责声明</Link>
             <Link href="/privacy">隐私政策</Link>

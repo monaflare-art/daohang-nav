@@ -37,11 +37,11 @@ export function SiteHeader() {
       <div className="ui-shell flex h-[72px] min-w-0 items-center justify-between gap-3 sm:gap-5">
         <Link href="/" className="flex min-w-0 items-center gap-3" aria-label={`${siteConfig.name} 首页`}>
           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-950 text-xl font-black text-white shadow-sm ring-1 ring-slate-950/10">
-            方
+            极
           </span>
           <span className="hidden min-w-0 sm:block">
             <span className="block text-[17px] font-semibold leading-5 tracking-[-0.02em] text-slate-950">{siteConfig.name}</span>
-            <span className="hidden text-[12px] font-medium text-slate-500 sm:block">Resource OS</span>
+            <span className="hidden text-[12px] font-medium text-slate-500 sm:block">{siteConfig.englishName}</span>
           </span>
         </Link>
         <nav className="soft-scrollbar flex min-w-0 max-w-full items-center gap-1 overflow-x-auto rounded-2xl border border-slate-200 bg-white/70 p-1 shadow-sm" aria-label="主导航">

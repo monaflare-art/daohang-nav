@@ -39,15 +39,15 @@ export default function Image() {
               fontWeight: 900,
             }}
           >
-            方
+            极
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ fontSize: 54, fontWeight: 900 }}>{siteConfig.name}</div>
-            <div style={{ marginTop: 10, fontSize: 26, color: "#475569" }}>清晰、合法、可维护的资源入口</div>
+            <div style={{ marginTop: 10, fontSize: 26, color: "#475569" }}>{siteConfig.englishName}</div>
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-          <div style={{ fontSize: 72, fontWeight: 900, letterSpacing: -1 }}>中文综合资源导航</div>
+          <div style={{ fontSize: 72, fontWeight: 900, letterSpacing: -1 }}>{siteConfig.tagline}</div>
           <div style={{ maxWidth: 900, fontSize: 30, lineHeight: 1.45, color: "#334155" }}>
             AI 工具、在线工具、开发资源、设计素材、学习办公和生活服务的高密度入口。
           </div>

@@ -1,5 +1,6 @@
-const requiredPublicEnv = [
-  "NEXT_PUBLIC_SITE_URL",
+const requiredPublicEnv = ["NEXT_PUBLIC_SITE_URL"];
+
+const optionalPublicEnv = [
   "NEXT_PUBLIC_PLAUSIBLE_DOMAIN",
   "NEXT_PUBLIC_SUBMIT_EMAIL",
   "NEXT_PUBLIC_SUBMIT_FORM_URL",
@@ -21,13 +22,19 @@ function isPlaceholderValue(value) {
   return placeholderPatterns.some((pattern) => pattern.test(value));
 }
 
-const invalidEntries = requiredPublicEnv
+const invalidRequiredEntries = requiredPublicEnv
   .map((name) => ({ name, value: process.env[name] }))
   .filter(({ value }) => isPlaceholderValue(value));
 
+const invalidOptionalEntries = optionalPublicEnv
+  .map((name) => ({ name, value: process.env[name] }))
+  .filter(({ value }) => value && isPlaceholderValue(value));
+
+const invalidEntries = [...invalidRequiredEntries, ...invalidOptionalEntries];
+
 if (invalidEntries.length > 0) {
   console.warn("\n[check-env] Production environment warning:");
-  console.warn("[check-env] These public env vars are missing or still look like .env.example placeholders:");
+  console.warn("[check-env] These public env vars are missing or still look like placeholders:");
 
   for (const { name, value } of invalidEntries) {
     console.warn(`  - ${name}: ${value ? `"${value}"` : "(not set)"}`);

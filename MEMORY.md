@@ -4,7 +4,7 @@
 
 - Project name: general-resource-nav
 - Repository: https://github.com/monaflare-art/daohang-nav
-- Main goal: Build a Chinese general resource navigation site with dense categories, resource cards, rankings, articles, and a submission page.
+- Main goal: Build 极新导航 Gexinn, a Chinese general resource navigation site with dense categories, resource cards, rankings, articles, and a submission page.
 - Current stage: V1 implementation
 
 ## Tech Stack
@@ -36,7 +36,10 @@
 
 ## Known Issues
 
-- Real production domain is still unknown; deploys must set `NEXT_PUBLIC_SITE_URL` before public launch.
+- Production domain decision: use `https://gexinn.com` for 极新导航 Gexinn. `NEXT_PUBLIC_SITE_URL` remains env-first, but production deploys should set it to `https://gexinn.com`.
+- DNS is not yet resolved; Codex may prepare Vercel deployment and custom domains, but must not claim `gexinn.com` is live until DNS is configured and verified.
+- Local Vercel CLI was available through `npx vercel`, but no local Vercel credentials or `VERCEL_TOKEN` were present on 2026-07-16, so deployment/custom-domain operations could not be completed from Codex in this environment.
+- Vercel DNS records to use after project/domain setup, subject to the project Domains page: apex `A 76.76.21.21`, `www` `CNAME cname.vercel-dns-0.com`.
 - Build-time placeholder env warning script lives at `scripts/check-env.mjs`; it warns but does not fail production builds.
 - Local verification commands: `npm run test`, `npm run lint`, `npm run build`, and `npm audit --audit-level=moderate`.
 - Browser QA checked desktop 1440px and mobile 390px; mobile overflow was fixed with `min-w-0` on grid/flex columns.
@@ -45,6 +48,7 @@
 - Latest visual QA checked desktop 1440x1000 and mobile 390x844 after the Resource OS shell redesign; no horizontal overflow was detected, homepage global header/footer are hidden, and mobile category scrollbar was hidden.
 - Latest Product Design QA checked the Command Center homepage at desktop 1440x1024 and mobile 390x844; `design-qa.md` records final result `passed`.
 - Latest visual QA refinement checked desktop 1440x1024 and mobile 390x844 after SVG rail icons and compact directory rows; no horizontal overflow was detected.
+- 2026-07-16 Edge QA checked local production build with `msedge`: desktop homepage and mobile submit page show 极新导航/Gexinn branding correctly; only Edge lazy-image informational console entry appeared, no app error.
 - Monetization workflow doc lives at `MONETIZATION.md`; current first registration queue is domestic: 阿里云云大使, 腾讯云推广大使, 百度智能云云推广大使, and 又拍云邀请/联盟.
 - 阿里云推广链接已接入：resource `aliyun` uses public `affiliateUrl` `https://www.aliyun.com/minisite/goods?userCode=ltpqlvx9`.
 - 腾讯云推广链接已接入：resource `tencent-cloud` uses primary `affiliateUrl` `https://curl.qcloud.com/Yj3ERuoZ` and keeps two extra campaign links in `affiliateLinks`.
@@ -65,4 +69,5 @@
 - GitHub: https://github.com/monaflare-art/daohang-nav
 - Server:
 - Deployment: Vercel
+- Production domain: https://gexinn.com
 - Credentials location only:

@@ -72,13 +72,13 @@ npm run build
 - 生产域名：`https://gexinn.com`
 - WWW 域名：`https://www.gexinn.com`
 
-当前 Vercel 项目已创建并完成生产部署；`gexinn.com` 和 `www.gexinn.com` 已添加到 Vercel 项目，但 DNS 尚未指向 Vercel，所以正式域名暂时不能访问。
+当前 Vercel 项目已创建并完成生产部署；`gexinn.com` 和 `www.gexinn.com` 已添加到 Vercel 项目，DNS 已在 DNSPod 配置并通过 Vercel 校验，正式域名可通过 HTTPS 访问。
 
 Vercel GitHub 自动部署连接待完成：Vercel CLI 连接 `monaflare-art/daohang-nav` 时返回仓库访问错误。需要在 Vercel GitHub App 设置里允许访问 `daohang-nav` 后，再重新连接 Git 仓库。
 
-## DNS 待办
+## DNS 配置
 
-域名 `gexinn.com` 当前仍使用 DNSPod nameserver，尚未解析到 Vercel。Vercel `domains verify` 当前给出的推荐记录如下：
+域名 `gexinn.com` 当前继续使用 DNSPod nameserver，并通过以下记录指向 Vercel：
 
 | 主机记录 | 类型 | 值 | 说明 |
 | --- | --- | --- | --- |
@@ -86,13 +86,13 @@ Vercel GitHub 自动部署连接待完成：Vercel CLI 连接 `monaflare-art/dao
 | `@` | `A` | `64.29.17.1` | `gexinn.com` 根域指向 Vercel |
 | `www` | `CNAME` | `ad8f0056e39022c6.vercel-dns-017.com.` | `www.gexinn.com` 指向 Vercel |
 
-也可以将域名 nameserver 改成 Vercel 提供的 `ns1.vercel-dns.com` 和 `ns2.vercel-dns.com`。如果继续使用 DNSPod，优先按上表添加记录，然后回到 Vercel Domains 页面重新验证。
+Vercel `domains verify` 已返回 `configured_correctly`，SSL certificate 已签发并开启自动续期。
 
 ## 当前部署状态
 
 - GitHub 仓库已确定为 `monaflare-art/daohang-nav`，当前 `main` 已 push。
-- Vercel 生产部署已完成，临时地址为 `https://daohang-nav.vercel.app`。
+- Vercel 生产部署已完成，正式地址为 `https://gexinn.com`，临时地址为 `https://daohang-nav.vercel.app`。
 - Vercel 生产环境变量已配置：`NEXT_PUBLIC_SITE_URL=https://gexinn.com`。
-- 自定义域名已添加到 Vercel 项目，但等待域名服务商后台 DNS 解析。
+- 自定义域名 `gexinn.com` 与 `www.gexinn.com` 已添加到 Vercel 项目，DNS 和 HTTPS 均已通过验证。
 - GitHub 自动部署连接等待 Vercel GitHub App 授权 `daohang-nav` 仓库。
 - Plausible、提交邮箱、提交表单尚无真实值，保持未配置。

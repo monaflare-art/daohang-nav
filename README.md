@@ -64,31 +64,35 @@ npm run build
 
 ## 部署
 
-推荐部署到 Vercel。生产环境必须配置 `NEXT_PUBLIC_SITE_URL=https://gexinn.com`，不要使用 `example.com` 或其他占位域名。
+项目部署到 Vercel。生产环境必须配置 `NEXT_PUBLIC_SITE_URL=https://gexinn.com`，不要使用 `example.com` 或其他占位域名。
 
-当前 GitHub 仓库：`monaflare-art/daohang-nav`
+- GitHub 仓库：`monaflare-art/daohang-nav`
+- Vercel 项目：`monaflare-arts-projects/daohang-nav`
+- 临时访问地址：`https://daohang-nav.vercel.app`
+- 生产域名：`https://gexinn.com`
+- WWW 域名：`https://www.gexinn.com`
 
-当前计划域名：
+当前 Vercel 项目已创建并完成生产部署；`gexinn.com` 和 `www.gexinn.com` 已添加到 Vercel 项目，但 DNS 尚未指向 Vercel，所以正式域名暂时不能访问。
 
-- 主域名：`gexinn.com`
-- WWW：`www.gexinn.com`
-
-域名尚未解析时，可以先使用 Vercel 提供的 `vercel.app` 临时地址验收。DNS 记录以 Vercel 项目 Domains 页面给出的要求为准。
+Vercel GitHub 自动部署连接待完成：Vercel CLI 连接 `monaflare-art/daohang-nav` 时返回仓库访问错误。需要在 Vercel GitHub App 设置里允许访问 `daohang-nav` 后，再重新连接 Git 仓库。
 
 ## DNS 待办
 
-域名 `gexinn.com` 当前尚未解析。完成 Vercel 项目绑定后，在域名服务商后台添加以下记录，并回到 Vercel Domains 页面等待校验：
+域名 `gexinn.com` 当前仍使用 DNSPod nameserver，尚未解析到 Vercel。Vercel `domains verify` 当前给出的推荐记录如下：
 
 | 主机记录 | 类型 | 值 | 说明 |
 | --- | --- | --- | --- |
-| `@` | `A` | `76.76.21.21` | `gexinn.com` 根域指向 Vercel |
-| `www` | `CNAME` | `cname.vercel-dns-0.com` | `www.gexinn.com` 指向 Vercel |
+| `@` | `A` | `216.198.79.1` | `gexinn.com` 根域指向 Vercel |
+| `@` | `A` | `64.29.17.1` | `gexinn.com` 根域指向 Vercel |
+| `www` | `CNAME` | `ad8f0056e39022c6.vercel-dns-017.com.` | `www.gexinn.com` 指向 Vercel |
 
-注意：Vercel Domains 页面可能按项目状态给出额外验证记录或带尾点的 CNAME 值，最终以 Vercel 页面显示为准。
+也可以将域名 nameserver 改成 Vercel 提供的 `ns1.vercel-dns.com` 和 `ns2.vercel-dns.com`。如果继续使用 DNSPod，优先按上表添加记录，然后回到 Vercel Domains 页面重新验证。
 
 ## 当前部署状态
 
-- GitHub 仓库已确定为 `monaflare-art/daohang-nav`。
-- Vercel CLI 本机暂无登录凭据；无法在本地直接创建 Vercel 项目、配置生产环境变量或添加自定义域名。
-- 需要 Vercel 登录后配置生产环境变量：`NEXT_PUBLIC_SITE_URL=https://gexinn.com`。
+- GitHub 仓库已确定为 `monaflare-art/daohang-nav`，当前 `main` 已 push。
+- Vercel 生产部署已完成，临时地址为 `https://daohang-nav.vercel.app`。
+- Vercel 生产环境变量已配置：`NEXT_PUBLIC_SITE_URL=https://gexinn.com`。
+- 自定义域名已添加到 Vercel 项目，但等待域名服务商后台 DNS 解析。
+- GitHub 自动部署连接等待 Vercel GitHub App 授权 `daohang-nav` 仓库。
 - Plausible、提交邮箱、提交表单尚无真实值，保持未配置。

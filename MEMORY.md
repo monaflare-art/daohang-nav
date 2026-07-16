@@ -12,7 +12,7 @@
 - Language: TypeScript
 - Framework: Next.js App Router + React
 - Package manager: npm
-- Deployment: Vercel target, static/local data first
+- Deployment: Vercel, static/local data first
 
 ## Important Decisions
 
@@ -37,10 +37,12 @@
 ## Known Issues
 
 - Production domain decision: use `https://gexinn.com` for 极新导航 Gexinn. `NEXT_PUBLIC_SITE_URL` remains env-first, but production deploys should set it to `https://gexinn.com`.
-- DNS is not yet resolved; Codex may prepare Vercel deployment and custom domains, but must not claim `gexinn.com` is live until DNS is configured and verified.
-- Local Vercel CLI was available through `npx vercel`, but no local Vercel credentials or `VERCEL_TOKEN` were present on 2026-07-16, so deployment/custom-domain operations could not be completed from Codex in this environment.
-- 2026-07-16 retry: Edge is logged into Vercel and reached the Vercel CLI device authorization page for code `XFXX-JFDD`, but Codex could not complete the `Allow` click because Computer Use coordinate clicks did not activate the button and macOS rejected `System Events` click automation with error `-25200`. Vercel CLI remained unauthenticated.
-- Vercel DNS records to use after project/domain setup, subject to the project Domains page: apex `A 76.76.21.21`, `www` `CNAME cname.vercel-dns-0.com`.
+- 2026-07-16 deployment: Vercel CLI authenticated as `monaflare-art`; project `monaflare-arts-projects/daohang-nav` was created and deployed. Current temporary production alias: `https://daohang-nav.vercel.app`.
+- Vercel project env: production `NEXT_PUBLIC_SITE_URL=https://gexinn.com` is configured. Plausible, submit email, and submit form URL remain unset because no real values were provided.
+- Custom domains `gexinn.com` and `www.gexinn.com` are added to the Vercel project, but DNS is not yet resolved to Vercel. Do not claim `gexinn.com` is live until Vercel verification passes and DNS propagation is visible.
+- Vercel `domains verify` currently recommends DNS records: apex `A 216.198.79.1`, apex `A 64.29.17.1`, and `www` `CNAME ad8f0056e39022c6.vercel-dns-017.com.`. Alternative nameserver path: `ns1.vercel-dns.com` and `ns2.vercel-dns.com`.
+- Current public DNS still points away from Vercel: `gexinn.com A 198.18.0.22`, `www.gexinn.com A 198.18.0.110`.
+- Vercel GitHub auto-deploy connection is still pending. `npx vercel git connect https://github.com/monaflare-art/daohang-nav` fails with a repository access error, likely because the Vercel GitHub App is not authorized for `daohang-nav`.
 - Build-time placeholder env warning script lives at `scripts/check-env.mjs`; it warns but does not fail production builds.
 - Local verification commands: `npm run test`, `npm run lint`, `npm run build`, and `npm audit --audit-level=moderate`.
 - Browser QA checked desktop 1440px and mobile 390px; mobile overflow was fixed with `min-w-0` on grid/flex columns.
@@ -50,6 +52,7 @@
 - Latest Product Design QA checked the Command Center homepage at desktop 1440x1024 and mobile 390x844; `design-qa.md` records final result `passed`.
 - Latest visual QA refinement checked desktop 1440x1024 and mobile 390x844 after SVG rail icons and compact directory rows; no horizontal overflow was detected.
 - 2026-07-16 Edge QA checked local production build with `msedge`: desktop homepage and mobile submit page show 极新导航/Gexinn branding correctly; only Edge lazy-image informational console entry appeared, no app error.
+- 2026-07-16 Edge QA checked deployed `https://daohang-nav.vercel.app`: desktop homepage and mobile submit page screenshots show 极新导航/Gexinn branding and no obvious layout breakage.
 - Monetization workflow doc lives at `MONETIZATION.md`; current first registration queue is domestic: 阿里云云大使, 腾讯云推广大使, 百度智能云云推广大使, and 又拍云邀请/联盟.
 - 阿里云推广链接已接入：resource `aliyun` uses public `affiliateUrl` `https://www.aliyun.com/minisite/goods?userCode=ltpqlvx9`.
 - 腾讯云推广链接已接入：resource `tencent-cloud` uses primary `affiliateUrl` `https://curl.qcloud.com/Yj3ERuoZ` and keeps two extra campaign links in `affiliateLinks`.
@@ -69,6 +72,7 @@
 - Reference site: https://www.weidus.com/ used for information architecture inspiration only
 - GitHub: https://github.com/monaflare-art/daohang-nav
 - Server:
-- Deployment: Vercel
+- Deployment: Vercel `monaflare-arts-projects/daohang-nav`
 - Production domain: https://gexinn.com
+- Temporary production URL: https://daohang-nav.vercel.app
 - Credentials location only:

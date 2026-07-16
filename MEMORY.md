@@ -31,6 +31,7 @@
 - Product Design workflow selected visual option 1, Command Center. Homepage now follows a light command-center layout with a narrow left rail, large interactive command search, recommended resource table/list, workflow shortcuts, and right-side insight rail.
 - After continued visual feedback, the Command Center homepage replaced text-symbol rail controls with local SVG icon components, compressed the category card wall into a compact index-style directory table, and hides the redundant top command bar on mobile.
 - User clarified the product target: build a navigation site structurally comparable to weidus.com, with broad content coverage and explicit monetization through promotable/affiliate resources, while avoiding direct copying and copyright-risk content.
+- Reference-site expansion rule: use weidus.com as a discovery source only; do not wholesale copy its database, descriptions, images, or high-risk resource categories. Add resources in batches after official URL verification, rewritten descriptions, and copyright/advertising-risk filtering.
 - Affiliate-ready resource model added: resources can now store `affiliateUrl`, `affiliateProgramUrl`, `affiliateStatus`, `commissionType`, `commissionNote`, `promotionLabel`, and `riskLevel`; outbound links prefer `affiliateUrl` when available.
 - After multiple foreign affiliate rejections, public resources now hide global/foreign sites and only expose China-market resources via the filtered `resources` export; full data remains in `allResources` for later recovery.
 
@@ -60,6 +61,7 @@
 - 阿里云 `affiliateLinks` currently include `云大使折扣补贴推广` and `云小站上云`; both use Mona's public Aliyun tracking URL.
 - 百度智能云推广链接已接入：resource `baidu-ai-cloud` uses primary new-customer campaign URL with `track=cc19d5069f9b5a93c16c23d79df4ab75003a3209e79e0086` and keeps enterprise/AI campaign links in `affiliateLinks`.
 - 又拍云推广链接已接入：resource `upyun` uses public invite URL `https://console.upyun.com/register/?invite=0zBpu9y-f`.
+- 2026-07-16 reference-site expansion batch 1 added official, low-risk resources from weidus.com homepage signals: Chinese AI assistants, official translate tools, official netdisk/email services, and online image/format tools. Piracy, cracked software, magnet search, unofficial netdisk resource dumps, and adult resources remain excluded.
 
 ## User Preferences
 

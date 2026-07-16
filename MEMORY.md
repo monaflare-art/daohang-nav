@@ -41,7 +41,7 @@
 - Vercel project env: production `NEXT_PUBLIC_SITE_URL=https://gexinn.com` is configured. Plausible, submit email, and submit form URL remain unset because no real values were provided.
 - Custom domains `gexinn.com` and `www.gexinn.com` are added to the Vercel project. DNSPod records were configured on 2026-07-16: apex `A 216.198.79.1`, apex `A 64.29.17.1`, and `www` `CNAME ad8f0056e39022c6.vercel-dns-017.com.`.
 - Vercel `domains verify` returns `configured_correctly` for both `gexinn.com` and `www.gexinn.com`. SSL certificate `cert_l8rVMNRgW8cQMHWjrJVbvxil` covers both domains, renews automatically, and HTTPS returns 200.
-- Vercel GitHub auto-deploy connection is still pending. `npx vercel git connect https://github.com/monaflare-art/daohang-nav` fails with a repository access error, likely because the Vercel GitHub App is not authorized for `daohang-nav`.
+- Vercel GitHub auto-deploy connection is complete. The Vercel GitHub App is authorized for `monaflare-art/daohang-nav`, and the Vercel project shows `monaflare-art/daohang-nav` as connected.
 - Build-time placeholder env warning script lives at `scripts/check-env.mjs`; it warns but does not fail production builds.
 - Local verification commands: `npm run test`, `npm run lint`, `npm run build`, and `npm audit --audit-level=moderate`.
 - Browser QA checked desktop 1440px and mobile 390px; mobile overflow was fixed with `min-w-0` on grid/flex columns.
@@ -73,6 +73,7 @@
 - GitHub: https://github.com/monaflare-art/daohang-nav
 - Server:
 - Deployment: Vercel `monaflare-arts-projects/daohang-nav`
+- Vercel Git integration: connected to `monaflare-art/daohang-nav`
 - Production domain: https://gexinn.com
 - Temporary production URL: https://daohang-nav.vercel.app
 - Credentials location only:

@@ -39,6 +39,7 @@
 - Production domain decision: use `https://gexinn.com` for 极新导航 Gexinn. `NEXT_PUBLIC_SITE_URL` remains env-first, but production deploys should set it to `https://gexinn.com`.
 - DNS is not yet resolved; Codex may prepare Vercel deployment and custom domains, but must not claim `gexinn.com` is live until DNS is configured and verified.
 - Local Vercel CLI was available through `npx vercel`, but no local Vercel credentials or `VERCEL_TOKEN` were present on 2026-07-16, so deployment/custom-domain operations could not be completed from Codex in this environment.
+- 2026-07-16 retry: Edge is logged into Vercel and reached the Vercel CLI device authorization page for code `XFXX-JFDD`, but Codex could not complete the `Allow` click because Computer Use coordinate clicks did not activate the button and macOS rejected `System Events` click automation with error `-25200`. Vercel CLI remained unauthenticated.
 - Vercel DNS records to use after project/domain setup, subject to the project Domains page: apex `A 76.76.21.21`, `www` `CNAME cname.vercel-dns-0.com`.
 - Build-time placeholder env warning script lives at `scripts/check-env.mjs`; it warns but does not fail production builds.
 - Local verification commands: `npm run test`, `npm run lint`, `npm run build`, and `npm audit --audit-level=moderate`.

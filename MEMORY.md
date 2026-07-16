@@ -59,7 +59,7 @@
 - Cloud provider resources now support multiple campaign links through `affiliateLinks`; resource detail pages render a `推广活动链接` section when multiple links are available.
 - 阿里云 `affiliateLinks` currently include `云大使折扣补贴推广` and `云小站上云`; both use Mona's public Aliyun tracking URL.
 - 百度智能云推广链接已接入：resource `baidu-ai-cloud` uses primary new-customer campaign URL with `track=cc19d5069f9b5a93c16c23d79df4ab75003a3209e79e0086` and keeps enterprise/AI campaign links in `affiliateLinks`.
-- 又拍云大使后台已验证：登录后点击 `链接邀请` 会要求先完成个人/企业实名认证；resource `upyun` is `pending` until Mona completes real-name verification and obtains the public invite URL.
+- 又拍云推广链接已接入：resource `upyun` uses public invite URL `https://console.upyun.com/register/?invite=0zBpu9y-f`.
 
 ## User Preferences
 

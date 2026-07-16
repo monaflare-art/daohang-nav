@@ -63,6 +63,7 @@
 - 又拍云推广链接已接入：resource `upyun` uses public invite URL `https://console.upyun.com/register/?invite=0zBpu9y-f`.
 - 阿里妈妈/淘宝联盟已登录并找到审核通过媒体 `爱分享(手机客户端专享)_99391035`、PID `mm_99391035_322400376_89025600014`；resource `taobao-union-deals` 暂为 `affiliateStatus: "pending"`，因为官方推荐频道页 `https://mo.m.taobao.com/common/page_haohuo?__t__=1612358774351` 在频道推广页转换中返回“该链接不支持转化”。
 - 七牛云推广链接已接入：resource `qiniu-cloud` uses public `affiliateUrl` `https://s.qiniu.com/q2Abim`; CPS 推广概览显示当前青铜等级返佣 25%，等级提升后最高可到 35%。
+- 京东云云推客推广链接已接入：resource `jdcloud-yuntuike` uses public `affiliateUrl` `https://3.cn/2VOJ-4Fe`; 普通京东联盟网站媒体申请要求 ICP 备案号，`gexinn.com` 当前未备案时暂不走该路径。
 - 华为云奖励推广计划已于 2026-01-30 起暂停运营，当前不作为新注册推广入口。
 - 2026-07-16 reference-site expansion batch 1 added official, low-risk resources from weidus.com homepage signals: Chinese AI assistants, official translate tools, official netdisk/email services, and online image/format tools. Piracy, cracked software, magnet search, unofficial netdisk resource dumps, and adult resources remain excluded.
 

@@ -39,7 +39,8 @@ Build a navigation site that can earn from promotable resources without copying 
 | 百度智能云 | https://cloud.baidu.com/campaign/experience/index.html?track=cc19d5069f9b5a93c16c23d79df4ab75003a3209e79e0086#company-hot | connected | 已接入 Mona 的 3 个百度智能云公开推广活动链接，主访问按钮默认使用新客特惠专场。 |
 | 又拍云 | https://console.upyun.com/register/?invite=0zBpu9y-f | connected | 已接入 Mona 的又拍云大使公开邀请链接，适合 CDN、云存储和站长流量。 |
 | 七牛云 | https://s.qiniu.com/q2Abim | connected | 已接入 Mona 的七牛云新推官专属推广链接；当前青铜等级返佣 25%，等级提升后最高可到 35%。 |
-| 京东云 | https://3.cn/2VOJ-4Fe | connected | 已接入 Mona 的京东云云推客公有云推荐返利链接；适合云服务器、数据库、安全和企业上云内容导流。 |
+| 京东云 | https://3.cn/-2VSyISI | connected | 已接入 Mona 的京东云云推客公有云推荐返利链接；适合云服务器、数据库、安全和企业上云内容导流。 |
+| 京美建站 | https://3.cn/2V-Sywtm | connected | 已接入 Mona 的京东云云推客京美建站 SaaS 版推荐返利链接；适合企业官网、小程序和模板建站流量。 |
 | 淘宝联盟精选 | https://pub.alimama.com/ | pending | 已登录阿里妈妈并找到 PID `mm_99391035_322400376_89025600014`；当前官方推荐频道页在转链时返回“该链接不支持转化”，需更换支持转化的链接。 |
 | 华为云 | https://activity.huaweicloud.com/cps/index.html | paused | 官方公告称奖励推广计划已于 2026-01-30 起暂停运营，当前不作为新注册推广入口。 |
 
@@ -98,4 +99,4 @@ When a screenshot or dashboard does not clearly identify which short link belong
 
 - 阿里妈妈：账号已登录，已有审核通过媒体 `爱分享(手机客户端专享)_99391035` 和推广位 PID `mm_99391035_322400376_89025600014`。已切换到 `他方平台 / 社交平台`、媒体 `爱分享(手机客户端专享)_99391035`、推广位 `爱分享` 并确认，但官方推荐频道页 `https://mo.m.taobao.com/common/page_haohuo?__t__=1612358774351` 返回“该链接不支持转化”。下一步应换具体商品、飞猪/阿里云可转链页面，或从阿里妈妈素材库复制已生成链接。
 - 七牛云：新推官已加入成功，CPS 推广概览显示专属推广链接 `https://s.qiniu.com/q2Abim`。当前等级为青铜，返佣 25%。
-- 京东联盟普通 CPS：创建网站媒体要求填写已完成备案域名的 ICP 备案号；`gexinn.com` 当前未备案，暂不走该路径。京东云云推客是独立路径，已接入。
+- 京东联盟普通 CPS：创建网站媒体要求填写已完成备案域名的 ICP 备案号；`gexinn.com` 当前未备案，暂不走该路径。京东云云推客是独立路径，已接入公有云组织推广链接 `https://3.cn/-2VSyISI` 和京美建站组织推广链接 `https://3.cn/2V-Sywtm`。

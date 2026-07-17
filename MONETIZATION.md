@@ -38,8 +38,8 @@ Build a navigation site that can earn from promotable resources without copying 
 | 腾讯云 | https://curl.qcloud.com/Yj3ERuoZ | connected | 已接入 Mona 的 3 个腾讯云公开推广短链，主访问按钮默认使用活动入口 1。 |
 | 百度智能云 | https://cloud.baidu.com/campaign/experience/index.html?track=cc19d5069f9b5a93c16c23d79df4ab75003a3209e79e0086#company-hot | connected | 已接入 Mona 的 3 个百度智能云公开推广活动链接，主访问按钮默认使用新客特惠专场。 |
 | UCloud | https://passport.ucloud.cn?cps_code=82uZz69HIZDFBpAOoe61kR | connected | 已接入 Mona 的 UCloud U 大使专属邀新链接，后台推广素材页复制所得。 |
-| 锐成云 | https://www.racent.com/affiliate | available | 官方推广联盟页说明有个人专属推广链接、推广订单跟踪和佣金收入查看；需 Mona 注册后复制专属链接。 |
-| 网宝 | https://www.idcpay.com/affiliate.html | available | 官方推广联盟页说明云服务器和独立服务器返佣；需 Mona 注册并确认平台资质、规则和提现方式。 |
+| 锐成云 | https://www.racent.com/affiliate | pending | 本轮尝试注册未能完成，先暂缓；后续如已有账号或注册条件可满足，再回来获取专属链接。 |
+| 网宝 | https://www.idcpay.com/affiliate.html | pending | 登录后卡在个人实名认证，要求微信实名、姓名和身份证号；Mona 反馈实名认证不了，先暂缓。 |
 | 又拍云 | https://console.upyun.com/register/?invite=0zBpu9y-f | connected | 已接入 Mona 的又拍云大使公开邀请链接，适合 CDN、云存储和站长流量。 |
 | 七牛云 | https://s.qiniu.com/q2Abim | connected | 已接入 Mona 的七牛云新推官专属推广链接；当前青铜等级返佣 25%，等级提升后最高可到 35%。 |
 | 京东云 | https://3.cn/-2VSyISI | connected | 已接入 Mona 的京东云云推客公有云推荐返利链接；适合云服务器、数据库、安全和企业上云内容导流。 |
@@ -118,6 +118,8 @@ When a screenshot or dashboard does not clearly identify which short link belong
 
 - 阿里妈妈：账号已登录，已有审核通过媒体 `爱分享(手机客户端专享)_99391035` 和推广位 PID `mm_99391035_322400376_89025600014`。已切换到 `他方平台 / 社交平台`、媒体 `爱分享(手机客户端专享)_99391035`、推广位 `爱分享` 并确认，但官方推荐频道页 `https://mo.m.taobao.com/common/page_haohuo?__t__=1612358774351` 返回“该链接不支持转化”。下一步应换具体商品、飞猪/阿里云可转链页面，或从阿里妈妈素材库复制已生成链接。
 - UCloud：已接入 U 大使推广素材页顶部“复制邀新链接”得到的公开链接 `https://passport.ucloud.cn?cps_code=82uZz69HIZDFBpAOoe61kR`；当前可见活动卡片的“复制推广链接”也返回同一 tracking 链接。
+- 锐成云：本轮从推广联盟页进入注册页后无法完成注册，先暂缓，不再继续卡在该平台。
+- 网宝：登录后进入个人实名认证页，要求微信实名认证、真实姓名和身份证号；Mona 反馈实名认证不了，先暂缓。
 - 新增待申请平台：锐成云、网宝、京东联盟、多多进宝、唯品会联盟、百度联盟、苏宁联盟、美团联盟、携程联盟、同程联盟、滴滴联盟、飞猪联盟开放平台、去哪儿开放平台、聚推客联盟、抖音精选联盟、快手联盟、小红书蒲公英、B站悬赏计划。下一步逐个登录/注册，复制公开可投放的专属链接后再改为 `connected`。
 - 七牛云：新推官已加入成功，CPS 推广概览显示专属推广链接 `https://s.qiniu.com/q2Abim`。当前等级为青铜，返佣 25%。
 - 京东联盟普通 CPS：创建网站媒体要求填写已完成备案域名的 ICP 备案号；`gexinn.com` 当前未备案，暂不走该路径。京东云云推客是独立路径，已接入公有云组织推广链接 `https://3.cn/-2VSyISI` 和京美建站组织推广链接 `https://3.cn/2V-Sywtm`。

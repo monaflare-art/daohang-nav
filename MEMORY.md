@@ -60,7 +60,7 @@
 - Cloud provider resources now support multiple campaign links through `affiliateLinks`; resource detail pages render a `推广活动链接` section when multiple links are available.
 - 阿里云 `affiliateLinks` currently include `云大使折扣补贴推广` and `云小站上云`; both use Mona's public Aliyun tracking URL.
 - 百度智能云推广链接已接入：resource `baidu-ai-cloud` uses primary new-customer campaign URL with `track=cc19d5069f9b5a93c16c23d79df4ab75003a3209e79e0086` and keeps enterprise/AI campaign links in `affiliateLinks`.
-- UCloud 已加入国内待申请推广队列：resource `ucloud` uses official U 大使 program URL `https://www.ucloud.cn/site/active/regift.html` with `affiliateStatus: "available"`；官方说明需登录 U 大使推广管理平台复制专属邀请链接或 `cps_code` 后才能接入。
+- UCloud 已完成注册/登录但暂未找到推广码：resource `ucloud` now remains `affiliateStatus: "pending"` until Mona finds a U 大使专属邀请链接或 `cps_code`。
 - 2026-07-17 国内推广资源批量扩展：新增 `racent-cloud`、`idcpay`、`jd-union`、`pinduoduo-jinbao`、`vipshop-union`、`baidu-union`，均先标记为 `available` 或 `pending`，等待 Mona 注册/登录并提供公开可投放专属链接后再改为 `connected`。
 - 2026-07-17 国内推广资源第二批扩展：新增 `suning-union`、`meituan-union`、`ctrip-union`、`ly-union`，覆盖电商、本地生活和旅行 CPS；均需 Mona 完成登录/资质/媒体配置后复制公开推广链接。
 - 2026-07-17 国内推广资源第三批扩展：新增 `didi-union`、`fliggy-union`、`qunar-open`、`jutuike`；`jutuike` 为第三方聚合平台，需只使用授权清晰、结算规则明确的活动链接。

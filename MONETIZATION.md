@@ -44,7 +44,7 @@ Build a navigation site that can earn from promotable resources without copying 
 | 七牛云 | https://s.qiniu.com/q2Abim | connected | 已接入 Mona 的七牛云新推官专属推广链接；当前青铜等级返佣 25%，等级提升后最高可到 35%。 |
 | 京东云 | https://3.cn/-2VSyISI | connected | 已接入 Mona 的京东云云推客公有云推荐返利链接；适合云服务器、数据库、安全和企业上云内容导流。 |
 | 京美建站 | https://3.cn/2V-Sywtm | connected | 已接入 Mona 的京东云云推客京美建站 SaaS 版推荐返利链接；适合企业官网、小程序和模板建站流量。 |
-| 雨云 | https://www.rainyun.com/docs/platform/reward/agent.html | available | 官方推广中心说明最高可达 30% 收益；需登录后台复制专属推广链接。 |
+| 雨云 | https://www.rainyun.com/MTE4MjAzNw==_ | connected | 已接入 Mona 的雨云推广中心专属注册链接；优惠码 `MTE4MjAzNw==` 可用于注册绑定推广客户。 |
 | 野草云 | https://www.yecaoyun.com/About/affiliates.html | available | 官方推广联盟说明全线产品续费同比例返佣，Cookie 有效期 90 天；需注册/登录取链。 |
 | 蓝队云 | https://www.landui.com/cps/ | available | 官方 CPS 页面说明个人/企业均可推广，可通过推广链接或推广码返佣。 |
 | 华纳云 | https://www.hncloud.com/affs.html | available | 官方合伙人页面说明注册会员后可拥有专属推广链接。 |
@@ -144,3 +144,4 @@ When a screenshot or dashboard does not clearly identify which short link belong
 - 购物类 CPS：Mona 明确“先不要这种购物的”，淘宝联盟、京东联盟、多多进宝、唯品会联盟、苏宁联盟已加 `visibility: "hidden"`，后续优先继续云服务、建站、工具、广告联盟等非购物变现方向。
 - 百度联盟：暂缓申请。官方帮助说明网站通常需要注册时间大于 1 个月并被百度搜索收录；`gexinn.com` 当前刚上线，先积累内容、收录和访问数据。
 - 非购物推广候选：新增雨云、野草云、蓝队云、华纳云、万维电讯，下一步可逐个注册/登录后台获取公开推广链接。
+- 雨云：已登录后台推广中心并获取专属推广链接 `https://www.rainyun.com/MTE4MjAzNw==_`；后台同时显示优惠码 `MTE4MjAzNw==`。

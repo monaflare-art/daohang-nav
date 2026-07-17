@@ -45,8 +45,8 @@ Build a navigation site that can earn from promotable resources without copying 
 | 京东云 | https://3.cn/-2VSyISI | connected | 已接入 Mona 的京东云云推客公有云推荐返利链接；适合云服务器、数据库、安全和企业上云内容导流。 |
 | 京美建站 | https://3.cn/2V-Sywtm | connected | 已接入 Mona 的京东云云推客京美建站 SaaS 版推荐返利链接；适合企业官网、小程序和模板建站流量。 |
 | 雨云 | https://www.rainyun.com/MTE4MjAzNw==_ | connected | 已接入 Mona 的雨云推广中心专属注册链接；优惠码 `MTE4MjAzNw==` 可用于注册绑定推广客户。 |
-| 野草云 | https://my.yecaoyun.com/aff.php?aff=7923 | connected | 已接入 Mona 的野草云推广联盟专属链接；后台仍提示注册邮箱尚未验证，需 Mona 自行完成邮箱激活。 |
-| 蓝队云 | https://www.landui.com/cps/ | available | 官方 CPS 页面说明个人/企业均可推广，可通过推广链接或推广码返佣。 |
+| 野草云 | https://my.yecaoyun.com/aff.php?aff=7923 | connected | 已接入 Mona 的野草云推广联盟专属链接；Mona 已完成注册邮箱验证。 |
+| 蓝队云 | https://www.landui.com/cps/ | pending | 已登录账号并进入代理分销页；点击开通后提示需支付 300 元开通 CPS 代理分销，当前不代为付款。 |
 | 华纳云 | https://www.hncloud.com/affs.html | available | 官方合伙人页面说明注册会员后可拥有专属推广链接。 |
 | 万维电讯 | https://www.wwdx.com/partner/aff.html | available | 官方推广返利页说明注册会员后可拥有唯一推广链接，客户购买主机后返利。 |
 | 淘宝联盟精选 | https://pub.alimama.com/ | paused | 购物类 CPS 暂停公开展示；数据保留，后续若恢复购物导购再继续转链。 |
@@ -145,4 +145,5 @@ When a screenshot or dashboard does not clearly identify which short link belong
 - 百度联盟：暂缓申请。官方帮助说明网站通常需要注册时间大于 1 个月并被百度搜索收录；`gexinn.com` 当前刚上线，先积累内容、收录和访问数据。
 - 非购物推广候选：新增雨云、野草云、蓝队云、华纳云、万维电讯，下一步可逐个注册/登录后台获取公开推广链接。
 - 雨云：已登录后台推广中心并获取专属推广链接 `https://www.rainyun.com/MTE4MjAzNw==_`；后台同时显示优惠码 `MTE4MjAzNw==`。
-- 野草云：已注册/登录并激活推广联盟，专属推广链接为 `https://my.yecaoyun.com/aff.php?aff=7923`；后台仍提示注册邮箱尚未验证，需 Mona 自行完成邮箱激活。
+- 野草云：已注册/登录并激活推广联盟，专属推广链接为 `https://my.yecaoyun.com/aff.php?aff=7923`；Mona 已完成注册邮箱验证。
+- 蓝队云：已登录账号并进入代理分销页；点击“开通代理分销”后提示需支付 300 元开通 CPS 代理分销。当前不代为付款，resource `landui-cloud` 保持 `pending`。

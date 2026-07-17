@@ -76,7 +76,8 @@
 - 购物类 CPS 暂停公开展示：Mona 明确“先不要这种购物的”；`taobao-union-deals`、`jd-union`、`pinduoduo-jinbao`、`vipshop-union`、`suning-union` are kept in data but marked `visibility: "hidden"`. Continue monetization with cloud, hosting, website builder, tool/SaaS, and ad-network directions first.
 - 2026-07-17 非购物推广继续路线：新增 `rainyun`、`yecaoyun`、`landui-cloud`、`hncloud`、`wwdx` as available cloud/hosting affiliate candidates. `baidu-union` is changed to pending because official Baidu Union guidance commonly requires a site older than 1 month and indexed by Baidu; wait for content, indexing and traffic before applying.
 - 雨云推广链接已接入：resource `rainyun` uses public affiliate URL `https://www.rainyun.com/MTE4MjAzNw==_`; Rainyun dashboard also shows coupon code `MTE4MjAzNw==` for binding referred users.
-- 野草云推广链接已接入：resource `yecaoyun` uses public affiliate URL `https://my.yecaoyun.com/aff.php?aff=7923`; Yecaoyun dashboard still shows email verification pending, which Mona must complete manually.
+- 野草云推广链接已接入：resource `yecaoyun` uses public affiliate URL `https://my.yecaoyun.com/aff.php?aff=7923`; Mona 已完成注册邮箱验证。
+- 蓝队云代理分销本轮暂缓：已登录账号并进入代理分销页，点击开通后提示需支付 300 元开通 CPS 代理分销；resource `landui-cloud` 保持 `pending`，待 Mona 明确同意付费后再继续。
 - 华为云奖励推广计划已于 2026-01-30 起暂停运营，当前不作为新注册推广入口。
 - 2026-07-16 reference-site expansion batch 1 added official, low-risk resources from weidus.com homepage signals: Chinese AI assistants, official translate tools, official netdisk/email services, and online image/format tools. Piracy, cracked software, magnet search, unofficial netdisk resource dumps, and adult resources remain excluded.
 

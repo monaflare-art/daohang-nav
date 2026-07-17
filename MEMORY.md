@@ -62,7 +62,7 @@
 - 百度智能云推广链接已接入：resource `baidu-ai-cloud` uses primary new-customer campaign URL with `track=cc19d5069f9b5a93c16c23d79df4ab75003a3209e79e0086` and keeps enterprise/AI campaign links in `affiliateLinks`.
 - UCloud 推广链接已接入：resource `ucloud` uses public U 大使 invite URL `https://passport.ucloud.cn?cps_code=82uZz69HIZDFBpAOoe61kR`; 后台推广素材页顶部“复制邀新链接”和可见活动卡片“复制推广链接”当前都返回该 tracking 链接。
 - 2026-07-17 国内推广资源批量扩展：新增 `racent-cloud`、`idcpay`、`jd-union`、`pinduoduo-jinbao`、`vipshop-union`、`baidu-union`，均先标记为 `available` 或 `pending`，等待 Mona 注册/登录并提供公开可投放专属链接后再改为 `connected`。
-- 锐成云推广联盟本轮暂缓：从推广联盟页进入注册页后需要用户名、邮箱、手机号、短信验证码和密码，Mona 反馈注册不了；resource `racent-cloud` 保持 `pending`，后续有可用注册条件再恢复。
+- 锐成云推广联盟当前审核中：Mona 已完成注册并提交推广联盟申请；官方页面说明人工审核一般 1-3 个工作日，resource `racent-cloud` 保持 `pending`，审核通过后再获取专属推广链接。
 - 网宝推广联盟本轮暂缓：登录后进入个人实名认证页，要求微信实名认证、真实姓名和身份证号，Mona 反馈实名认证不了；resource `idcpay` 保持 `pending`。
 - 2026-07-17 国内推广资源第二批扩展：新增 `suning-union`、`meituan-union`、`ctrip-union`、`ly-union`，覆盖电商、本地生活和旅行 CPS；均需 Mona 完成登录/资质/媒体配置后复制公开推广链接。
 - 2026-07-17 国内推广资源第三批扩展：新增 `didi-union`、`fliggy-union`、`qunar-open`、`jutuike`；`jutuike` 为第三方聚合平台，需只使用授权清晰、结算规则明确的活动链接。

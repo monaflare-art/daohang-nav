@@ -64,6 +64,7 @@
 - 2026-07-17 国内推广资源批量扩展：新增 `racent-cloud`、`idcpay`、`jd-union`、`pinduoduo-jinbao`、`vipshop-union`、`baidu-union`，均先标记为 `available` 或 `pending`，等待 Mona 注册/登录并提供公开可投放专属链接后再改为 `connected`。
 - 2026-07-17 国内推广资源第二批扩展：新增 `suning-union`、`meituan-union`、`ctrip-union`、`ly-union`，覆盖电商、本地生活和旅行 CPS；均需 Mona 完成登录/资质/媒体配置后复制公开推广链接。
 - 2026-07-17 国内推广资源第三批扩展：新增 `didi-union`、`fliggy-union`、`qunar-open`、`jutuike`；`jutuike` 为第三方聚合平台，需只使用授权清晰、结算规则明确的活动链接。
+- 2026-07-17 内容/带货平台推广扩展：新增 `douyin-jingxuan`、`kuaishou-union`、`xiaohongshu-pgy`、`bilibili-reward`；这些偏账号内容商业化和带货权限，需 Mona 登录平台确认资格后才能获取可投放链接。
 - 又拍云推广链接已接入：resource `upyun` uses public invite URL `https://console.upyun.com/register/?invite=0zBpu9y-f`.
 - 阿里妈妈/淘宝联盟已登录并找到审核通过媒体 `爱分享(手机客户端专享)_99391035`、PID `mm_99391035_322400376_89025600014`；resource `taobao-union-deals` 暂为 `affiliateStatus: "pending"`，因为官方推荐频道页 `https://mo.m.taobao.com/common/page_haohuo?__t__=1612358774351` 在频道推广页转换中返回“该链接不支持转化”。
 - 七牛云推广链接已接入：resource `qiniu-cloud` uses public `affiliateUrl` `https://s.qiniu.com/q2Abim`; CPS 推广概览显示当前青铜等级返佣 25%，等级提升后最高可到 35%。

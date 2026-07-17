@@ -57,6 +57,10 @@ Build a navigation site that can earn from promotable resources without copying 
 | 飞猪联盟开放平台 | https://sht-front.fliggy.com/ | available | 官方页面说明可备案推广、获取推广资料、查看推广订单和收入结算；需 Mona 登录后取链。 |
 | 去哪儿开放平台 | https://open.qunar.com/ | pending | 官方开放平台提供旅行资源开放；是否适合个人/网站 CPS 需登录或商务确认。 |
 | 聚推客联盟 | https://www.jutuike.com/ | available | 第三方 CPS/CPA 聚合平台；只作为补充渠道，需逐项确认活动授权和结算规则。 |
+| 抖音精选联盟 | https://buyin.jinritemai.com/ | available | 抖音电商官方商品推广平台；需 Mona 确认达人/机构权限、商品橱窗和带货资格。 |
+| 快手联盟 | https://m-u.kuaishou.com/ | available | 快手生态商业化与推广合作入口；需 Mona 登录后确认推广权限和可投放链接。 |
+| 小红书蒲公英 | https://pgy.xiaohongshu.com/ | available | 小红书官方内容种草与直播合作平台；偏内容合作，不等同普通 CPS 链接。 |
+| B站悬赏计划 | https://www.bilibili.com/blackboard/activity-BPiQy33YHl.html | available | B站官方带货服务入口，UP 主可通过多种内容位带货并获得销售分成。 |
 | 华为云 | https://activity.huaweicloud.com/cps/index.html | paused | 官方公告称奖励推广计划已于 2026-01-30 起暂停运营，当前不作为新注册推广入口。 |
 
 ## Paused Foreign Affiliate Queue
@@ -114,6 +118,6 @@ When a screenshot or dashboard does not clearly identify which short link belong
 
 - 阿里妈妈：账号已登录，已有审核通过媒体 `爱分享(手机客户端专享)_99391035` 和推广位 PID `mm_99391035_322400376_89025600014`。已切换到 `他方平台 / 社交平台`、媒体 `爱分享(手机客户端专享)_99391035`、推广位 `爱分享` 并确认，但官方推荐频道页 `https://mo.m.taobao.com/common/page_haohuo?__t__=1612358774351` 返回“该链接不支持转化”。下一步应换具体商品、飞猪/阿里云可转链页面，或从阿里妈妈素材库复制已生成链接。
 - UCloud：官方 U 大使计划可申请推广；下一步需要 Mona 登录 UCloud，完成必要的账号/实名步骤后，在 U 大使推广管理平台的推广素材里复制专属邀请链接或 `cps_code`。
-- 新增待申请平台：锐成云、网宝、京东联盟、多多进宝、唯品会联盟、百度联盟、苏宁联盟、美团联盟、携程联盟、同程联盟、滴滴联盟、飞猪联盟开放平台、去哪儿开放平台、聚推客联盟。下一步逐个登录/注册，复制公开可投放的专属链接后再改为 `connected`。
+- 新增待申请平台：锐成云、网宝、京东联盟、多多进宝、唯品会联盟、百度联盟、苏宁联盟、美团联盟、携程联盟、同程联盟、滴滴联盟、飞猪联盟开放平台、去哪儿开放平台、聚推客联盟、抖音精选联盟、快手联盟、小红书蒲公英、B站悬赏计划。下一步逐个登录/注册，复制公开可投放的专属链接后再改为 `connected`。
 - 七牛云：新推官已加入成功，CPS 推广概览显示专属推广链接 `https://s.qiniu.com/q2Abim`。当前等级为青铜，返佣 25%。
 - 京东联盟普通 CPS：创建网站媒体要求填写已完成备案域名的 ICP 备案号；`gexinn.com` 当前未备案，暂不走该路径。京东云云推客是独立路径，已接入公有云组织推广链接 `https://3.cn/-2VSyISI` 和京美建站组织推广链接 `https://3.cn/2V-Sywtm`。

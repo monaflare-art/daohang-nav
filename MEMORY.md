@@ -72,6 +72,7 @@
 - 七牛云推广链接已接入：resource `qiniu-cloud` uses public `affiliateUrl` `https://s.qiniu.com/q2Abim`; CPS 推广概览显示当前青铜等级返佣 25%，等级提升后最高可到 35%。
 - 京东云云推客推广链接已接入：resource `jdcloud-yuntuike` uses public `affiliateUrl` `https://3.cn/-2VSyISI`; 普通京东联盟网站媒体申请要求 ICP 备案号，`gexinn.com` 当前未备案时暂不走该路径。
 - 京美建站推广链接已接入：resource `jdcloud-site` uses public `affiliateUrl` `https://3.cn/2V-Sywtm`; 该链接来自京东云云推客京美建站 SaaS 版推荐返利计划。
+- 多多进宝推广链接已接入：resource `pinduoduo-jinbao` uses the public long-link for “天降惊喜券” as default `affiliateUrl`; `affiliateLinks` also includes 地区购物补贴、福利频道、中小件家具官补秒杀、开学季家具好物优选 and one 学而思练习册 single-product sample. Strategy: prefer stable channel/activity links and avoid bulk-maintaining many short-lived single-product links.
 - 华为云奖励推广计划已于 2026-01-30 起暂停运营，当前不作为新注册推广入口。
 - 2026-07-16 reference-site expansion batch 1 added official, low-risk resources from weidus.com homepage signals: Chinese AI assistants, official translate tools, official netdisk/email services, and online image/format tools. Piracy, cracked software, magnet search, unofficial netdisk resource dumps, and adult resources remain excluded.
 

@@ -46,7 +46,7 @@ Build a navigation site that can earn from promotable resources without copying 
 | 京美建站 | https://3.cn/2V-Sywtm | connected | 已接入 Mona 的京东云云推客京美建站 SaaS 版推荐返利链接；适合企业官网、小程序和模板建站流量。 |
 | 淘宝联盟精选 | https://pub.alimama.com/ | pending | 已登录阿里妈妈并找到 PID `mm_99391035_322400376_89025600014`；当前官方推荐频道页在转链时返回“该链接不支持转化”，需更换支持转化的链接。 |
 | 京东联盟 | https://union.jd.com/ | pending | 官方电商 CPS 联盟；普通网站媒体此前遇到 ICP 备案要求，需备案或改用其他媒体路径后再转链。 |
-| 多多进宝 | https://jinbao.pinduoduo.com/ | available | 拼多多旗下官方 CPS 推广返佣平台；需 Mona 登录并配置渠道后复制活动/商品推广链接。 |
+| 多多进宝 | https://mobile.yangkeduo.com/muti_coupon_rec.html?_pdd_fs=1&__page=ddjb_act_coupon_adv&__mav=1&traffic=web_gen_url&pid=44595078_317004414&cpsSign=ZXMP_260717_44595078_317004414_2a4294d0e3c24d3369a67435b61f6001&_x_ddjb_act=%7B%22st%22%3A%22168%22%7D&traffic=prom&duoduo_type=2 | connected | 已接入 Mona 的多多进宝推广位“多多分享”长链接，主入口使用“天降惊喜券”，并保留地区购物补贴、福利频道、家具活动和一个单品样例链接。 |
 | 唯品会联盟 | https://union.vip.com/ | available | 官方联盟提供推广商品和 CPS 收益分成；需 Mona 注册/登录并确认协议后复制推广链接。 |
 | 百度联盟 | https://union.baidu.com/ | available | 站点广告联盟变现平台；需在网站内容、备案/资质和流量满足平台要求后申请广告位。 |
 | 苏宁联盟 | https://sums.suning.com/ | available | 官方 CPS 推广联盟，可领取商品/店铺/活动/频道推广链接；需 Mona 登录并配置媒体/推广位。 |
@@ -123,3 +123,4 @@ When a screenshot or dashboard does not clearly identify which short link belong
 - 新增待申请平台：锐成云、网宝、京东联盟、多多进宝、唯品会联盟、百度联盟、苏宁联盟、美团联盟、携程联盟、同程联盟、滴滴联盟、飞猪联盟开放平台、去哪儿开放平台、聚推客联盟、抖音精选联盟、快手联盟、小红书蒲公英、B站悬赏计划。下一步逐个登录/注册，复制公开可投放的专属链接后再改为 `connected`。
 - 七牛云：新推官已加入成功，CPS 推广概览显示专属推广链接 `https://s.qiniu.com/q2Abim`。当前等级为青铜，返佣 25%。
 - 京东联盟普通 CPS：创建网站媒体要求填写已完成备案域名的 ICP 备案号；`gexinn.com` 当前未备案，暂不走该路径。京东云云推客是独立路径，已接入公有云组织推广链接 `https://3.cn/-2VSyISI` 和京美建站组织推广链接 `https://3.cn/2V-Sywtm`。
+- 多多进宝：已接入推广位“多多分享”的公开长链接。默认入口为“天降惊喜券”；`affiliateLinks` 另含地区购物补贴、福利频道、中小件家具官补秒杀、开学季家具好物优选和学而思练习册单品样例。后续继续加多多进宝时，优先加长期频道/活动链接，不批量维护大量单品。

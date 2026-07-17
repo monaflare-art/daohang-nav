@@ -79,7 +79,7 @@
 - 野草云推广链接已接入：resource `yecaoyun` uses public affiliate URL `https://my.yecaoyun.com/aff.php?aff=7923`; Mona 已完成注册邮箱验证。
 - 蓝队云代理分销本轮暂缓：已登录账号并进入代理分销页，点击开通后提示需支付 300 元开通 CPS 代理分销；resource `landui-cloud` 保持 `pending`，待 Mona 明确同意付费后再继续。
 - 华纳云合伙人本轮暂缓：Mona 已完成华纳云注册并进入已验证账号；官方合伙人页写明需联系在线客服开通并生成专属推广链接，resource `hncloud` 保持 `pending`。
-- 万维电讯推广注册进行中：已进入注册页，当前需要 Mona 完成邮箱验证码、密码和注册提交；完成后进入推广中心获取唯一推广链接。
+- 万维电讯推广链接已接入：resource `wwdx` uses public affiliate URL `https://www.wwdx.com/aff/UFVJBDUG`; 后台推介计划初始数据为点击 0、注册用户 0、佣金 0。
 - 华为云奖励推广计划已于 2026-01-30 起暂停运营，当前不作为新注册推广入口。
 - 2026-07-16 reference-site expansion batch 1 added official, low-risk resources from weidus.com homepage signals: Chinese AI assistants, official translate tools, official netdisk/email services, and online image/format tools. Piracy, cracked software, magnet search, unofficial netdisk resource dumps, and adult resources remain excluded.
 

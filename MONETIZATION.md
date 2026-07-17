@@ -49,6 +49,10 @@ Build a navigation site that can earn from promotable resources without copying 
 | 多多进宝 | https://jinbao.pinduoduo.com/ | available | 拼多多旗下官方 CPS 推广返佣平台；需 Mona 登录并配置渠道后复制活动/商品推广链接。 |
 | 唯品会联盟 | https://union.vip.com/ | available | 官方联盟提供推广商品和 CPS 收益分成；需 Mona 注册/登录并确认协议后复制推广链接。 |
 | 百度联盟 | https://union.baidu.com/ | available | 站点广告联盟变现平台；需在网站内容、备案/资质和流量满足平台要求后申请广告位。 |
+| 苏宁联盟 | https://sums.suning.com/ | available | 官方 CPS 推广联盟，可领取商品/店铺/活动/频道推广链接；需 Mona 登录并配置媒体/推广位。 |
+| 美团联盟 | https://union.meituan.com/ | available | 官方页面说明入驻、登记媒体和推广位后可获取推广链接并结算佣金；需 Mona 完成资质认证。 |
+| 携程联盟 | https://u.ctrip.com/ | available | 旅行产品分销推广入口，佣金政策以联盟后台公告为准；需 Mona 注册/登录后取链。 |
+| 同程联盟 | https://union.ly.com/web/brokerage | available | 官方佣金页说明按销售额返点，适合旅行产品导流；需 Mona 登录后配置推广渠道。 |
 | 华为云 | https://activity.huaweicloud.com/cps/index.html | paused | 官方公告称奖励推广计划已于 2026-01-30 起暂停运营，当前不作为新注册推广入口。 |
 
 ## Paused Foreign Affiliate Queue
@@ -106,6 +110,6 @@ When a screenshot or dashboard does not clearly identify which short link belong
 
 - 阿里妈妈：账号已登录，已有审核通过媒体 `爱分享(手机客户端专享)_99391035` 和推广位 PID `mm_99391035_322400376_89025600014`。已切换到 `他方平台 / 社交平台`、媒体 `爱分享(手机客户端专享)_99391035`、推广位 `爱分享` 并确认，但官方推荐频道页 `https://mo.m.taobao.com/common/page_haohuo?__t__=1612358774351` 返回“该链接不支持转化”。下一步应换具体商品、飞猪/阿里云可转链页面，或从阿里妈妈素材库复制已生成链接。
 - UCloud：官方 U 大使计划可申请推广；下一步需要 Mona 登录 UCloud，完成必要的账号/实名步骤后，在 U 大使推广管理平台的推广素材里复制专属邀请链接或 `cps_code`。
-- 新增待申请平台：锐成云、网宝、京东联盟、多多进宝、唯品会联盟、百度联盟。下一步逐个登录/注册，复制公开可投放的专属链接后再改为 `connected`。
+- 新增待申请平台：锐成云、网宝、京东联盟、多多进宝、唯品会联盟、百度联盟、苏宁联盟、美团联盟、携程联盟、同程联盟。下一步逐个登录/注册，复制公开可投放的专属链接后再改为 `connected`。
 - 七牛云：新推官已加入成功，CPS 推广概览显示专属推广链接 `https://s.qiniu.com/q2Abim`。当前等级为青铜，返佣 25%。
 - 京东联盟普通 CPS：创建网站媒体要求填写已完成备案域名的 ICP 备案号；`gexinn.com` 当前未备案，暂不走该路径。京东云云推客是独立路径，已接入公有云组织推广链接 `https://3.cn/-2VSyISI` 和京美建站组织推广链接 `https://3.cn/2V-Sywtm`。

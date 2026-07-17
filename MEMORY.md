@@ -74,6 +74,7 @@
 - 京美建站推广链接已接入：resource `jdcloud-site` uses public `affiliateUrl` `https://3.cn/2V-Sywtm`; 该链接来自京东云云推客京美建站 SaaS 版推荐返利计划。
 - 多多进宝推广链接已接入：resource `pinduoduo-jinbao` uses the public long-link for “天降惊喜券” as default `affiliateUrl`; `affiliateLinks` also includes 地区购物补贴、福利频道、中小件家具官补秒杀、开学季家具好物优选 and one 学而思练习册 single-product sample. Strategy: prefer stable channel/activity links and avoid bulk-maintaining many short-lived single-product links.
 - 购物类 CPS 暂停公开展示：Mona 明确“先不要这种购物的”；`taobao-union-deals`、`jd-union`、`pinduoduo-jinbao`、`vipshop-union`、`suning-union` are kept in data but marked `visibility: "hidden"`. Continue monetization with cloud, hosting, website builder, tool/SaaS, and ad-network directions first.
+- 2026-07-17 非购物推广继续路线：新增 `rainyun`、`yecaoyun`、`landui-cloud`、`hncloud`、`wwdx` as available cloud/hosting affiliate candidates. `baidu-union` is changed to pending because official Baidu Union guidance commonly requires a site older than 1 month and indexed by Baidu; wait for content, indexing and traffic before applying.
 - 华为云奖励推广计划已于 2026-01-30 起暂停运营，当前不作为新注册推广入口。
 - 2026-07-16 reference-site expansion batch 1 added official, low-risk resources from weidus.com homepage signals: Chinese AI assistants, official translate tools, official netdisk/email services, and online image/format tools. Piracy, cracked software, magnet search, unofficial netdisk resource dumps, and adult resources remain excluded.
 

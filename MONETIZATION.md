@@ -47,8 +47,8 @@ Build a navigation site that can earn from promotable resources without copying 
 | 雨云 | https://www.rainyun.com/MTE4MjAzNw==_ | connected | 已接入 Mona 的雨云推广中心专属注册链接；优惠码 `MTE4MjAzNw==` 可用于注册绑定推广客户。 |
 | 野草云 | https://my.yecaoyun.com/aff.php?aff=7923 | connected | 已接入 Mona 的野草云推广联盟专属链接；Mona 已完成注册邮箱验证。 |
 | 蓝队云 | https://www.landui.com/cps/ | pending | 已登录账号并进入代理分销页；点击开通后提示需支付 300 元开通 CPS 代理分销，当前不代为付款。 |
-| 华纳云 | https://www.hncloud.com/affs.html | available | 官方合伙人页面说明注册会员后可拥有专属推广链接。 |
-| 万维电讯 | https://www.wwdx.com/partner/aff.html | available | 官方推广返利页说明注册会员后可拥有唯一推广链接，客户购买主机后返利。 |
+| 华纳云 | https://www.hncloud.com/affs.html | pending | Mona 已完成注册并进入已验证账号；官方合伙人页写明需联系在线客服开通并生成专属推广链接。 |
+| 万维电讯 | https://www.wwdx.com/partner/aff.html | available | 官方推广返利页说明注册会员后可拥有唯一推广链接；当前停在注册页，需 Mona 完成邮箱验证码和密码提交。 |
 | 淘宝联盟精选 | https://pub.alimama.com/ | paused | 购物类 CPS 暂停公开展示；数据保留，后续若恢复购物导购再继续转链。 |
 | 京东联盟 | https://union.jd.com/ | paused | 购物类 CPS 暂停公开展示；普通网站媒体此前还遇到 ICP 备案要求。 |
 | 多多进宝 | https://mobile.yangkeduo.com/muti_coupon_rec.html?_pdd_fs=1&__page=ddjb_act_coupon_adv&__mav=1&traffic=web_gen_url&pid=44595078_317004414&cpsSign=ZXMP_260717_44595078_317004414_2a4294d0e3c24d3369a67435b61f6001&_x_ddjb_act=%7B%22st%22%3A%22168%22%7D&traffic=prom&duoduo_type=2 | paused | 已接入长链接但按用户要求购物类先隐藏，不在公开导航站展示。 |
@@ -147,3 +147,5 @@ When a screenshot or dashboard does not clearly identify which short link belong
 - 雨云：已登录后台推广中心并获取专属推广链接 `https://www.rainyun.com/MTE4MjAzNw==_`；后台同时显示优惠码 `MTE4MjAzNw==`。
 - 野草云：已注册/登录并激活推广联盟，专属推广链接为 `https://my.yecaoyun.com/aff.php?aff=7923`；Mona 已完成注册邮箱验证。
 - 蓝队云：已登录账号并进入代理分销页；点击“开通代理分销”后提示需支付 300 元开通 CPS 代理分销。当前不代为付款，resource `landui-cloud` 保持 `pending`。
+- 华纳云：Mona 已完成注册并进入已验证账号；官方合伙人页写明需联系在线客服开通并生成专属推广链接，当前未取得公开 tracking URL。
+- 万维电讯：已进入注册页，当前需要 Mona 完成邮箱验证码、密码和注册提交；完成后进入推广中心获取唯一推广链接。

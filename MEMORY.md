@@ -35,6 +35,7 @@
 - Affiliate-ready resource model added: resources can now store `affiliateUrl`, `affiliateProgramUrl`, `affiliateStatus`, `commissionType`, `commissionNote`, `promotionLabel`, and `riskLevel`; outbound links prefer `affiliateUrl` when available.
 - After multiple foreign affiliate rejections, public resources now hide global/foreign sites and only expose China-market resources via the filtered `resources` export; full data remains in `allResources` for later recovery.
 - Monetization strategy corrected: do not register every large platform just because it has an affiliate program. V1 should prioritize high-intent comparison traffic such as cheap cloud servers, VPS, no-ICP hosting, website builders, CDN/object storage, and concrete tool SaaS; generic big-platform local-life/travel/content/ecommerce programs are hidden or deprioritized until the site has search traffic and matching content.
+- Primary conversion page added at `/deals`: use it for high-intent hosting, no-ICP website building, CDN/object storage, and server/VPS offer traffic. Future affiliate resources should be added there only when they match a concrete buying scenario and have a public official URL or approved tracking URL.
 
 ## Known Issues
 
@@ -85,6 +86,7 @@
 - 美团联盟本轮暂缓：进入美团联盟登录/注册后需要认证，Mona 反馈认证不了；resource `meituan-union` 保持 `pending`，后续不再优先尝试。
 - 携程联盟下一步：官方入口 `https://u.ctrip.com/alliance/#/index` 可访问，页面说明旅游品类流量变现、推广成交获得奖励；当前停在携程账号登录页，需 Mona 登录后继续登记媒体/推广位并取链。
 - 2026-07-19 策略纠偏：美团、携程、同程、滴滴、飞猪、去哪儿、聚推客、抖音精选联盟、快手联盟、小红书蒲公英、B站悬赏计划、百度联盟等低意图或强资质大平台入口先加 `visibility: "hidden"`；首页推荐改为雨云、野草云、万维电讯、京美建站、又拍云、七牛云、UCloud 等更适合早期转化的主机/建站/云存储入口。
+- 2026-07-19 新增 `/deals` 建站优惠落地页：聚合雨云、野草云、万维电讯、京美建站、又拍云、七牛云、UCloud 等已接入或高意图资源，并加入主导航、首页推荐入口和 sitemap。
 - 2026-07-16 reference-site expansion batch 1 added official, low-risk resources from weidus.com homepage signals: Chinese AI assistants, official translate tools, official netdisk/email services, and online image/format tools. Piracy, cracked software, magnet search, unofficial netdisk resource dumps, and adult resources remain excluded.
 
 ## User Preferences

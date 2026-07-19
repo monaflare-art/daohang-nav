@@ -32,6 +32,10 @@ Prioritize high-intent, comparison-driven pages and resources:
 
 Public CTA copy should be closer to `领取优惠`, `查看套餐`, `注册返利`, or `对比价格`, not generic `访问官网`.
 
+Current primary conversion page:
+
+- `/deals`: 建站、主机、云存储优惠入口。Only add resources here when they match a concrete buying scenario and have a public official URL or approved tracking URL.
+
 ## Data Rules
 
 - `url`: official product URL.

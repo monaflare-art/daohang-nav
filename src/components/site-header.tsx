@@ -8,6 +8,7 @@ import { siteConfig } from "@/lib/site";
 const navItems = [
   { href: "/", label: "首页" },
   { href: "/#categories", label: "分类" },
+  { href: "/deals", label: "建站优惠" },
   { href: "/rankings", label: "排行榜" },
   { href: "/blog", label: "文章资讯" },
   { href: "/submit", label: "收录提交" },

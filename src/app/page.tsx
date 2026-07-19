@@ -23,6 +23,7 @@ import { absoluteUrl, siteConfig } from "@/lib/site";
 const navItems = [
   { href: "/", label: "首页", icon: HomeIcon },
   { href: "/categories/ai-tools", label: "分类", icon: CompassIcon },
+  { href: "/deals", label: "优惠", icon: RankIcon },
   { href: "/rankings", label: "排行榜", icon: RankIcon },
   { href: "/blog", label: "文章资讯", icon: ArticleIcon },
   { href: "/submit", label: "收录提交", icon: SubmitIcon },
@@ -278,7 +279,7 @@ export default function HomePage() {
                   <h2>推荐资源</h2>
                   <p>优先展示更可能产生转化的主机、建站和云存储入口</p>
                 </div>
-                <Link href="/rankings">查看全部</Link>
+                <Link href="/deals">查看优惠页</Link>
               </div>
               <div className="resource-table-head">
                 <span>资源名称</span>

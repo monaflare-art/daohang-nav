@@ -16,7 +16,7 @@ export function latestDate(dates: string[]) {
 export default function sitemap(): MetadataRoute.Sitemap {
   const latestContentDate = latestDate([...resources.map((resource) => resource.submittedAt), ...posts.map((post) => post.date)]);
 
-  const staticRoutes = ["", "/rankings", "/blog", "/submit", "/about", "/disclaimer", "/privacy"].map((route) => ({
+  const staticRoutes = ["", "/deals", "/rankings", "/blog", "/submit", "/about", "/disclaimer", "/privacy"].map((route) => ({
     url: `${siteConfig.url}${route}`,
     lastModified: latestContentDate,
   }));

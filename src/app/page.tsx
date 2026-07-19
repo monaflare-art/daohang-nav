@@ -16,7 +16,7 @@ import {
 } from "@/components/icons";
 import { JsonLd } from "@/components/json-ld";
 import { categories } from "@/data/categories";
-import { getAffiliateLabel, getFeaturedResources, getRankingResources, getResourceOutboundUrl, resources, type Resource } from "@/data/resources";
+import { getAffiliateLabel, getRankingResources, getResourceOutboundUrl, resources, type Resource } from "@/data/resources";
 import { posts } from "@/data/posts";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
@@ -31,30 +31,41 @@ const navItems = [
 
 const workflowGroups = [
   {
-    title: "中文 AI 助手",
-    note: "适合中文写作、资料整理和办公场景",
-    slugs: ["doubao", "kimi", "tongyi"],
+    title: "便宜云服务器",
+    note: "适合学生、站长和小项目先低成本上线",
+    slugs: ["rainyun", "yecaoyun", "wwdx"],
   },
   {
-    title: "国内云服务推广",
-    note: "优先申请返佣，适合建站和服务器内容",
+    title: "免备案建站",
+    note: "香港/海外 VPS、主机和建站服务优先",
+    slugs: ["yecaoyun", "wwdx", "jdcloud-site"],
+  },
+  {
+    title: "CDN 与对象存储",
+    note: "适合图片站、下载站和静态站加速",
+    slugs: ["upyun", "qiniu-cloud", "ucloud"],
+  },
+  {
+    title: "企业建站工具",
+    note: "企业官网、小程序和模板建站转化更直接",
+    slugs: ["jdcloud-site", "upyun", "qiniu-cloud"],
+  },
+  {
+    title: "暂缓大平台",
+    note: "阿里云、腾讯云等保留入口但不作为首页主推",
     slugs: ["aliyun", "tencent-cloud", "baidu-ai-cloud"],
   },
-  {
-    title: "翻译与阅读",
-    note: "中文用户高频翻译和词典入口",
-    slugs: ["baidu-translate", "youdao-translate"],
-  },
-  {
-    title: "生活服务",
-    note: "地图、快递和招聘等高频入口",
-    slugs: ["amap", "kuaidi100", "boss"],
-  },
-  {
-    title: "商业资讯",
-    note: "科技商业、创业和产品趋势资讯",
-    slugs: ["36kr", "huxiu"],
-  },
+];
+
+const homepagePromotionSlugs = [
+  "rainyun",
+  "yecaoyun",
+  "wwdx",
+  "jdcloud-site",
+  "upyun",
+  "qiniu-cloud",
+  "ucloud",
+  "jdcloud-yuntuike",
 ];
 
 function faviconUrl(url: string) {
@@ -78,6 +89,7 @@ function ResourceTableRow({ resource }: { resource: Resource }) {
   const category = categories.find((item) => item.slug === resource.category);
   const affiliateLabel = getAffiliateLabel(resource);
   const outboundUrl = getResourceOutboundUrl(resource);
+  const ctaLabel = resource.affiliateStatus === "connected" ? "领取优惠" : "查看";
 
   return (
     <div className="resource-table-row">
@@ -99,7 +111,7 @@ function ResourceTableRow({ resource }: { resource: Resource }) {
         data-resource-slug={resource.slug}
         className="inline-flex h-8 shrink-0 items-center gap-1 rounded-xl border border-slate-200 bg-white px-3 text-[12px] font-semibold text-slate-700 transition hover:border-emerald-200 hover:text-emerald-700"
       >
-        访问
+        {ctaLabel}
         <ExternalIcon className="h-3.5 w-3.5" />
       </a>
     </div>
@@ -176,7 +188,7 @@ function CategoryDirectoryRow({ category }: { category: (typeof categories)[numb
 }
 
 export default function HomePage() {
-  const featuredResources = getFeaturedResources().slice(0, 4);
+  const featuredResources = homepagePromotionSlugs.map(getBySlug).filter((item): item is Resource => Boolean(item));
   const rankingResources = getRankingResources().slice(0, 10);
   const visibleCategories = categories.filter((category) => (
     resources.some((resource) => resource.category === category.slug)
@@ -264,7 +276,7 @@ export default function HomePage() {
               <div className="command-section-head">
                 <div>
                   <h2>推荐资源</h2>
-                  <p>精选优质资源，官方推荐</p>
+                  <p>优先展示更可能产生转化的主机、建站和云存储入口</p>
                 </div>
                 <Link href="/rankings">查看全部</Link>
               </div>
@@ -272,7 +284,7 @@ export default function HomePage() {
                 <span>资源名称</span>
                 <span className="hidden md:block">分类</span>
                 <span className="hidden lg:block">描述</span>
-                <span>访问</span>
+                <span>操作</span>
               </div>
               <div>
                 {featuredResources.map((resource) => (
@@ -285,9 +297,9 @@ export default function HomePage() {
               <div className="command-section-head mb-5 px-0 pt-0">
                 <div>
                   <h2>常用工作流</h2>
-                  <p>把资源按真实任务组合起来</p>
+                  <p>按购买意图组合资源，而不是按大品牌堆入口</p>
                 </div>
-                <Link href="/categories/online-tools">查看全部</Link>
+                <Link href="/categories/dev">查看全部</Link>
               </div>
               <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
                 {workflowGroups.map((group) => (

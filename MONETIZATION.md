@@ -8,15 +8,29 @@ Build a navigation site that can earn from promotable resources without copying 
 
 1. Discover candidate resources from public directories, AI knowledge hubs, Product Hunt, GitHub, official partner pages, and user submissions.
 2. Verify each candidate through its official website, docs, pricing page, affiliate page, partner page, or terms.
-3. Classify monetization:
+3. Reject low-intent big-platform programs for the first public monetization wave unless there is a specific buying scenario, coupon page, or comparison article that makes the click plausible.
+4. Classify monetization:
    - `connected`: Mona already has an affiliate/referral link.
    - `available`: official affiliate, partner, ambassador, or referral program exists but Mona still needs to apply.
    - `pending`: possible program exists but availability, eligibility, or approval status is unclear.
    - `none`: no official monetization path found.
-4. Store only public metadata in `src/data/resources.ts`.
-5. Store secrets, login sessions, dashboards, payout accounts, and affiliate platform credentials outside Git.
-6. Replace `affiliateUrl` after Mona registers and gets an approved tracking link.
-7. Re-run `npm run test`, `npm run lint`, and `npm run build`.
+5. Store only public metadata in `src/data/resources.ts`.
+6. Store secrets, login sessions, dashboards, payout accounts, and affiliate platform credentials outside Git.
+7. Replace `affiliateUrl` after Mona registers and gets an approved tracking link.
+8. Re-run `npm run test`, `npm run lint`, and `npm run build`.
+
+## Current Monetization Strategy
+
+Do not optimize the first version around generic big-platform registrations. A new navigation site is unlikely to send high-converting traffic to platforms users already know and search directly, such as large local-life, travel, ecommerce, or cloud brands.
+
+Prioritize high-intent, comparison-driven pages and resources:
+
+- Cheap cloud servers, VPS, virtual hosts, dedicated servers, and high-defense servers.
+- No-ICP website hosting, Hong Kong/overseas hosting, WordPress hosting, and website builders.
+- CDN, object storage, SSL, email hosting, SMS, API, and other concrete infrastructure tools.
+- Tool SaaS with a clear job-to-be-done, such as PDF, image compression, design assets, AI writing, data recovery, and document conversion.
+
+Public CTA copy should be closer to `领取优惠`, `查看套餐`, `注册返利`, or `对比价格`, not generic `访问官网`.
 
 ## Data Rules
 
@@ -90,6 +104,23 @@ Paused examples:
 - 多多进宝
 - 唯品会联盟
 - 苏宁联盟
+
+## Paused Low-Intent Big-Platform Queue
+
+These programs may have affiliate or partner paths, but they are not good first-wave navigation-site conversion targets because users usually go directly to the brand or app, and the platforms often require qualification, real-name verification, media review,备案, or existing traffic.
+
+Paused examples:
+
+- 美团联盟
+- 携程联盟
+- 同程联盟
+- 滴滴联盟
+- 飞猪联盟开放平台
+- 去哪儿开放平台
+- 抖音精选联盟
+- 快手联盟
+- 小红书蒲公英
+- B站悬赏计划
 
 ## Registration SOP
 

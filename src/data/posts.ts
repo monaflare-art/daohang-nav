@@ -11,6 +11,34 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "cheap-cn-cloud-server-guide",
+    title: "国内便宜云服务器怎么选",
+    excerpt: "新站优先比较价格、备案要求、线路、续费和返佣入口，不要只看大厂品牌。",
+    category: "服务器推荐",
+    date: "2026-07-19",
+    tags: ["云服务器", "VPS", "建站"],
+    relatedResourceSlugs: ["rainyun", "yecaoyun", "wwdx", "ucloud"],
+    content: [
+      "早期导航站更适合承接“便宜云服务器”“免备案建站”“学生服务器”这类明确需求，而不是泛泛地跳转到大厂首页。",
+      "优先比较四件事：首年价格、续费价格、是否需要备案、线路是否适合目标用户。便宜不是唯一标准，续费和稳定性更影响长期成本。",
+      "已经接入推广链接的资源必须明确标记为推广，并把适合人群和风险写清楚。用户信任比一次点击更重要。",
+    ],
+  },
+  {
+    slug: "no-icp-website-hosting-tools",
+    title: "免备案建站工具和主机入口",
+    excerpt: "适合个人项目、外贸站、工具站和临时验证项目，先找低门槛、可快速上线的服务。",
+    category: "建站指南",
+    date: "2026-07-19",
+    tags: ["免备案", "建站", "主机"],
+    relatedResourceSlugs: ["yecaoyun", "wwdx", "jdcloud-site", "upyun", "qiniu-cloud"],
+    content: [
+      "免备案建站不是越便宜越好，关键是能不能稳定访问、能不能快速部署、后续迁移是否方便。",
+      "个人项目可以优先看香港或海外 VPS、虚拟主机、对象存储加 CDN、模板建站工具。企业官网则要更重视售后、域名、SSL 和备案规划。",
+      "导航站的推荐页要按场景组织资源，比如个人博客、企业官网、工具站、图片站，而不是只罗列品牌。",
+    ],
+  },
+  {
     slug: "how-to-use-a-resource-directory",
     title: "如何用导航站减少信息搜索时间",
     excerpt: "把高频入口、垂直分类和临时搜索分开，能明显减少每天重复找工具的时间。",

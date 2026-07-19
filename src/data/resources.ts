@@ -1,4 +1,5 @@
 import { categories } from "@/data/categories";
+import { referenceResources } from "@/data/reference-resources";
 
 export type ResourceStatus = "active" | "inactive";
 export type AffiliateStatus = "none" | "available" | "pending" | "connected";
@@ -2370,7 +2371,9 @@ const resourcesSeed: Resource[] = [
   },
 ];
 
-export const allResources: Resource[] = resourcesSeed.map((resource) => ({
+const combinedResources: Resource[] = [...resourcesSeed, ...referenceResources];
+
+export const allResources: Resource[] = combinedResources.map((resource) => ({
   ...resource,
   market: resource.market ?? "global",
   category: categories.some((category) => category.slug === resource.category)

@@ -1819,13 +1819,17 @@ export const referenceResources: Resource[] = [
       "参考收录"
     ],
     "status": "active",
-    "isFeatured": false,
-    "isSponsored": false,
-    "affiliateStatus": "none",
-    "commissionType": "unknown",
+    "isFeatured": true,
+    "isSponsored": true,
+    "affiliateUrl": "https://api.zicc.cc/register?aff=3SZHT9QBCZ62",
+    "affiliateProgramUrl": "https://api.zicc.cc/affiliate",
+    "affiliateStatus": "connected",
+    "commissionType": "recurring",
+    "commissionNote": "被邀请用户充值后返利 15%，返利额度可转入账户余额。",
+    "promotionLabel": "返利 15%",
     "riskLevel": "medium",
-    "monetizationNote": "参考站发现，当前仅作为内容和 SEO 流量入口；发现官方推广计划并获取 Mona 专属链接后再改为 connected。",
-    "officialLabel": "参考",
+    "monetizationNote": "Mona 已登录 Z-API 后台并获取邀请链接；站内外链使用 Mona 专属 invite/referral URL。",
+    "officialLabel": "推广",
     "submittedAt": "2026-07-19"
   },
   {

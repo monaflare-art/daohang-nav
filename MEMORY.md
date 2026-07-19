@@ -89,6 +89,7 @@
 - 万维电讯推广链接已接入：resource `wwdx` uses public affiliate URL `https://www.wwdx.com/aff/UFVJBDUG`; 后台推介计划初始数据为点击 0、注册用户 0、佣金 0。
 - Z-API 推广链接已接入：resource `ref-z-api` uses public invite URL `https://api.zicc.cc/register?aff=3SZHT9QBCZ62`; 邀请返利页显示被邀请用户充值后返利 15%，返利额度可转入账户余额。
 - 千笔写作推广链接已接入：resource `ref-qianbixiezuo` uses public affiliate URL `https://www.qianbixiezuo.com?i=v9dvr`; 论文合伙人页显示用户使用邀请码 9 折、推广者获得用户付费金额 20%、满 50 元可提现。
+- 硅基流动推广链接已接入：resource `siliconflow` uses public invite URL `https://cloud.siliconflow.cn/i/V8nQ8MJh`; 推荐官计划显示被邀请人完成注册及实名认证后，邀请人可获得面值 16 元推荐官奖励券，活动期内邀请人数和奖励次数不设上限。
 - 华为云奖励推广计划已于 2026-01-30 起暂停运营，当前不作为新注册推广入口。
 - 美团联盟本轮暂缓：进入美团联盟登录/注册后需要认证，Mona 反馈认证不了；resource `meituan-union` 保持 `pending`，后续不再优先尝试。
 - 携程联盟下一步：官方入口 `https://u.ctrip.com/alliance/#/index` 可访问，页面说明旅游品类流量变现、推广成交获得奖励；当前停在携程账号登录页，需 Mona 登录后继续登记媒体/推广位并取链。

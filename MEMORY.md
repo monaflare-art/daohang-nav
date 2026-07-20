@@ -97,6 +97,7 @@
 - kookeey 推广链接已接入：resource `kookeey` uses public affiliate URL `https://kookeey-ye-wu-ji-quan-qiu-dai-li-ip.saaslink.net/8Hgx4w`; PartnerShare 后台显示用户注册并购买任意 IP 产品后可获得 10% 现金返现，用户与推广者永久绑定，邀请码 `8Hgx4w`。
 - 八爪鱼采集器推广链接已记录：resource `bazhuayu` uses public affiliate URL `https://affiliate.bazhuayu.com/6tem7A`; PartnerShare 后台显示每邀请一位好友成功订阅八爪鱼套餐可获得 15%-40% 佣金奖励，邀请码 `6tem7A`；当前页面仍显示审核中，resource 保持 `affiliateStatus: "pending"`，结算前需复核审核状态。
 - IPFoxy 推广链接已接入：resource `ipfoxy` uses public affiliate URL `https://www.ipfoxy.com/invite/aV1zj9`; PartnerShare 后台显示独享代理每成功购买 1 个 IP 可获 1 美金现金奖励，返现周期长达 12 个月，动态代理永久返现 10%，邀请码 `aV1zj9`。
+- PartnerShare 新增产品当前阻塞：`https://www.partnershare.net/home` 登录后只显示“我的应用”统计和已接入应用，当前可见 IPFoxy、kookeey、HelpLook、八爪鱼；`promotionhub` 是公开产品目录，页面上的 `ps_ref` 不可视为 Mona-owned 专属推广链接。`network.partnershare.net/alliance-login` 和 `network.partnershare.net/promotionhub` 在 Edge 中均回到旧后台，未出现可申请 SocialEcho、DuoPlus、FlashID、Data4、302.AI、PopAi 等产品的工作台入口；这些产品保持未接入，拿到后台确认的专属链接前不要写入 `affiliateUrl`。
 - 华为云奖励推广计划已于 2026-01-30 起暂停运营，当前不作为新注册推广入口。
 - 美团联盟本轮暂缓：进入美团联盟登录/注册后需要认证，Mona 反馈认证不了；resource `meituan-union` 保持 `pending`，后续不再优先尝试。
 - 携程联盟下一步：官方入口 `https://u.ctrip.com/alliance/#/index` 可访问，页面说明旅游品类流量变现、推广成交获得奖励；当前停在携程账号登录页，需 Mona 登录后继续登记媒体/推广位并取链。

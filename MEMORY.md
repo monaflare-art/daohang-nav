@@ -95,6 +95,7 @@
 - AdsPower 推广链接已接入：resource `adspower` uses public affiliate URL `https://www.adspower.net/share/1owYWI`; 推广奖励页显示好友通过分享订阅 AdsPower 套餐后，最长 24 个月每月获得 10% 订阅套餐费返佣，邀请码 `1owYWI`。
 - HelpLook 推广链接已接入：resource `helplook` uses public affiliate URL `https://share.helplook.net/r3ZV47`; PartnerShare 后台显示每邀请一位新付费客户可获得持续 1 年的 20% 套餐金额返现，邀请码 `r3ZV47`。
 - kookeey 推广链接已接入：resource `kookeey` uses public affiliate URL `https://kookeey-ye-wu-ji-quan-qiu-dai-li-ip.saaslink.net/8Hgx4w`; PartnerShare 后台显示用户注册并购买任意 IP 产品后可获得 10% 现金返现，用户与推广者永久绑定，邀请码 `8Hgx4w`。
+- 八爪鱼采集器推广链接已记录：resource `bazhuayu` uses public affiliate URL `https://affiliate.bazhuayu.com/6tem7A`; PartnerShare 后台显示每邀请一位好友成功订阅八爪鱼套餐可获得 15%-40% 佣金奖励，邀请码 `6tem7A`；当前页面仍显示审核中，resource 保持 `affiliateStatus: "pending"`，结算前需复核审核状态。
 - 华为云奖励推广计划已于 2026-01-30 起暂停运营，当前不作为新注册推广入口。
 - 美团联盟本轮暂缓：进入美团联盟登录/注册后需要认证，Mona 反馈认证不了；resource `meituan-union` 保持 `pending`，后续不再优先尝试。
 - 携程联盟下一步：官方入口 `https://u.ctrip.com/alliance/#/index` 可访问，页面说明旅游品类流量变现、推广成交获得奖励；当前停在携程账号登录页，需 Mona 登录后继续登记媒体/推广位并取链。

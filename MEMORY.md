@@ -49,6 +49,7 @@
 - 2026-07-21 batch content expansion added `/blog/ai-customer-service-knowledge-base-guide`, `/blog/fingerprint-browser-proxy-ip-guide`, and `/blog/ai-writing-paper-tools-guide`; `/deals` content links are now driven by `contentLinks` for easier continued expansion.
 - 2026-07-21 hosting scenario batch added `/blog/personal-blog-hosting-guide`, `/blog/foreign-trade-website-hosting-guide`, and `/blog/tool-site-low-cost-deploy-guide` for connected hosting/cloud resources; pending 蓝队云/华纳云 remain excluded.
 - 2026-07-21 `/blog` was redesigned from a flat article list into an editorial matrix with featured conversion posts, category groups and article/topic counts.
+- 2026-07-21 article detail pages now show a `/deals` CTA when the article has connected affiliate resources, while pending-only articles do not get the monetization CTA.
 
 ## Known Issues
 

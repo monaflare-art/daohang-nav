@@ -53,6 +53,7 @@ export default async function BlogPostPage({ params }: Props) {
   const relatedResources = post.relatedResourceSlugs
     .map((resourceSlug) => resources.find((resource) => resource.slug === resourceSlug))
     .filter((resource): resource is (typeof resources)[number] => Boolean(resource));
+  const connectedResourcesCount = relatedResources.filter((resource) => resource.affiliateStatus === "connected").length;
 
   return (
     <main className="ui-shell max-w-5xl py-8">
@@ -71,6 +72,26 @@ export default async function BlogPostPage({ params }: Props) {
           ))}
         </div>
       </Surface>
+
+      {connectedResourcesCount > 0 ? (
+        <Surface className="mt-6 p-5 sm:p-6">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-[13px] font-semibold text-emerald-700">已接入推广入口</p>
+              <h2 className="mt-1 text-[18px] font-semibold tracking-[-0.02em] text-slate-950">继续查看可投放优惠资源</h2>
+              <p className="mt-2 text-[13px] leading-6 text-slate-500">
+                这篇文章关联 {connectedResourcesCount} 个已确认可公开投放的资源，推广入口会在资源卡片和优惠页中明确标记。
+              </p>
+            </div>
+            <Link
+              href="/deals"
+              className="inline-flex h-11 shrink-0 items-center justify-center rounded-xl bg-slate-950 px-4 text-sm font-semibold text-white transition hover:bg-emerald-700"
+            >
+              查看优惠入口
+            </Link>
+          </div>
+        </Surface>
+      ) : null}
 
       {relatedResources.length > 0 ? (
         <section className="mt-8">

@@ -43,6 +43,7 @@
 - 2026-07-21 `/deals` also added a main cloud-vendor campaign section for 阿里云, 腾讯云, 百度智能云, and 京东云, and added HelpLook to the tool SaaS section so all connected high-intent public resources have a conversion-page placement.
 - 2026-07-21 `/blog/ai-api-saas-tools-guide` added as a purchase-decision SEO article for connected AI/API/tool SaaS resources, and `/deals` links to it from the content direction section.
 - 2026-07-21 `/blog/cloud-vendor-campaigns-guide` added as a purchase-decision SEO article for 阿里云、腾讯云、百度智能云、京东云、UCloud、七牛云 and 又拍云, and `/deals` links to it from the content direction section.
+- 2026-07-21 `/blog/cdn-object-storage-guide` added as a purchase-decision SEO article for connected CDN/object storage resources 又拍云、七牛云、UCloud plus main cloud vendors, and `/deals` links to it from the content direction section.
 
 ## Known Issues
 

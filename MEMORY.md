@@ -39,7 +39,7 @@
 - After multiple foreign affiliate rejections, public resources now hide global/foreign sites and only expose China-market resources via the filtered `resources` export; full data remains in `allResources` for later recovery.
 - Monetization strategy corrected: do not register every large platform just because it has an affiliate program. V1 should prioritize high-intent comparison traffic such as cheap cloud servers, VPS, no-ICP hosting, website builders, CDN/object storage, and concrete tool SaaS; generic big-platform local-life/travel/content/ecommerce programs are hidden or deprioritized until the site has search traffic and matching content.
 - Primary conversion page added at `/deals`: use it for high-intent hosting, no-ICP website building, CDN/object storage, and server/VPS offer traffic. Future affiliate resources should be added there only when they match a concrete buying scenario and have a public official URL or approved tracking URL.
-- 2026-07-21 `/deals` expanded beyond cloud/hosting to include AI/API and tool SaaS entries such as 硅基流动, APi云市场, HelpLook, 八爪鱼, SaleSmartly, AdsPower, IPFoxy, and kookeey, because new domestic affiliate applications are mostly blocked by review, real-name checks,客服, or payment.
+- 2026-07-21 `/deals` expanded beyond cloud/hosting to include AI/API and tool SaaS entries such as 硅基流动, APi云市场, Z-API, 千笔写作, SaleSmartly, AdsPower, IPFoxy, and kookeey, because new domestic affiliate applications are mostly blocked by review, real-name checks,客服, or payment.
 
 ## Known Issues
 

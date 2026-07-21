@@ -31,7 +31,7 @@ const dealSections = [
   {
     title: "AI API / 开发者工具",
     description: "适合把大模型、接口市场和开发工具做成教程或选型页。",
-    slugs: ["siliconflow", "api-cloud-market", "helplook", "bazhuayu"],
+    slugs: ["siliconflow", "api-cloud-market", "z-api", "qianbi-writing"],
   },
   {
     title: "跨境运营 / 工具 SaaS",

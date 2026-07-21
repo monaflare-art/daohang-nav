@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { contentLinks, dealSections } from "@/app/deals/page";
+import { contentLinks, dealSections, getDealPageStats } from "@/app/deals/page";
 import { posts } from "@/data/posts";
 import { allResources, resources } from "@/data/resources";
 
@@ -45,5 +45,22 @@ describe("post data integrity", () => {
     const sectionTitles = dealSections.map((section) => section.title);
 
     expect(new Set(sectionTitles).size).toBe(sectionTitles.length);
+  });
+
+  it("summarizes unique public deal resources and connected affiliate entries", () => {
+    const publicResourceSlugs = new Set(resources.map((resource) => resource.slug));
+    const uniqueDealSlugs = new Set(dealSections.flatMap((section) => section.slugs).filter((resourceSlug) => publicResourceSlugs.has(resourceSlug)));
+    const connectedDealSlugs = new Set(
+      resources
+        .filter((resource) => uniqueDealSlugs.has(resource.slug))
+        .filter((resource) => resource.affiliateStatus === "connected")
+        .map((resource) => resource.slug),
+    );
+    const stats = getDealPageStats();
+
+    expect(stats.resourceCount).toBe(uniqueDealSlugs.size);
+    expect(stats.connectedCount).toBe(connectedDealSlugs.size);
+    expect(stats.sectionCount).toBe(dealSections.length);
+    expect(stats.contentCount).toBe(contentLinks.length);
   });
 });

@@ -5,8 +5,8 @@ import { ExternalIcon } from "@/components/icons";
 import { getAffiliateLabel, getResourceOutboundUrl, resources, type Resource } from "@/data/resources";
 
 export const metadata: Metadata = {
-  title: "建站优惠",
-  description: "面向站长、开发者和个人项目的云服务器、免备案主机、CDN 和建站工具优惠入口。",
+  title: "建站与工具优惠",
+  description: "面向站长、开发者和个人项目的云服务器、免备案主机、CDN、AI API 和工具 SaaS 优惠入口。",
   alternates: {
     canonical: "/deals",
   },
@@ -68,8 +68,27 @@ export const contentLinks = [
   { href: "/blog/cross-border-ops-tools-guide", label: "跨境运营工具怎么选" },
 ];
 
-function resourcesBySlug(slugs: string[]) {
+export function resourcesBySlug(slugs: string[]) {
   return slugs.map((slug) => resources.find((resource) => resource.slug === slug)).filter((resource): resource is Resource => Boolean(resource));
+}
+
+export function getDealPageStats() {
+  const uniqueResources = new Map<string, Resource>();
+
+  for (const section of dealSections) {
+    for (const resource of resourcesBySlug(section.slugs)) {
+      uniqueResources.set(resource.slug, resource);
+    }
+  }
+
+  const resourceList = Array.from(uniqueResources.values());
+
+  return {
+    resourceCount: resourceList.length,
+    connectedCount: resourceList.filter((resource) => resource.affiliateStatus === "connected").length,
+    sectionCount: dealSections.length,
+    contentCount: contentLinks.length,
+  };
 }
 
 function DealResourceRow({ resource }: { resource: Resource }) {
@@ -112,6 +131,8 @@ function DealResourceRow({ resource }: { resource: Resource }) {
 }
 
 export default function DealsPage() {
+  const stats = getDealPageStats();
+
   return (
     <main className="ui-shell py-8">
       <Surface className="overflow-hidden p-6 sm:p-8">
@@ -124,6 +145,20 @@ export default function DealsPage() {
             <p className="mt-5 max-w-2xl text-[15px] leading-7 text-slate-500">
               这里不做泛品牌入口，只放更可能产生购买决策的云服务器、VPS、免备案建站、CDN、对象存储、AI API 和工具 SaaS。已接入推广的链接会明确标记。
             </p>
+            <div className="mt-6 grid max-w-2xl gap-3 sm:grid-cols-3">
+              <div className="rounded-2xl border border-slate-200 bg-white/80 p-4">
+                <p className="text-2xl font-semibold tracking-[-0.03em] text-slate-950">{stats.connectedCount}</p>
+                <p className="mt-1 text-xs font-semibold text-slate-500">已接入推广</p>
+              </div>
+              <div className="rounded-2xl border border-slate-200 bg-white/80 p-4">
+                <p className="text-2xl font-semibold tracking-[-0.03em] text-slate-950">{stats.resourceCount}</p>
+                <p className="mt-1 text-xs font-semibold text-slate-500">高意图入口</p>
+              </div>
+              <div className="rounded-2xl border border-slate-200 bg-white/80 p-4">
+                <p className="text-2xl font-semibold tracking-[-0.03em] text-slate-950">{stats.contentCount}</p>
+                <p className="mt-1 text-xs font-semibold text-slate-500">选型专题</p>
+              </div>
+            </div>
           </div>
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
             <p className="text-sm font-semibold text-slate-950">选择前先看</p>

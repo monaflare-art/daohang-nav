@@ -52,7 +52,7 @@ const checkpoints = [
   "推广入口必须明确标记",
 ];
 
-const contentLinks = [
+export const contentLinks = [
   { href: "/blog/cheap-cn-cloud-server-guide", label: "国内便宜云服务器怎么选" },
   { href: "/blog/no-icp-website-hosting-tools", label: "免备案建站工具和主机入口" },
   { href: "/blog/personal-blog-hosting-guide", label: "个人博客主机怎么选" },

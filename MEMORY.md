@@ -54,6 +54,7 @@
 - 2026-07-21 `/deals` exports `dealSections`; `src/data/posts.test.ts` now also verifies deal section slugs exist in public resources and section titles stay unique.
 - 2026-07-21 `/deals` metadata now covers cloud, hosting, CDN, AI API, and tool SaaS; the page exposes `getDealPageStats()` so the hero can show unique public resources, connected affiliate entries, sections, and content-topic counts with test coverage.
 - 2026-07-21 article conversion CTA gating now uses `getConnectedAffiliateResourceCount()` from `src/data/posts.ts`; tests verify only `affiliateStatus: "connected"` resources count, so pending/available/none entries cannot trigger monetization CTA copy.
+- 2026-07-21 public connected affiliate resources must appear on `/deals`; `src/data/posts.test.ts` now enforces this. Duplicate reference entries `ref-z-api` and `ref-qianbixiezuo` are hidden because formal resources `z-api` and `qianbi-writing` carry the public affiliate links.
 
 ## Known Issues
 

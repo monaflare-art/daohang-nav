@@ -64,6 +64,16 @@ describe("post data integrity", () => {
     expect(stats.contentCount).toBe(contentLinks.length);
   });
 
+  it("keeps every public connected affiliate resource visible on the deals page", () => {
+    const dealResourceSlugs = new Set(dealSections.flatMap((section) => section.slugs));
+    const missingConnectedResources = resources
+      .filter((resource) => resource.affiliateStatus === "connected")
+      .map((resource) => resource.slug)
+      .filter((resourceSlug) => !dealResourceSlugs.has(resourceSlug));
+
+    expect(missingConnectedResources).toEqual([]);
+  });
+
   it("counts only connected affiliate resources for article conversion CTAs", () => {
     expect(
       getConnectedAffiliateResourceCount([

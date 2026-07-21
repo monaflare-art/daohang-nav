@@ -3,6 +3,7 @@ import {
   getFeaturedResources,
   getRankingResources,
   getResource,
+  getResourceCtaLabel,
   getResourcesByCategory,
 } from "@/data/resources";
 
@@ -25,6 +26,16 @@ describe("resource data helpers", () => {
 
     expect(featuredResources.length).toBeGreaterThan(0);
     expect(featuredResources.every((resource) => resource.isFeatured)).toBe(true);
+  });
+
+  it("labels connected affiliate resources with a promotional CTA", () => {
+    const connectedResource = getResource("aliyun");
+    const plainResource = getResource("deepseek");
+
+    expect(connectedResource).toBeDefined();
+    expect(plainResource).toBeDefined();
+    expect(getResourceCtaLabel(connectedResource!)).toBe("访问推广入口");
+    expect(getResourceCtaLabel(plainResource!)).toBe("访问官网");
   });
 
   it("sorts ranking resources by sponsored, then featured, then name", () => {

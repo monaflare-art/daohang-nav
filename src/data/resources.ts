@@ -2639,6 +2639,14 @@ export function getAffiliateLabel(resource: Resource) {
   return null;
 }
 
+export function getResourceCtaLabel(resource: Resource) {
+  if (resource.affiliateStatus === "connected") {
+    return "访问推广入口";
+  }
+
+  return "访问官网";
+}
+
 export function getResourcesByCategory(categorySlug: string) {
   return resources.filter((resource) => resource.category === categorySlug);
 }

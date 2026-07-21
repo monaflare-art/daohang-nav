@@ -2,7 +2,7 @@ import Link from "next/link";
 import { MonoBadge } from "@/components/design-system";
 import { ExternalIcon } from "@/components/icons";
 import { getCategory } from "@/data/categories";
-import { getAffiliateLabel, getResourceOutboundUrl, type Resource } from "@/data/resources";
+import { getAffiliateLabel, getResourceCtaLabel, getResourceOutboundUrl, type Resource } from "@/data/resources";
 
 function faviconUrl(url: string) {
   const hostname = new URL(url).hostname;
@@ -14,6 +14,7 @@ export function ResourceCard({ resource, compact = false }: { resource: Resource
   const category = getCategory(resource.category);
   const affiliateLabel = getAffiliateLabel(resource);
   const outboundUrl = getResourceOutboundUrl(resource);
+  const ctaLabel = getResourceCtaLabel(resource);
 
   return (
     <article
@@ -62,7 +63,7 @@ export function ResourceCard({ resource, compact = false }: { resource: Resource
           data-resource-slug={resource.slug}
           className="inline-flex shrink-0 items-center gap-1 rounded-lg bg-slate-950 px-2.5 py-1.5 text-xs font-semibold text-white transition hover:bg-[#0f766e]"
         >
-          访问
+          {ctaLabel}
           <ExternalIcon />
         </a>
       </div>

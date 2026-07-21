@@ -7,7 +7,7 @@ import { ExternalIcon } from "@/components/icons";
 import { JsonLd } from "@/components/json-ld";
 import { ResourceCard } from "@/components/resource-card";
 import { getCategory } from "@/data/categories";
-import { getAffiliateLabel, getResource, getResourceOutboundUrl, resources } from "@/data/resources";
+import { getAffiliateLabel, getResource, getResourceCtaLabel, getResourceOutboundUrl, resources } from "@/data/resources";
 import { absoluteUrl, defaultOgImage, siteConfig } from "@/lib/site";
 
 type Props = {
@@ -54,6 +54,7 @@ export default async function ResourcePage({ params }: Props) {
   const category = getCategory(resource.category);
   const affiliateLabel = getAffiliateLabel(resource);
   const outboundUrl = getResourceOutboundUrl(resource);
+  const ctaLabel = getResourceCtaLabel(resource);
   const related = resources
     .filter((item) => item.slug !== resource.slug && (item.category === resource.category || item.tags.some((tag) => resource.tags.includes(tag))))
     .slice(0, 6);
@@ -100,7 +101,7 @@ export default async function ResourcePage({ params }: Props) {
             data-resource-slug={resource.slug}
             className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-xl bg-slate-950 px-4 text-[13px] font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-emerald-700"
           >
-            访问官网
+            {ctaLabel}
             <ExternalIcon />
           </a>
         </div>

@@ -29,6 +29,11 @@ const dealSections = [
     slugs: ["upyun", "qiniu-cloud", "ucloud"],
   },
   {
+    title: "主流云厂商活动",
+    description: "适合云服务器、数据库、AI 云和企业上云活动导流。",
+    slugs: ["aliyun", "tencent-cloud", "baidu-ai-cloud", "jdcloud-yuntuike"],
+  },
+  {
     title: "AI API / 开发者工具",
     description: "适合把大模型、接口市场和开发工具做成教程或选型页。",
     slugs: ["siliconflow", "api-cloud-market", "z-api", "qianbi-writing"],
@@ -36,7 +41,7 @@ const dealSections = [
   {
     title: "跨境运营 / 工具 SaaS",
     description: "适合客服、指纹浏览器、代理 IP、知识库和数据采集类购买决策。",
-    slugs: ["salesmartly", "adspower", "ipfoxy", "kookeey"],
+    slugs: ["salesmartly", "adspower", "ipfoxy", "kookeey", "helplook"],
   },
 ];
 

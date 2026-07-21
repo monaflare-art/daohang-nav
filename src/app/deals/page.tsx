@@ -55,6 +55,9 @@ const checkpoints = [
 const contentLinks = [
   { href: "/blog/cheap-cn-cloud-server-guide", label: "国内便宜云服务器怎么选" },
   { href: "/blog/no-icp-website-hosting-tools", label: "免备案建站工具和主机入口" },
+  { href: "/blog/personal-blog-hosting-guide", label: "个人博客主机怎么选" },
+  { href: "/blog/foreign-trade-website-hosting-guide", label: "外贸站主机怎么选" },
+  { href: "/blog/tool-site-low-cost-deploy-guide", label: "小工具站低成本部署" },
   { href: "/blog/cloud-vendor-campaigns-guide", label: "主流云厂商活动怎么选" },
   { href: "/blog/cdn-object-storage-guide", label: "CDN 和对象存储怎么选" },
   { href: "/blog/ai-api-saas-tools-guide", label: "AI API 和工具 SaaS 怎么选" },

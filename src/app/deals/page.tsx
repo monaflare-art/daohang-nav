@@ -52,6 +52,19 @@ const checkpoints = [
   "推广入口必须明确标记",
 ];
 
+const contentLinks = [
+  { href: "/blog/cheap-cn-cloud-server-guide", label: "国内便宜云服务器怎么选" },
+  { href: "/blog/no-icp-website-hosting-tools", label: "免备案建站工具和主机入口" },
+  { href: "/blog/cloud-vendor-campaigns-guide", label: "主流云厂商活动怎么选" },
+  { href: "/blog/cdn-object-storage-guide", label: "CDN 和对象存储怎么选" },
+  { href: "/blog/ai-api-saas-tools-guide", label: "AI API 和工具 SaaS 怎么选" },
+  { href: "/blog/api-market-model-api-guide", label: "API 接口市场怎么选" },
+  { href: "/blog/ai-customer-service-knowledge-base-guide", label: "AI 客服和帮助中心怎么选" },
+  { href: "/blog/fingerprint-browser-proxy-ip-guide", label: "指纹浏览器和代理 IP 怎么选" },
+  { href: "/blog/ai-writing-paper-tools-guide", label: "AI 写作和论文工具怎么选" },
+  { href: "/blog/cross-border-ops-tools-guide", label: "跨境运营工具怎么选" },
+];
+
 function resourcesBySlug(slugs: string[]) {
   return slugs.map((slug) => resources.find((resource) => resource.slug === slug)).filter((resource): resource is Resource => Boolean(resource));
 }
@@ -143,27 +156,11 @@ export default function DealsPage() {
       <Surface className="mt-8 p-6">
         <SectionHeader title="后续内容方向" description="这个页面应该配合专题文章，而不是单独堆链接。" />
         <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-          <Link href="/blog/cheap-cn-cloud-server-guide" className="rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-950 hover:border-emerald-200 hover:text-emerald-700">
-            国内便宜云服务器怎么选
-          </Link>
-          <Link href="/blog/no-icp-website-hosting-tools" className="rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-950 hover:border-emerald-200 hover:text-emerald-700">
-            免备案建站工具和主机入口
-          </Link>
-          <Link href="/blog/cloud-vendor-campaigns-guide" className="rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-950 hover:border-emerald-200 hover:text-emerald-700">
-            主流云厂商活动怎么选
-          </Link>
-          <Link href="/blog/cdn-object-storage-guide" className="rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-950 hover:border-emerald-200 hover:text-emerald-700">
-            CDN 和对象存储怎么选
-          </Link>
-          <Link href="/blog/ai-api-saas-tools-guide" className="rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-950 hover:border-emerald-200 hover:text-emerald-700">
-            AI API 和工具 SaaS 怎么选
-          </Link>
-          <Link href="/blog/api-market-model-api-guide" className="rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-950 hover:border-emerald-200 hover:text-emerald-700">
-            API 接口市场怎么选
-          </Link>
-          <Link href="/blog/cross-border-ops-tools-guide" className="rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-950 hover:border-emerald-200 hover:text-emerald-700">
-            跨境运营工具怎么选
-          </Link>
+          {contentLinks.map((link) => (
+            <Link key={link.href} href={link.href} className="rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-950 hover:border-emerald-200 hover:text-emerald-700">
+              {link.label}
+            </Link>
+          ))}
         </div>
       </Surface>
     </main>

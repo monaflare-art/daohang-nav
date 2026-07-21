@@ -57,6 +57,7 @@
 - 2026-07-21 public connected affiliate resources must appear on `/deals`; `src/data/posts.test.ts` now enforces this. Duplicate reference entries `ref-z-api` and `ref-qianbixiezuo` are hidden because formal resources `z-api` and `qianbi-writing` carry the public affiliate links.
 - 2026-07-21 homepage search panel now includes a first-screen `/deals` conversion strip for connected cloud, AI API, and tool SaaS offers; Playwright QA captured desktop/mobile screenshots under `output/playwright/` and only saw an external favicon 404.
 - 2026-07-21 resource cards and detail pages now use `getResourceCtaLabel()` so connected affiliate resources show `访问推广入口`, while pending/none resources continue to show `访问官网`; tests cover the label rule.
+- 2026-07-21 `/deals` resource cards also use `getResourceCtaLabel()` so conversion-page button labels stay consistent with homepage/resource detail CTAs.
 
 ## Known Issues
 

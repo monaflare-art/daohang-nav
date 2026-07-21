@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MonoBadge, SectionHeader, Surface } from "@/components/design-system";
 import { ExternalIcon } from "@/components/icons";
-import { getAffiliateLabel, getResourceOutboundUrl, resources, type Resource } from "@/data/resources";
+import { getAffiliateLabel, getResourceCtaLabel, getResourceOutboundUrl, resources, type Resource } from "@/data/resources";
 
 export const metadata: Metadata = {
   title: "建站与工具优惠",
@@ -94,6 +94,7 @@ export function getDealPageStats() {
 function DealResourceRow({ resource }: { resource: Resource }) {
   const affiliateLabel = getAffiliateLabel(resource);
   const outboundUrl = getResourceOutboundUrl(resource);
+  const ctaLabel = getResourceCtaLabel(resource);
 
   return (
     <article className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-200 hover:shadow-md">
@@ -122,7 +123,7 @@ function DealResourceRow({ resource }: { resource: Resource }) {
           data-resource-slug={resource.slug}
           className="inline-flex h-9 shrink-0 items-center gap-1 rounded-xl bg-slate-950 px-3 text-xs font-semibold text-white transition hover:bg-emerald-700"
         >
-          查看优惠
+          {ctaLabel}
           <ExternalIcon className="h-3.5 w-3.5" />
         </a>
       </div>

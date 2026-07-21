@@ -250,6 +250,13 @@ export default function HomePage() {
         <section className="portal-main">
           <section className="portal-panel portal-search-panel">
             <HomeCommandSearch />
+            <div className="portal-deals-strip">
+              <div>
+                <span>已接入推广</span>
+                <strong>云服务器、AI API、工具 SaaS 优惠入口</strong>
+              </div>
+              <Link href="/deals">查看全部优惠</Link>
+            </div>
             <div className="portal-shortcuts">
               {shortcutGroups.map((group) => (
                 <ShortcutColumn key={group.title} {...group} />

@@ -1132,6 +1132,53 @@ textarea {
   font-weight: 650;
 }
 
+.portal-deals-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid #edf1f6;
+  background: linear-gradient(135deg, #f8fffb 0%, #ffffff 55%, #f8fafc 100%);
+  padding: 12px 14px;
+}
+
+.portal-deals-strip div {
+  min-width: 0;
+}
+
+.portal-deals-strip span {
+  display: block;
+  color: #059669;
+  font-size: 11px;
+  font-weight: 850;
+}
+
+.portal-deals-strip strong {
+  display: block;
+  margin-top: 2px;
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.portal-deals-strip a {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  border-radius: 9px;
+  background: #0f172a;
+  padding-inline: 12px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.portal-deals-strip a:hover {
+  background: #047857;
+}
+
 .portal-shortcuts {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1546,6 +1593,15 @@ textarea {
   .portal-search-panel .command-column + .command-column {
     border-left: 0;
     border-top: 1px solid #edf1f6;
+  }
+
+  .portal-deals-strip {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .portal-deals-strip a {
+    width: 100%;
   }
 }
 

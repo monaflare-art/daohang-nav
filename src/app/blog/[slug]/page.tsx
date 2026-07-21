@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { SectionHeader, Surface } from "@/components/design-system";
 import { ResourceCard } from "@/components/resource-card";
-import { getPost, posts } from "@/data/posts";
+import { getConnectedAffiliateResourceCount, getPost, posts } from "@/data/posts";
 import { resources } from "@/data/resources";
 import { defaultOgImage } from "@/lib/site";
 
@@ -53,7 +53,7 @@ export default async function BlogPostPage({ params }: Props) {
   const relatedResources = post.relatedResourceSlugs
     .map((resourceSlug) => resources.find((resource) => resource.slug === resourceSlug))
     .filter((resource): resource is (typeof resources)[number] => Boolean(resource));
-  const connectedResourcesCount = relatedResources.filter((resource) => resource.affiliateStatus === "connected").length;
+  const connectedResourcesCount = getConnectedAffiliateResourceCount(relatedResources);
 
   return (
     <main className="ui-shell max-w-5xl py-8">

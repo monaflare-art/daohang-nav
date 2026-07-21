@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { contentLinks, dealSections, getDealPageStats } from "@/app/deals/page";
-import { posts } from "@/data/posts";
+import { getConnectedAffiliateResourceCount, posts } from "@/data/posts";
 import { allResources, resources } from "@/data/resources";
 
 const postSlugs = new Set(posts.map((post) => post.slug));
@@ -62,5 +62,17 @@ describe("post data integrity", () => {
     expect(stats.connectedCount).toBe(connectedDealSlugs.size);
     expect(stats.sectionCount).toBe(dealSections.length);
     expect(stats.contentCount).toBe(contentLinks.length);
+  });
+
+  it("counts only connected affiliate resources for article conversion CTAs", () => {
+    expect(
+      getConnectedAffiliateResourceCount([
+        { affiliateStatus: "connected" },
+        { affiliateStatus: "pending" },
+        { affiliateStatus: "available" },
+        { affiliateStatus: "none" },
+        {},
+      ]),
+    ).toBe(1);
   });
 });

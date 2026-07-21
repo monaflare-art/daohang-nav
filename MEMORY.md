@@ -53,6 +53,7 @@
 - 2026-07-21 `src/data/posts.test.ts` added integrity coverage for unique post slugs, existing related resource slugs, and `/deals` content links pointing to existing posts.
 - 2026-07-21 `/deals` exports `dealSections`; `src/data/posts.test.ts` now also verifies deal section slugs exist in public resources and section titles stay unique.
 - 2026-07-21 `/deals` metadata now covers cloud, hosting, CDN, AI API, and tool SaaS; the page exposes `getDealPageStats()` so the hero can show unique public resources, connected affiliate entries, sections, and content-topic counts with test coverage.
+- 2026-07-21 article conversion CTA gating now uses `getConnectedAffiliateResourceCount()` from `src/data/posts.ts`; tests verify only `affiliateStatus: "connected"` resources count, so pending/available/none entries cannot trigger monetization CTA copy.
 
 ## Known Issues
 

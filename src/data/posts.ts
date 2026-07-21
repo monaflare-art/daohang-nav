@@ -9,6 +9,10 @@ export type Post = {
   content: string[];
 };
 
+export type AffiliateResourceSummary = {
+  affiliateStatus?: "none" | "available" | "pending" | "connected";
+};
+
 export const posts: Post[] = [
   {
     slug: "cheap-cn-cloud-server-guide",
@@ -249,4 +253,8 @@ export const posts: Post[] = [
 
 export function getPost(slug: string) {
   return posts.find((post) => post.slug === slug);
+}
+
+export function getConnectedAffiliateResourceCount(resources: AffiliateResourceSummary[]) {
+  return resources.filter((resource) => resource.affiliateStatus === "connected").length;
 }

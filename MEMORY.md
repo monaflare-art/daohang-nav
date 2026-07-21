@@ -48,6 +48,7 @@
 - 2026-07-21 `/blog/api-market-model-api-guide` added as a purchase-decision SEO article for connected API resources 硅基流动、APi云市场 and Z-API, and `/deals` links to it from the content direction section.
 - 2026-07-21 batch content expansion added `/blog/ai-customer-service-knowledge-base-guide`, `/blog/fingerprint-browser-proxy-ip-guide`, and `/blog/ai-writing-paper-tools-guide`; `/deals` content links are now driven by `contentLinks` for easier continued expansion.
 - 2026-07-21 hosting scenario batch added `/blog/personal-blog-hosting-guide`, `/blog/foreign-trade-website-hosting-guide`, and `/blog/tool-site-low-cost-deploy-guide` for connected hosting/cloud resources; pending 蓝队云/华纳云 remain excluded.
+- 2026-07-21 `/blog` was redesigned from a flat article list into an editorial matrix with featured conversion posts, category groups and article/topic counts.
 
 ## Known Issues
 

@@ -39,6 +39,7 @@
 - After multiple foreign affiliate rejections, public resources now hide global/foreign sites and only expose China-market resources via the filtered `resources` export; full data remains in `allResources` for later recovery.
 - Monetization strategy corrected: do not register every large platform just because it has an affiliate program. V1 should prioritize high-intent comparison traffic such as cheap cloud servers, VPS, no-ICP hosting, website builders, CDN/object storage, and concrete tool SaaS; generic big-platform local-life/travel/content/ecommerce programs are hidden or deprioritized until the site has search traffic and matching content.
 - Primary conversion page added at `/deals`: use it for high-intent hosting, no-ICP website building, CDN/object storage, and server/VPS offer traffic. Future affiliate resources should be added there only when they match a concrete buying scenario and have a public official URL or approved tracking URL.
+- 2026-07-21 `/deals` expanded beyond cloud/hosting to include AI/API and tool SaaS entries such as 硅基流动, APi云市场, HelpLook, 八爪鱼, SaleSmartly, AdsPower, IPFoxy, and kookeey, because new domestic affiliate applications are mostly blocked by review, real-name checks,客服, or payment.
 
 ## Known Issues
 
@@ -70,6 +71,7 @@
 - UCloud 推广链接已接入：resource `ucloud` uses public U 大使 invite URL `https://passport.ucloud.cn?cps_code=82uZz69HIZDFBpAOoe61kR`; 后台推广素材页顶部“复制邀新链接”和可见活动卡片“复制推广链接”当前都返回该 tracking 链接。
 - 2026-07-17 国内推广资源批量扩展：新增 `racent-cloud`、`idcpay`、`jd-union`、`pinduoduo-jinbao`、`vipshop-union`、`baidu-union`，均先标记为 `available` 或 `pending`，等待 Mona 注册/登录并提供公开可投放专属链接后再改为 `connected`。
 - 锐成云推广联盟当前审核中：Mona 已完成注册并提交推广联盟申请；官方页面说明人工审核一般 1-3 个工作日，resource `racent-cloud` 保持 `pending`，审核通过后再获取专属推广链接。
+- 2026-07-21 复查锐成云控制台仍显示“审核中”；resource `racent-cloud` 继续保持 `pending`，未取得专属推广链接前不要改为 `connected`。
 - 网宝推广联盟本轮暂缓：登录后进入个人实名认证页，要求微信实名认证、真实姓名和身份证号，Mona 反馈实名认证不了；resource `idcpay` 保持 `pending`。
 - 2026-07-17 国内推广资源第二批扩展：新增 `suning-union`、`meituan-union`、`ctrip-union`、`ly-union`，覆盖电商、本地生活和旅行 CPS；均需 Mona 完成登录/资质/媒体配置后复制公开推广链接。
 - 2026-07-17 国内推广资源第三批扩展：新增 `didi-union`、`fliggy-union`、`qunar-open`、`jutuike`；`jutuike` 为第三方聚合平台，需只使用授权清晰、结算规则明确的活动链接。

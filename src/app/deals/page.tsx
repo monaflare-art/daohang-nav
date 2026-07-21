@@ -28,6 +28,16 @@ const dealSections = [
     description: "适合图片站、下载站、静态站和内容分发场景。",
     slugs: ["upyun", "qiniu-cloud", "ucloud"],
   },
+  {
+    title: "AI API / 开发者工具",
+    description: "适合把大模型、接口市场和开发工具做成教程或选型页。",
+    slugs: ["siliconflow", "api-cloud-market", "helplook", "bazhuayu"],
+  },
+  {
+    title: "跨境运营 / 工具 SaaS",
+    description: "适合客服、指纹浏览器、代理 IP、知识库和数据采集类购买决策。",
+    slugs: ["salesmartly", "adspower", "ipfoxy", "kookeey"],
+  },
 ];
 
 const checkpoints = [
@@ -72,7 +82,7 @@ function DealResourceRow({ resource }: { resource: Resource }) {
           data-resource-slug={resource.slug}
           className="inline-flex h-9 shrink-0 items-center gap-1 rounded-xl bg-slate-950 px-3 text-xs font-semibold text-white transition hover:bg-emerald-700"
         >
-          领取优惠
+          查看优惠
           <ExternalIcon className="h-3.5 w-3.5" />
         </a>
       </div>
@@ -91,7 +101,7 @@ export default function DealsPage() {
               建站、主机、云存储优惠入口
             </h1>
             <p className="mt-5 max-w-2xl text-[15px] leading-7 text-slate-500">
-              这里不做泛品牌入口，只放更可能产生购买决策的云服务器、VPS、免备案建站、CDN 和对象存储资源。已接入推广的链接会明确标记。
+              这里不做泛品牌入口，只放更可能产生购买决策的云服务器、VPS、免备案建站、CDN、对象存储、AI API 和工具 SaaS。已接入推广的链接会明确标记。
             </p>
           </div>
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">

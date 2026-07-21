@@ -39,6 +39,21 @@ export const posts: Post[] = [
     ],
   },
   {
+    slug: "ai-api-saas-tools-guide",
+    title: "AI API 和工具 SaaS 怎么选：先看使用场景再看价格",
+    excerpt: "把 AI API、接口市场、客服系统、指纹浏览器、代理 IP 和知识库工具放在同一个购买框架里比较，避免只看品牌名和返佣标签。",
+    category: "工具选型",
+    date: "2026-07-21",
+    tags: ["AI API", "工具SaaS", "国内推广"],
+    relatedResourceSlugs: ["siliconflow", "api-cloud-market", "z-api", "salesmartly", "adspower", "ipfoxy", "helplook", "qianbi-writing"],
+    content: [
+      "选 AI API 和工具 SaaS 时，先不要从品牌名开始，而是从要完成的任务开始。只是给项目接入模型能力，优先看硅基流动、APi云市场和 Z-API 这类 API 入口；如果要服务客户、管理咨询和沉淀帮助文档，SaleSmartly 和 HelpLook 更接近真实转化场景。",
+      "第二步看成本结构。API 类产品要看调用单价、充值门槛、模型覆盖和是否方便迁移；工具 SaaS 要看月费、团队席位、续费价格和数据导出。价格便宜不等于适合，能减少人工流程的工具才更容易长期留下。",
+      "第三步看账号和网络环境。跨境运营、广告验证、批量账号和数据采集场景，通常需要把指纹浏览器、代理 IP、客服系统和采集工具一起评估。AdsPower、IPFoxy、kookeey 这类工具适合放在同一个方案里比较，而不是单独看一个功能点。",
+      "最后看风险和替换成本。论文写作、知识库、客服和 API 平台都涉及内容、账号或业务数据，优先选择能导出数据、能控制权限、价格规则透明的服务。导航站推荐入口只解决发现问题，真正下单前仍应按自己的业务场景做一次小额测试。",
+    ],
+  },
+  {
     slug: "how-to-use-a-resource-directory",
     title: "如何用导航站减少信息搜索时间",
     excerpt: "把高频入口、垂直分类和临时搜索分开，能明显减少每天重复找工具的时间。",

@@ -142,7 +142,7 @@ export default function DealsPage() {
 
       <Surface className="mt-8 p-6">
         <SectionHeader title="后续内容方向" description="这个页面应该配合专题文章，而不是单独堆链接。" />
-        <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+        <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
           <Link href="/blog/cheap-cn-cloud-server-guide" className="rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-950 hover:border-emerald-200 hover:text-emerald-700">
             国内便宜云服务器怎么选
           </Link>
@@ -157,6 +157,9 @@ export default function DealsPage() {
           </Link>
           <Link href="/blog/ai-api-saas-tools-guide" className="rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-950 hover:border-emerald-200 hover:text-emerald-700">
             AI API 和工具 SaaS 怎么选
+          </Link>
+          <Link href="/blog/cross-border-ops-tools-guide" className="rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-950 hover:border-emerald-200 hover:text-emerald-700">
+            跨境运营工具怎么选
           </Link>
         </div>
       </Surface>

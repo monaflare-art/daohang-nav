@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { contentLinks } from "@/app/deals/page";
+import { contentLinks, dealSections } from "@/app/deals/page";
 import { posts } from "@/data/posts";
-import { allResources } from "@/data/resources";
+import { allResources, resources } from "@/data/resources";
 
 const postSlugs = new Set(posts.map((post) => post.slug));
 const resourceSlugs = new Set(allResources.map((resource) => resource.slug));
@@ -27,5 +27,23 @@ describe("post data integrity", () => {
       .filter((slug) => !postSlugs.has(slug));
 
     expect(missingPosts).toEqual([]);
+  });
+
+  it("keeps deals sections connected to existing public resources", () => {
+    const publicResourceSlugs = new Set(resources.map((resource) => resource.slug));
+    const missingResources = dealSections.flatMap((section) =>
+      section.slugs
+        .filter((resourceSlug) => !publicResourceSlugs.has(resourceSlug))
+        .map((resourceSlug) => `${section.title}:${resourceSlug}`),
+    );
+
+    expect(missingResources).toEqual([]);
+    expect(dealSections.every((section) => section.slugs.length > 0)).toBe(true);
+  });
+
+  it("keeps deals section titles unique", () => {
+    const sectionTitles = dealSections.map((section) => section.title);
+
+    expect(new Set(sectionTitles).size).toBe(sectionTitles.length);
   });
 });

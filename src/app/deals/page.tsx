@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
 };
 
-const dealSections = [
+export const dealSections = [
   {
     title: "便宜云服务器 / VPS",
     description: "更适合新站、学生、小工具和个人项目先跑起来。",

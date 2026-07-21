@@ -51,6 +51,7 @@
 - 2026-07-21 `/blog` was redesigned from a flat article list into an editorial matrix with featured conversion posts, category groups and article/topic counts.
 - 2026-07-21 article detail pages now show a `/deals` CTA when the article has connected affiliate resources, while pending-only articles do not get the monetization CTA.
 - 2026-07-21 `src/data/posts.test.ts` added integrity coverage for unique post slugs, existing related resource slugs, and `/deals` content links pointing to existing posts.
+- 2026-07-21 `/deals` exports `dealSections`; `src/data/posts.test.ts` now also verifies deal section slugs exist in public resources and section titles stay unique.
 
 ## Known Issues
 

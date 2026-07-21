@@ -45,6 +45,7 @@
 - 2026-07-21 `/blog/cloud-vendor-campaigns-guide` added as a purchase-decision SEO article for 阿里云、腾讯云、百度智能云、京东云、UCloud、七牛云 and 又拍云, and `/deals` links to it from the content direction section.
 - 2026-07-21 `/blog/cdn-object-storage-guide` added as a purchase-decision SEO article for connected CDN/object storage resources 又拍云、七牛云、UCloud plus main cloud vendors, and `/deals` links to it from the content direction section.
 - 2026-07-21 `/blog/cross-border-ops-tools-guide` added as a purchase-decision SEO article for connected cross-border/tool SaaS resources SaleSmartly, AdsPower, IPFoxy, kookeey and HelpLook; 八爪鱼 stays excluded while affiliateStatus is `pending`.
+- 2026-07-21 `/blog/api-market-model-api-guide` added as a purchase-decision SEO article for connected API resources 硅基流动、APi云市场 and Z-API, and `/deals` links to it from the content direction section.
 
 ## Known Issues
 

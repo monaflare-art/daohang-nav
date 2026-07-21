@@ -158,6 +158,9 @@ export default function DealsPage() {
           <Link href="/blog/ai-api-saas-tools-guide" className="rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-950 hover:border-emerald-200 hover:text-emerald-700">
             AI API 和工具 SaaS 怎么选
           </Link>
+          <Link href="/blog/api-market-model-api-guide" className="rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-950 hover:border-emerald-200 hover:text-emerald-700">
+            API 接口市场怎么选
+          </Link>
           <Link href="/blog/cross-border-ops-tools-guide" className="rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-950 hover:border-emerald-200 hover:text-emerald-700">
             跨境运营工具怎么选
           </Link>
